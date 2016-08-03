@@ -2,7 +2,7 @@
 
 <pre>
 {
-        "type":"twilio",
+	"type":"twilio",
 	"active": "True",
 	"account_sid":"YOUR_ACCOUNT_SID",
 	"auth_token":"YOUR_AUTH_TOKEN",
