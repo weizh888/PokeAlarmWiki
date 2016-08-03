@@ -19,7 +19,6 @@
 | api_key        | Your API key                           | yes       |
 | channel        | Pushes to this channel instead of user | no        |
 
-Parameters surrounded by red blocks are optional.
 
 ## How to get API Key
 
