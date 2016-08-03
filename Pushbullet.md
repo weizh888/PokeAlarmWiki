@@ -1,15 +1,17 @@
 #Pushbullet
 
-**Warning:** Do to the recent changes requiring Pushbullet premium, Pushbullet support may not be continued in the future
+**Warning:** Do to the recent changes requiring Pushbullet premium for Bots, Pushbullet support may not be continued in the future
 ## Example Config
-```json 
+
+<pre>
 {
     "type":"pushbullet",
     "active":"True",
     "api_key":"YOUR_API_KEY_HERE",
-    _"channel":""_
+    <i>"channel":""</i>
 }
-```
+</pre>
+
 
 ## Parameters
 | Parameters     | Description                            | Required  |
