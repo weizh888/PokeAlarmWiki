@@ -1,5 +1,3 @@
-#Pushbullet
-
 **Warning:** Do to the recent changes requiring Pushbullet premium for Bots, Pushbullet support may not be continued in the future
 ## Example Config
 
