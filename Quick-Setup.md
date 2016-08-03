@@ -1,5 +1,3 @@
-# Quick-Setup
-
 1. Setup and run [AHAAAAAAA's PokemonGo-Map](https://github.com/AHAAAAAAA/PokemonGo-Map). There is a detailed wiki [here](https://github.com/AHAAAAAAA/PokemonGo-Map/wiki). Make sure you have the latest version of Python 2.7 and git installed. 
 
 2. Navigate to the folder you want to store the Alarm in. Use `git clone https://github.com/kvangent/PokeAlarm.git` to create a local copy of the alarm.
