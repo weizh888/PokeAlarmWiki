@@ -17,8 +17,6 @@
 | api_key        | Your API key                           | yes       |
 | channel        | Pushes to this channel instead of user | yes       |
 
-Parameters surrounded by red blocks are optional.
-
 ## How to get an API Key
 
 1. Go to slack.com. Enter your email address and click 'Create your team'. Follow the instructions to setup and activate your account. 
