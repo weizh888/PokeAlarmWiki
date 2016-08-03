@@ -1,1 +1,1 @@
-[PokeAlarm] (https://github.com/kvangent/PokeAlarm/wiki/PokeAlarm)
+#[PokeAlarm] (https://github.com/kvangent/PokeAlarm/wiki/PokeAlarm)
