@@ -1,4 +1,4 @@
-##[PokeAlarm] (https://github.com/kvangent/PokeAlarm/wiki/PokeAlarm)
+##[PokeAlarm] (https://github.com/kvangent/PokeAlarm/wiki)
 ##[Quick-Setup] (https://github.com/kvangent/PokeAlarm/wiki/Quick-Setup)
 
 ## Alarm Details
