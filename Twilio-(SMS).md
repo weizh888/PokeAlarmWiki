@@ -16,7 +16,8 @@
 | -------------- |----------------------------------------|:---------:|
 | type           | must be 'twilio'                       | yes       |
 | active         | 'True' for alarm to be active          | yes       |
-| auth_token     | Your Auth Token from Slack             | yes       |
+| account_sid    | Your Account SID from Twilio           | yes       |
+| auth_token     | Your Auth Token from Twilio            | yes       |
 | from_number    | Your Twilio number to send from        | yes       |
 | to_number      | Your number to receive texts from      | yes       |  
 
