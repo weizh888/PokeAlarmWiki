@@ -30,7 +30,8 @@ You can now customize your alarms to give any message you prefer, based on what 
 			"active": "True",
 			"type":"slack",
 			"api_key":"YOUR_API_KEY",
-			"channel":"#general"
+			"channel":"#general",
+			"notify_text":"A wild <pkmn> has appeared!"
 		},
 		{
 			"active": "True",
