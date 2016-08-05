@@ -18,12 +18,12 @@ If you are experiencing trouble with setup or other user difficulties, please se
 
 ### Problems with receiving in UTC time or Notifications not sending because 'time_left has passed'.
 
-I have implemented a client side fix for this issue. Simply run the webserver with the --time_fix command to have your times corrected. The command will be `python runwebhook.py --time_fix`. If the PokemonGo-Map ever gets the issue corrected, just drop the extra argument.
+This error should now be corrected. Please make sure you have updated to the latest version of PokemonGo-Map. If you are still experiencing issues, please open a ticket. 
 
 If you see this issue after updating to the latest version, please open an issue ticket here on github.
 
 ### Windows: socket.error: [Errno 10053] An established connection was aborted by the software in your host machine OR Linux: socket.error: [Errno 32] Broken pipe
 
-This issue should now be correctly caught from the client side. If you still experience this issue, please open an issue ticket on github.
+This error should now be corrected. Please make sure you have updated to the latest version of PokemonGo-Map. If you are still experiencing issues, please open a ticket.
 
 
