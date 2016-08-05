@@ -24,8 +24,6 @@ Make sure you aren't using notepad to edit the files (Notepad++ is a good altern
 
 This error should now be corrected. Please make sure you have updated to the latest version of PokemonGo-Map. If you are still experiencing issues, please open a ticket. 
 
-If you see this issue after updating to the latest version, please open an issue ticket here on github.
-
 #### Windows: socket.error: [Errno 10053] An established connection was aborted by the software in your host machine OR Linux: socket.error: [Errno 32] Broken pipe
 
 This error should now be corrected. Please make sure you have updated to the latest version of PokemonGo-Map. If you are still experiencing issues, please open a ticket.
