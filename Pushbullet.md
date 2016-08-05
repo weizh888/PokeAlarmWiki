@@ -1,26 +1,32 @@
 **Warning:** Do to the recent changes requiring Pushbullet premium for Bots, Pushbullet support may not be continued in the future
 ## Example Config
-
-<pre>
+```json
 {
     "type":"pushbullet",
     "active":"True",
-    "api_key":"YOUR_API_KEY_HERE",
-    <i>"channel":""</i>
+    "api_key":"YOUR_API_KEY_HERE"
 }
-</pre>
+```
 
+### Basic Parameters
 
-## Parameters
-| Parameters     | Description                            | Required  |
-| -------------- |----------------------------------------|:---------:|
-| type           | must be 'pushbullet'                   | yes       |
-| active         | 'True' for alarm to be active          | yes       |
-| api_key        | Your API key                           | yes       |
-| channel        | Pushes to this channel instead of user | no        |
+| Parameters     | Description                            |
+| -------------- |----------------------------------------|
+| type           | must be 'pushbullet'                   |
+| active         |'True' for alarm to be active           |
+| api_key        | Your Pushbullet API key                |
 
+### Required Parameters
+| Parameters     | Description                                       | Default                                       |
+| -------------- |---------------------------------------------------|-----------------------------------------------|
+| channel        | Channel tag of the Pushbullet channel to push     | Sends to all devices                          |
+| notify_text    | Notification header attached to the push          | "A wild <pkmn> has appeared!"                 |
+| link           | Link to be attached to the push                   | "<gmaps>"                                     |
+| body_text      | Link to be attached to the push                   | "Available until <24h_time> (<time_left>)."   |                                  
 
-## How to get API Key
+For more information on text substitutions, please see the main configuration page.
+
+## How to get an API Key
 
 1. Go to Pushbullet.com and click one of the 'Sign up' options.
 
