@@ -1,6 +1,6 @@
 ## Example Config
 
-<pre>
+```json
 {
 	"type":"twilio",
 	"active": "True",
@@ -9,17 +9,23 @@
 	"from_number":"+1234567890",
 	"to_number":"+1234567890"
 }
-</pre>
+```
 
-## Parameters
-| Parameters     | Description                            | Required  |
-| -------------- |----------------------------------------|:---------:|
-| type           | must be 'twilio'                       | yes       |
-| active         | 'True' for alarm to be active          | yes       |
-| account_sid    | Your Account SID from Twilio           | yes       |
-| auth_token     | Your Auth Token from Twilio            | yes       |
-| from_number    | Your Twilio number to send from        | yes       |
-| to_number      | Your number to receive texts from      | yes       |  
+### Required Parameters
+| Parameters     | Description                            | 
+| -------------- |----------------------------------------|
+| type           | must be 'twilio'                       |
+| active         | 'True' for alarm to be active          |
+| account_sid    | Your Account SID from Twilio           |
+| auth_token     | Your Auth Token from Twilio            |
+| from_number    | Your Twilio number to send from        |
+| to_number      | Your number to receive texts from      |
+
+
+### Optional Parameters
+| Parameters     | Description                                       | Default                                       |
+| -------------- |---------------------------------------------------|-----------------------------------------------|
+| message   | Text message to be sent via Twilio                | "A wild <pkmn> has appeared! <gmaps> Available until <24h_time> (<time_left>)."                 |
 
 ## How to get the Account SID, Auth Token, and Twilio Number
 
