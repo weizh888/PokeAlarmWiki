@@ -5,8 +5,8 @@ The alarm is a third party extenstion of [AHAAAAAAA's PokemonGo-Map](https://git
 We currently support the following services:
 * Pushbullet
 * Slacker
-* Twilio (SMS)
 * Telegram. 
+* Twilio (SMS)
 
 Pushbullet support will likely be discontinued after August 1st because of the change of services to premium. 
 
