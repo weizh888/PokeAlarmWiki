@@ -2,7 +2,7 @@
 [Home] (https://github.com/kvangent/PokeAlarm/wiki)  
 [Installation] (https://github.com/kvangent/PokeAlarm/wiki/Installation)  
 [Alarm Configuration] (https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration)  
-[Pkmn Configuration] (https://github.com/kvangent/PokeAlarm/wiki/Pkmn-Configuration)
+[Pokemon Configuration] (https://github.com/kvangent/PokeAlarm/wiki/Pokemon-Configuration)
 
 ### **Alarm Types**  
 [Pushbullet] (https://github.com/kvangent/PokeAlarm/wiki/Pushbullet)  
