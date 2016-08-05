@@ -16,7 +16,7 @@
 | active         |`True` for alarm to be active           |
 | api_key        | Your Pushbullet API key                |
 
-### Required Parameters
+### Option Parameters
 | Parameters     | Description                                       | Default                                       |
 | -------------- |---------------------------------------------------|-----------------------------------------------|
 | channel        | Channel tag of the target channel                 | Sends to all devices                          |
