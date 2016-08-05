@@ -11,15 +11,16 @@ You can now customize your alarms to give any message you prefer, based on what 
 
 | text           | Description                            |
 | -------------- |----------------------------------------|
-| <id>           | ID of the alerted pokemon              |
-| <pkmn>         | Name of the alerted pokemon            |
-| <addr>         | Nearest street address of the pokemon  |
-| <loc>          | Latitude, Longitude of the pokemon     |
-| <gmaps>        | Gmaps link to a pin of the pokemon     |
-| <dist>         | *Distance from set location in meters  |
-| <time_left>    | Time remaining for the pokemon         |
-| <12h_time>     | Dissapear time in 12hour format        |
-| <24h_time>     | Dissapear time in 24hour format        |
+| `<id>`           | ID of the alerted pokemon              |
+| `<pkmn>`         | Name of the alerted pokemon            |
+| `<addr>`         | Nearest street address of the pokemon  |
+| `<loc>`          | Latitude, Longitude of the pokemon     |
+| `<gmaps>`        | Gmaps link to a pin of the pokemon     |
+| `<dist>`         | *Distance from set location in meters  |
+| `<time_left>`    | Time remaining for the pokemon         |
+| `<12h_time>`     | Dissapear time in 12hour format        |
+| `<24h_time>`     | Dissapear time in 24hour format        |
+* If no location has been set, dist will always return 0m
 
 ## Example Alarms Config
 
