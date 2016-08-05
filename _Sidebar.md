@@ -1,10 +1,10 @@
 **Wiki Contents**  
 [PokeAlarm] (https://github.com/kvangent/PokeAlarm/wiki)  
-[Setup] (https://github.com/kvangent/PokeAlarm/wiki/Setup)
+[Setup] (https://github.com/kvangent/PokeAlarm/wiki/Setup)  
 [Configuration] (https://github.com/kvangent/PokeAlarm/wiki/Config)
 
 **Services**  
 [Pushbullet] (https://github.com/kvangent/PokeAlarm/wiki/Pushbullet)  
 [Slack] (https://github.com/kvangent/PokeAlarm/wiki/Slack) 
-[Telegram] (https://github.com/kvangent/PokeAlarm/wiki/Telegram)   
+[Telegram] (https://github.com/kvangent/PokeAlarm/wiki/Telegram)    
 [Twilio (SMS)] (https://github.com/kvangent/PokeAlarm/wiki/Twilio-(SMS))
