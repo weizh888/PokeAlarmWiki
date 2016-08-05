@@ -8,7 +8,7 @@
 }
 ```
 
-### Basic Parameters
+### Required Parameters
 
 | Parameters     | Description                            |
 | -------------- |----------------------------------------|
