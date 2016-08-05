@@ -1,21 +1,29 @@
 ## Example Config
 
-<pre>
+```json
 {
     "type":"slack",
     "active":"True",
     "api_key":"YOUR_API_KEY_HERE",
-    "channel":""
+    "channel":"#general"
 }
-</pre>
+```
 
-## Parameters
-| Parameters     | Description                            | Required  |
-| -------------- |----------------------------------------|:---------:|
-| type           | must be 'pushbullet'                   | yes       |
-| active         | 'True' for alarm to be active          | yes       |
-| api_key        | Your API key                           | yes       |
-| channel        | Pushes to this channel instead of user | yes       |
+### Basic Parameters
+| Parameters     | Description                            |
+| -------------- |----------------------------------------|
+| type           | must be `pushbullet`                   |
+| active         | `True` for alarm to be active          |
+| api_key        | Your API key                           |
+| channel        | Pushes to this channel instead of user |
+
+### Required Parameters
+| Parameters     | Description                                       | Default                                       |
+| -------------- |---------------------------------------------------|-----------------------------------------------|
+| notify_text    | Notification text to begin the message            | `A wild <pkmn> has appeared!`                 |
+| notify_link    | Link to be added to notification text             | `<gmaps>`                                     |
+| body_text      | Additional text to be added to the message        | `Available until <24h_time> (<time_left>).`   | 
+| username       | Username the bot should post the message as       | `<pkmn>`   | 
 
 ## How to get an API Key
 
