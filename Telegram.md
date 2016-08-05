@@ -22,7 +22,6 @@
 | Parameters     | Description                                       | Default                                       |
 | -------------- |---------------------------------------------------|-----------------------------------------------|
 | header         | Header text for the message                       | `A wild <pkmn> has appeared!`                 |
-| notify_link    | Link to be added to notification text             | `<gmaps>`                                     |
 | body_text      | Additional text to be added to the message        | `"<gmaps> \n Available until <24h_time> (<time_left>)."`| 
 
 
