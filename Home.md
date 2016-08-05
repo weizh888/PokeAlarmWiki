@@ -14,6 +14,20 @@ If you are experience issues with the alarm or would like to see new features, p
 
 If you are experiencing trouble with setup or other user difficulties, please see the reddit thread.
 
+##Command Line Arguments
+
+'-H', '--host' - Set web server listening host, default is 127.0.0.1  
+
+'-P', '--port' - Set web server listening port, default is 4000  
+
+'-l', '--location' - Location, can be an address or coordinates. If no locations are set, distances will always calculate as 0.  
+
+'-L', '--locale' - Locale for Pokemon names: default is en, check locale folder for more options 
+
+'-d', '--debug', - Debug Mode, allows extra output to console  
+
+'-tf', '--time_fix', - Apply time_fix offset native/local times. Use for outdated versions of PokemonGo-Map  
+
 ## Common Problems
 
 #### Unable to decode JSON object
