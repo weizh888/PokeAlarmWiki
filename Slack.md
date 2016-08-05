@@ -17,13 +17,13 @@
 | api_key        | Your API key                           |
 | channel        | Pushes to this channel instead of user |
 
-### Required Parameters
+### Optional Parameters
 | Parameters     | Description                                       | Default                                       |
 | -------------- |---------------------------------------------------|-----------------------------------------------|
 | notify_text    | Notification text to begin the message            | `A wild <pkmn> has appeared!`                 |
 | notify_link    | Link to be added to notification text             | `<gmaps>`                                     |
 | body_text      | Additional text to be added to the message        | `Available until <24h_time> (<time_left>).`   | 
-| username       | Username the bot should post the message as       | `<pkmn>`   | 
+| username       | Username the bot should post the message as       | `<pkmn>`                                      | 
 
 ## How to get an API Key
 
