@@ -9,7 +9,7 @@
 }
 ```
 
-### Basic Parameters
+### Required Parameters
 | Parameters     | Description                            |
 | -------------- |----------------------------------------|
 | type           | must be `pushbullet`                   |
