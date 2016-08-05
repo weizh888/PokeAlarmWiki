@@ -12,8 +12,8 @@
 
 | Parameters     | Description                            |
 | -------------- |----------------------------------------|
-| type           | must be 'pushbullet'                   |
-| active         |'True' for alarm to be active           |
+| type           | must be `pushbullet`                   |
+| active         |`True` for alarm to be active           |
 | api_key        | Your Pushbullet API key                |
 
 ### Required Parameters
