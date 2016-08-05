@@ -19,7 +19,7 @@
 ### Required Parameters
 | Parameters     | Description                                       | Default                                       |
 | -------------- |---------------------------------------------------|-----------------------------------------------|
-| channel        | Channel tag of the Pushbullet channel to push     | Sends to all devices                          |
+| channel        | Channel tag of the target channel                 | Sends to all devices                          |
 | notify_text    | Notification header attached to the push          | "A wild <pkmn> has appeared!"                 |
 | link           | Link to be attached to the push                   | "<gmaps>"                                     |
 | body_text      | Link to be attached to the push                   | "Available until <24h_time> (<time_left>)."   |                                  
