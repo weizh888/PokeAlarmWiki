@@ -1,6 +1,6 @@
 **Wiki Contents**  
-[PokeAlarm] (https://github.com/kvangent/PokeAlarm/wiki)  
-[Setup] (https://github.com/kvangent/PokeAlarm/wiki/Setup)  
+[Home] (https://github.com/kvangent/PokeAlarm/wiki)  
+[Installation] (https://github.com/kvangent/PokeAlarm/wiki/Setup)  
 [Configuration] (https://github.com/kvangent/PokeAlarm/wiki/Config)
 
 **Services**  
