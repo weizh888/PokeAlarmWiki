@@ -1,22 +1,29 @@
 ## Example Config
 
-<pre>
+```json
 {
     "type":"telegram",
     "active":"True",
     "api_key":"YOUR_BOT_TOKEN",
     "chat_id":"YOUR_CHAT_ID"
 }
-</pre>
+```
 
 
-## Parameters
-| Parameters     | Description                            | Required  |
-| -------------- |----------------------------------------|:---------:|
-| type           | must be 'telegram '                    | yes       |
-| active         | 'True' for alarm to be active          | yes       |
-| bot_token      | Your Bot Token from Telegram           | yes       |
-| chat_id        | Your chat's id from Telegram          | yes       |
+### Required Parameters
+| Parameters     | Description                            |
+| -------------- |----------------------------------------|
+| type           | must be `telegram`                     |
+| active         | `True` for alarm to be active          |
+| bot_token      | Your Bot Token from Telegram           |
+| chat_id        | Your chat's id from Telegram           |
+
+### Optional Parameters
+| Parameters     | Description                                       | Default                                       |
+| -------------- |---------------------------------------------------|-----------------------------------------------|
+| header         | Header text for the message                       | `A wild <pkmn> has appeared!`                 |
+| notify_link    | Link to be added to notification text             | `<gmaps>`                                     |
+| body_text      | Additional text to be added to the message        | `"<gmaps> \n Available until <24h_time> (<time_left>)."`| 
 
 
 ## How to get API Key
