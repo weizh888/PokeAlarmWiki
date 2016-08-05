@@ -16,13 +16,17 @@ If you are experiencing trouble with setup or other user difficulties, please se
 
 ## Common Problems
 
-### Problems with receiving in UTC time or Notifications not sending because 'time_left has passed'.
+#### Unable to decode JSON object
+
+Make sure you aren't using notepad to edit the files (Notepad++ is a good alternative). Also, check to make sure your json formatting is correct. You can check your format [here] (http://www.jsoneditoronline.org/).
+
+#### Problems with receiving in UTC time or Notifications not sending because 'time_left has passed'.
 
 This error should now be corrected. Please make sure you have updated to the latest version of PokemonGo-Map. If you are still experiencing issues, please open a ticket. 
 
 If you see this issue after updating to the latest version, please open an issue ticket here on github.
 
-### Windows: socket.error: [Errno 10053] An established connection was aborted by the software in your host machine OR Linux: socket.error: [Errno 32] Broken pipe
+#### Windows: socket.error: [Errno 10053] An established connection was aborted by the software in your host machine OR Linux: socket.error: [Errno 32] Broken pipe
 
 This error should now be corrected. Please make sure you have updated to the latest version of PokemonGo-Map. If you are still experiencing issues, please open a ticket.
 
