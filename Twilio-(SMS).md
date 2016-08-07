@@ -29,7 +29,7 @@
 
 ## How to get the Account SID, Auth Token, and Twilio Number
 
-1. Go to [Twilio] (www.twilio.com) and click 'Get a free API key'. Fill out the following form, and enter your phone number to verify your account.
+1. Go to [Twilio] (https://www.twilio.com) and click 'Get a free API key'. Fill out the following form, and enter your phone number to verify your account.
 
 2. On the left hand side, click the Home Button and then click Dashboard. The **Account SID** and **Auth Token** will be listed. To reveal the Auth Token, click on the lock next to it.
 
