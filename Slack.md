@@ -12,10 +12,10 @@
 ### Required Parameters
 | Parameters     | Description                            |
 | -------------- |----------------------------------------|
-| type           | must be `pushbullet`                   |
+| type           | must be `slack`                          |
 | active         | `True` for alarm to be active          |
 | api_key        | Your API key                           |
-| channel        | Pushes to this channel instead of user |
+| channel        | Pushes to this channel                 |
 
 ### Optional Parameters
 | Parameters     | Description                                       | Default                                       |
@@ -24,7 +24,9 @@
 | notify_link    | Link to be added to notification text             | `<gmaps>`                                     |
 | body_text      | Additional text to be added to the message        | `Available until <24h_time> (<time_left>).`   | 
 | username       | Username the bot should post the message as       | `<pkmn>`                                      | 
-
+| pkmn_channel   | Custom channel for pokemon *                      | None                                          |
+*Note: Nidoran names will be changed to NidoranM/NidoranF to allow channels with their names to work.
+ 
 ## How to get an API Key
 
 1. Go to slack.com. Enter your email address and click 'Create your team'. Follow the instructions to setup and activate your account. 
