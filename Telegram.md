@@ -34,3 +34,12 @@
 3. Start a conversation with your bot. In the top left click on the menu bars, then click create group. Type in the name of the bot you previously created, then click on it when it appears below. Then click next. Type any message to your bot. 
 
 4. Enter your bot_token in to replace the `<BOT_TOKEN_HERE>` in the following url `https://api.telegram.org/bot<BOT_TOKEN_HERE>/getUpdates`. Then go to it, and find the section that says `"chat":{"id":<CHAT_ID>`. This number is your chat_id. 
+
+
+## How to create a custom channel
+
+1. Create a Public Channel (Currently doesn't work from the web app).
+
+2. Add your bot as an administrator for the channel.
+
+3. The chat_id for your bot will be `@channel_url`.
