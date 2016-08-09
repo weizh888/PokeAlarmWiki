@@ -1,5 +1,7 @@
 To configure what Pokemon you would like to be notified of, you need to edit the alarms.json file. Under the pokemon field, you need to specify the name of the Pokemon, and then specify when you would like to be notified of it.
 
+**Note:** In order for distances to work, you MUST have a location set with `-l`
+
 `"Bulbasaur":"True"` will notify you of the pokemon Bulbasaur, regardless of its distance away from your set location. T, True, Y, and Yes evaluate to true, regardless of casing.
 
 `"Bulbasaur":"1000"` will notify you of the pokemon Bulbasaur, if its distance is not greater then 1000 meters away. 
