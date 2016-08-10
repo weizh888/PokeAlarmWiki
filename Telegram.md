@@ -22,8 +22,8 @@
 | Parameters     | Description                                       | Default                                       |
 | -------------- |---------------------------------------------------|-----------------------------------------------|
 | header         | Header text for the message                       | `A wild <pkmn> has appeared!`                 |
-| body_text      | Additional text to be added to the message        | `"<gmaps> \n Available until <24h_time> (<time_left>)."`| 
-
+| body     | Additional text to be added to the message              | `"<gmaps> \n Available until <24h_time> (<time_left>)."`| 
+| send_map | Specify if you want to be send a map or not             | True | 
 
 ## How to get API Key
 
