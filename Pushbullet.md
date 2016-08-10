@@ -20,9 +20,9 @@
 | Parameters     | Description                                       | Default                                       |
 | -------------- |---------------------------------------------------|-----------------------------------------------|
 | channel        | Channel tag of the target channel                 | Sends to all devices                          |
-| notify_text    | Notification header attached to the push          | `A wild <pkmn> has appeared!`                 |
-| link           | Link to be attached to the push                   | `<gmaps>`                                     |
-| body_text      | Message attched to the push                       | `Available until <24h_time> (<time_left>).`   |                                  
+| title          | Notification title  attached to the push          | `A wild <pkmn> has appeared!`                 |
+| url            | Link to be attached to the push                   | `<gmaps>`                                     |
+| body           | Message attched to the push                       | `Available until <24h_time> (<time_left>).`   |                                  
 
 For more information on text substitutions, please see the main configuration page.
 
