@@ -26,7 +26,7 @@ If you are experiencing trouble with setup or other user difficulties, please se
 
 '-d', '--debug', - Debug Mode, allows extra output to console  
 
-'-tf', '--time_fix', - Apply time_fix offset native/local times. Use for outdated versions of PokemonGo-Map  
+'-sl', '--skip_lured', - Do not alert for a lured Pokemon. 
 
 ## Common Problems
 
