@@ -12,6 +12,7 @@ You can now customize your alarms to give any message you prefer, based on what 
 | `<id>`         | ID of the alerted pokemon              |
 | `<pkmn>`       | Name of the alerted pokemon            |
 | `<addr>`       | Nearest street address of the pokemon  |
+| `<postal>`     | Postal code of of the pokemon location |
 | `<loc>`        | Latitude, Longitude of the pokemon     |
 | `<gmaps>`      | Gmaps link to a pin of the pokemon     |
 | `<dist>`       | *Distance from set location in meters  |
