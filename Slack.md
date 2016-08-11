@@ -20,11 +20,11 @@
 ### Optional Parameters
 | Parameters     | Description                                       | Default                                       |
 | -------------- |---------------------------------------------------|-----------------------------------------------|
-| notify_text    | Notification text to begin the message            | `A wild <pkmn> has appeared!`                 |
-| notify_link    | Link to be added to notification text             | `<gmaps>`                                     |
-| body_text      | Additional text to be added to the message        | `Available until <24h_time> (<time_left>).`   | 
+| title          | Notification text to begin the message            | `A wild <pkmn> has appeared!`                 |
+| url            | Link to be added to notification text             | `<gmaps>`                                     |
+| body           | Additional text to be added to the message        | `Available until <24h_time> (<time_left>).`   | 
 | username       | Username the bot should post the message as       | `<pkmn>`                                      | 
-| pkmn_channel   | Custom channel for pokemon *                      | None                                          |
+| pkmn_channel   | Custom channel for pokemon *                      | None - pushes to user channel                 |
 *Note: Nidoran names will be changed to NidoranM/NidoranF to allow channels with their names to work.
  
 ## How to get an API Key
