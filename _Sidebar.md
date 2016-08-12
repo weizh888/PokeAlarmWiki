@@ -8,5 +8,5 @@
 [Pushbullet] (https://github.com/kvangent/PokeAlarm/wiki/Pushbullet)  
 [Slack] (https://github.com/kvangent/PokeAlarm/wiki/Slack)  
 [Telegram] (https://github.com/kvangent/PokeAlarm/wiki/Telegram)    
-[Twilio (SMS)] (https://github.com/kvangent/PokeAlarm/wiki/Twilio-(SMS))
+[Twilio (SMS)] (https://github.com/kvangent/PokeAlarm/wiki/Twilio-(SMS))  
 [Twitter] (https://github.com/kvangent/PokeAlarm/wiki/Twitter) 
