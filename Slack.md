@@ -4,18 +4,16 @@
 {
     "type":"slack",
     "active":"True",
-    "api_key":"YOUR_API_KEY_HERE",
-    "channel":"#general"
+    "api_key":"YOUR_API_KEY_HERE"
 }
 ```
 
 ### Required Parameters
 | Parameters     | Description                            |
 | -------------- |----------------------------------------|
-| type           | must be `slack`                          |
+| type           | must be `slack`                        |
 | active         | `True` for alarm to be active          |
 | api_key        | Your API key                           |
-| channel        | Pushes to this channel                 |
 
 ### Optional Parameters
 | Parameters     | Description                                       | Default                                       |
@@ -24,8 +22,8 @@
 | url            | Link to be added to notification text             | `<gmaps>`                                     |
 | body           | Additional text to be added to the message        | `Available until <24h_time> (<time_left>).`   | 
 | username       | Username the bot should post the message as       | `<pkmn>`                                      | 
-| pkmn_channel   | Custom channel for pokemon *                      | None - pushes to user channel                 |
-*Note: Nidoran names will be changed to NidoranM/NidoranF to allow channels with their names to work.
+| channel        | Send messages to this channel.. `#<pkmn>` pushes to pokemon name* | `#general`                |
+*Note: Nidorans will be `nidoranf` or `nidoranm`, Farfetch'd will be `farfetched`, and Mr. Mime will be `mrmime`. Channels that do not exist (channels cannot be created by bots) will default to general instead.
  
 ## How to get an API Key
 
