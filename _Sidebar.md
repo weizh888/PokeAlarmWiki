@@ -9,3 +9,4 @@
 [Slack] (https://github.com/kvangent/PokeAlarm/wiki/Slack)  
 [Telegram] (https://github.com/kvangent/PokeAlarm/wiki/Telegram)    
 [Twilio (SMS)] (https://github.com/kvangent/PokeAlarm/wiki/Twilio-(SMS))
+[Twitter] (https://github.com/kvangent/PokeAlarm/wiki/Twitter) 
