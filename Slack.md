@@ -22,8 +22,34 @@
 | url            | Link to be added to notification text             | `<gmaps>`                                     |
 | body           | Additional text to be added to the message        | `Available until <24h_time> (<time_left>).`   | 
 | username       | Username the bot should post the message as       | `<pkmn>`                                      | 
-| channel        | Send messages to this channel.. `#<pkmn>` pushes to pokemon name* | `#general`                |
-*Note: Nidorans will be `nidoranf` or `nidoranm`, Farfetch'd will be `farfetched`, and Mr. Mime will be `mrmime`. Channels that do not exist (channels cannot be created by bots) will default to general instead.
+| channel        | Send messages to this channel.. `#<pkmn>` pushes to pokemon name* | `#general`                    |
+| map            | Specify a json object to describe the map         | See map section for more details              |
+*Note: Nidorans will be `nidoranf` or `nidoranm`, Farfetch'd will be `farfetchd`, and Mr. Mime will be `mrmime`. Channels that do not exist (channels cannot be created by bots) will default to general instead.
+
+### Mini Map configuration
+```json
+{
+	"active": "True",
+	"type":"slack",
+	"api_key":"YOUR_API_KEY"
+	"map":{ 
+		"enabled":"true"
+		"width": "250",
+		"height": "125",
+		"maptype": "roadmap",
+		"zoom": "15"
+	}
+},
+```
+
+| Parameters     | Description                                       | Default                                       |
+| -------------- |---------------------------------------------------|-----------------------------------------------|
+| enabled        | Turns the map on or off                           | `True`                                        |
+| width          | Width of the map                                  | `250` px                                      |
+| height         | Height of the map                                 | `150` px                                      | 
+| maptype        | Link to be added to notification text             | `roadmap`                                     |
+| zoom           | Specifies the zoom of the map                     | `15`                                          | 
+
  
 ## How to get an API Key
 
