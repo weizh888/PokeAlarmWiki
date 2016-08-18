@@ -3,6 +3,7 @@
 [Installation] (https://github.com/kvangent/PokeAlarm/wiki/Installation)  
 [Alarm Configuration] (https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration)    
 [Pokemon Configuration] (https://github.com/kvangent/PokeAlarm/wiki/Pokemon-Configuration)     
+[Geofencing] (https://github.com/kvangent/PokeAlarm/wiki/Geofencing)     
 [Notification Templates] (https://github.com/kvangent/PokeAlarm/wiki/Notification-Templates)
 
 ### **Alarm Types**  
