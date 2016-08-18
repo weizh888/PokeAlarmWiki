@@ -29,7 +29,7 @@ Below is notification template for Slack.  In this example of **alarm.json**, we
 
 In other words, there is a dratini, pokemon number 147, at the given address, 328 meters southwest of your stated location when you launched `runwebhook.py` _(assuming you ran with the `-l` argument and provided an address or coordinates)_.  It will be there until 17:40:37 (5:40pm), and you have 13 minutes and 57 seconds to catch it.
 
-Edit your **alarms.json** like so:
+Edit the beginning of your **alarms.json** like so, near the top where `"alarms"` is:
 
 ```
     "alarms":[
