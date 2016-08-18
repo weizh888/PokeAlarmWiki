@@ -54,7 +54,7 @@ From above, we've taken advantage of the `<pkmn>`, `<id>`, `<addr>`, `<postal>`,
 * The `"body"` key is additional text in slack that will not be hyperlinked.
 * Be conscious about quotes and commas! 
 
-Great.  Now that you have your formatting perfect, you want to handpick your pokemon to be notified of.  You can see in the pokemon list below that some are set to `"True"` (Lapras, Kabutops) while others are set to a numeric value, e.g. `"75"` (eevee) or `"1000"` (dragonite, etc.) The numeric values indicate to PokeAlarm that you want to be notified only if that pokemon is with x meters of a given location (again, assuming `python ./runwebhook.py -l 'your location'`).  If you don't supply a location then any of the pokemon in the list with numeric values default to `"True"`, and you'll get notified of that Eevee and Dragonite, no matter how far away.
+Great.  Now that you have your formatting perfect, you want to handpick your pokemon to be notified of.  You can see in the pokemon list below that some are set to `"True"` (Lapras, Kabutops) while others are set to a numeric value, e.g. `"75"` (eevee) or `"1000"` (dragonite, etc.) The numeric values indicate to PokeAlarm that you want to be notified only if that pokemon is within x meters of a given location (again, assuming `python ./runwebhook.py -l 'your location'`).  If you don't supply a location then any of the pokemon in the list with numeric values default to `"True"`, and you'll get notified of that Eevee and Dragonite, no matter how far away.
 
 
 Below is a complete **alarms.json** for Slack:
