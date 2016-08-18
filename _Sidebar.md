@@ -1,7 +1,7 @@
 ### **Wiki Contents**  
 [Home] (https://github.com/kvangent/PokeAlarm/wiki)  
 [Installation] (https://github.com/kvangent/PokeAlarm/wiki/Installation)  
-[Alarm Configuration] (https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration)
+[Alarm Configuration] (https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration)  
 [Dynamic Text Substitution] (https://github.com/kvangent/PokeAlarm/wiki/Notification-Templates)
 
 ### **Alert Limits**    
