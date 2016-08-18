@@ -2,6 +2,7 @@
 [Home] (https://github.com/kvangent/PokeAlarm/wiki)  
 [Installation] (https://github.com/kvangent/PokeAlarm/wiki/Installation)  
 [Alarm Configuration] (https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration)  
+[Notification Templates] (https://github.com/kvangent/PokeAlarm/wiki/Notification-Templates)  
 [Pokemon Configuration] (https://github.com/kvangent/PokeAlarm/wiki/Pokemon-Configuration)
 
 ### **Alarm Types**  
