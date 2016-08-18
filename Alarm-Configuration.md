@@ -51,8 +51,9 @@ For what fields you have the option to change, please see the specific service. 
 
 ### Sample Notification Template
 
-Below is an excerpt of a modified notification template for Pushover.  This is edited in the alarms/pushover_alarm.py file.  In this example, we have modified it to use the 12 hour format in the message body, changed some of the wording and added the distance we are from the pokemon (location argument must be called when adding this subsitution, or it will always be set to 0).
+Below is an excerpt of a modified notification template for Pushover.  In this example, we have modified it to use the 12 hour format in the message body, changed some of the wording and added the distance we are from the pokemon (location argument must be called when adding this subsitution, or it will always be set to 0).
 
+Modified alarms/pushover_alarm.py:
 ```
 def __init__(self, settings):
         self.app_token = settings['app_token']
