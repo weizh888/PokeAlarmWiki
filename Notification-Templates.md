@@ -47,6 +47,7 @@ To use this format, edit the beginning of your **alarms.json** like so, near the
 
 From above, we've taken advantage of the `<pkmn>`, `<id>`, `<addr>`, `<postal>`, `<gmaps>`, `<dist>`, `<dir>`, `<24h_time>`, and `<time_left>` variables to customize our notification message of the nearby dratini.
 
+* Add your own [Slack API Key](https://get.slack.help/hc/en-us/articles/215770388-Creating-and-regenerating-API-tokens) after `"api_key"`.
 * Change "general" in `"Channel":"#general"` to whatever channel you'd like PokeAlarm to post to.
 * Edit the` "title"` key to whatever you'd like, using the above text substitutions to customize your messages.
 * The `"url"` key will hyperlink your title to google maps directions.
