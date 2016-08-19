@@ -32,11 +32,11 @@
 	"active": "True",
 	"type":"slack",
 	"api_key":"YOUR_API_KEY"
-	"map":{ 
-		"enabled":"true"
-		"width": "250",
-		"height": "125",
-		"maptype": "roadmap",
+	"map": { 
+		"enabled":"true",
+		"width":"250",
+		"height":"125",
+		"maptype":"roadmap",
 		"zoom": "15"
 	}
 },
