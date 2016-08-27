@@ -8,7 +8,7 @@ For what fields (title, message, etc) you have the option to change, please see 
 | -------------- |----------------------------------------|
 | `<id>`         | ID of the alerted pokemon              |
 | `<pkmn>`       | Name of the alerted pokemon            |
-| `<addr>`       | Nearest street address of the pokemon  |
+| `<address>`    | Nearest street address of the pokemon  |
 | `<postal>`     | Postal code of of the pokemon location |
 | `<loc>`        | Latitude, Longitude of the pokemon     |
 | `<gmaps>`      | Gmaps link to a pin of the pokemon     |
