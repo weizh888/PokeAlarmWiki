@@ -1,4 +1,4 @@
-1. Setup and run [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map). There is a detailed wiki [here](https://github.com/PokemonGoMap/PokemonGo-Map/wiki). Make sure you have the latest version of Python 2.7 and git installed. 
+1. Setup and run [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map). There is a detailed wiki [here](https://github.com/PokemonGoMap/PokemonGo-Map/wiki). Make sure you have the latest version of Python 2.7 and git installed.
 
 2. Navigate to the folder you want to store the Alarm in. Use `git clone https://github.com/kvangent/PokeAlarm.git` to create a local copy of the alarm.
 
@@ -12,4 +12,4 @@
 
 6. Start the PokemonGo-Map like normal, but add the `-wh http://127.0.0.1:4000` (or whatever listening address you specified in the last step). You can also put this in the config.ini file as well. You can have multiple alarms all pointing at the same alarm.
 
-7. PokeAlarm should log to console every-time is learns about a pokemon - and will say 'Pokemon notification was triggered!' when a Pokemon on your list was found. If you aren't receiving anything, make sure that you have the correct address running on your Map and try again!
+7. PokeAlarm should log to console every-time is learns about a pokemon - and will say 'Pokemon notification was triggered!' when a Pokemon on your list was found. If you aren't receiving anything, make sure that you have the correct address running on your map and try again!

@@ -31,7 +31,7 @@
 {
 	"active": "True",
 	"type":"slack",
-	"api_key":"YOUR_API_KEY"
+	"api_key":"YOUR_API_KEY",
 	"map": { 
 		"enabled":"true",
 		"width":"250",

@@ -1,12 +1,14 @@
 #PokeAlarm
 
-The alarm is a third party extension of [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) that allows you to received external notifications via the service of your choice.
+The alarm is a third party extension of [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) that allows you to receive external notifications via the service of your choice.
 
 We currently support the following services:
 * Pushbullet
+* Pushover
 * Slacker
-* Telegram. 
+* Telegram
 * Twilio (SMS)
+* Twitter
 
 Pushbullet support will likely be discontinued after August 1st because of the change of services to premium. 
 
@@ -20,19 +22,27 @@ If you are experiencing trouble with setup or other user difficulties, please se
 
 '-P', '--port' - Set web server listening port, default is 4000  
 
-'-l', '--location' - Location, can be an address or coordinates. If no locations are set, distances will always calculate as 0.  
+'-k', '--key' - Specify a Google Maps API Key to use.
+
+'-c', '--config' - Alarms configuration file. default: alarms.json
+
+'-l', '--location' - Location, can be an address or coordinates. If no locations are set, distances will always calculate as 0. 
 
 '-L', '--locale' - Locale for Pokemon names: default is en, check locale folder for more options 
 
-'-d', '--debug', - Debug Mode, allows extra output to console  
+'-u', '--units' - Specify either metric or imperial. Default: metric
 
-'-sl', '--skip_lured', - Do not alert for a lured Pokemon. 
+'-gf', '--geofence' - Specify a file of coordinates, limiting alerts to within this area
+
+'-tl', '--timelimit' - Minimum number of seconds remaining on a pokemon to notify
+
+'-d', '--debug', - Debug Mode, allows extra output to console   
 
 ## Common Problems
 
 #### Unable to decode JSON object
 
-Make sure you aren't using notepad to edit the files (Notepad++ is a good alternative). Also, check to make sure your json formatting is correct. You can check your format [here] (http://www.jsoneditoronline.org/).
+Make sure you aren't using notepad to edit the files (Notepad++ is a good alternative). Also, check to make sure your json formatting is correct. You can check your format [here](http://www.jsoneditoronline.org/).
 
 #### Problems with receiving in UTC time or Notifications not sending because 'time_left has passed'.
 
