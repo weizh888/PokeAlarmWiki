@@ -28,6 +28,35 @@ Each alarm setting runs independent of the other alarms, so changes to one alarm
 
 If is perfectly valid to have any combination of services, including repeats. 
 
+## Customizing Alerts
+
+Most alarms have customizable fields for each alert that allow you to insert your own message. This allows your to override the standard message and provide your own. You may customize as few or as many fields as you want - any field not present in your config will reset to default.
+
+In order to customize an Alert, you must specify what type of alert you want to config: Either `pokemon`, `pokestop`, or `gym`. Each of these has different defaults available. The following is a config where a portion of the Alert has been updated:
+
+```json
+{
+  "type":"slack",
+  "active":"True",
+  "api_key":"YOUR_API_KEY_HERE",
+	"pokemon":{
+		"channel":"Pokemon",
+		"username":"<pkmn>",
+		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<id>.png",
+		"title":"A GIANT <pkmn> jumped out of the grass!",
+		"body": "Available until <24h_time> (<time_left>)."
+	},
+	"gym":{
+		"channel":"Gyms",
+		"title":"Someone  has placed a lure on a Pokestop!",
+		"body":"Better hurry! The lure only has <time_left> remaining!."
+	}
+}
+```
+For more information about Dynamic Text Substitutions (the <text>), please see the specific wiki page. 
+
+For what service has what fields, please check the specific wiki page for that service.
+
 ## Example Alarms Config
 
 ```json
