@@ -42,7 +42,6 @@ In order to customize an Alert, you must specify what type of alert you want to 
 	"pokemon":{
 		"channel":"Pokemon",
 		"username":"<pkmn>",
-		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<id>.png",
 		"title":"A GIANT <pkmn> jumped out of the grass!",
 		"body": "Available until <24h_time> (<time_left>)."
 	},
