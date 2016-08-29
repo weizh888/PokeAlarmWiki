@@ -1,15 +1,46 @@
-## Example Config
 
+## Basic Config
 ```json
 {
-	"type":"twilio",
 	"active": "True",
-	"account_sid":"YOUR_ACCOUNT_SID",
+	"type":"twilio",
+	"account_sid":"YOUR_API_KEY",
 	"auth_token":"YOUR_AUTH_TOKEN",
-	"from_number":"+1234567890",
-	"to_number":"+1234567890"
+	"from_number":"YOUR_FROM_NUM",
+	"to_number":"YOUR_TO_NUM"
 }
 ```
+
+## Advanced Config
+```json
+{
+	"active": "True",
+	"type":"twilio",
+	"account_sid":"YOUR_API_KEY",
+	"auth_token":"YOUR_AUTH_TOKEN",
+	"from_number":"YOUR_FROM_NUM",
+	"to_number":"YOUR_TO_NUM",
+	"pokemon":{
+		"from_number":"YOUR_FROM_NUM",
+		"to_number":"YOUR_TO_NUM",
+		"message": "A wild <pkmn> has appeared! <gmaps> Available until <24h_time> (<time_left>).",
+	},
+	"pokestop":{
+		"from_number":"YOUR_FROM_NUM",
+		"to_number":"YOUR_TO_NUM",
+		"message": "Someone has placed a lure on a Pokestop! <gmaps> Lure will expire at <24h_time> (<time_left>).",
+	},
+	"gym":{
+		"from_number":"YOUR_FROM_NUM",
+		"to_number":"YOUR_TO_NUM",
+		"message": "A Team <old_team> gym has fallen! It is now controlled by <new_team>. <gmaps>",
+	}
+}
+```
+
+
+
+**------ Everything below this line is possibly outdated. Please refrain from opening issues for incorrect information below this line ------**
 
 ### Required Parameters
 | Parameters     | Description                            | 
