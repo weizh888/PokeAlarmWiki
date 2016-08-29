@@ -1,8 +1,8 @@
 ## Basic Config
 ```json
 {
-	"active":"True",
-	"type":"pushbullet",
+	"active": "True",
+	"type":"slack",
 	"api_key":"YOUR_API_KEY"
 }
 ```
@@ -10,27 +10,34 @@
 ## Advanced Config
 ```json
 {
-	"active":"True",
-	"type":"pushbullet",
+	"active": "True",
+	"type":"slack",
 	"api_key":"YOUR_API_KEY",
-	"channel":"DEFAULT_CHANNEL",
+	"channel":"general",
+	"startup_message":"True",
 	"pokemon":{
+		"channel":"general",
+		"username":"<pkmn>",
+		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<id>.png",
 		"title":"A wild <pkmn> has appeared!",
 		"url":"<gmaps>",
-		"body":"Available until <24h_time> (<time_left>).",
-		"channel":"OVERRIDES_DEFAULT_CHANNEL"
+		"body": "Available until <24h_time> (<time_left>)."
 	},
 	"pokestop":{
+		"channel":"general",
+		"username":"Pokestop",
+		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png",
 		"title":"Someone has placed a lure on a Pokestop!",
 		"url":"<gmaps>",
-		"body":"Lure will expire at <24h_time> (<time_left>).",
-		"channel":"OVERRIDES_DEFAULT_CHANNEL"
+		"body":"Lure will expire at <24h_time> (<time_left>)."
 	},
 	"gym":{
+		"channel":"general",
+		"username":"Pokemon Gym",
+		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym.png",
 		"title":"A Team <old_team> gym has fallen!",
 		"url":"<gmaps>",
-		"body":"It is now controlled by <new_team>.",
-		"channel":"OVERRIDES_DEFAULT_CHANNEL"
+		"body": "It is now controlled by <new_team>."
 	}
 }
 ```
