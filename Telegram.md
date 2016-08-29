@@ -1,14 +1,45 @@
-## Example Config
 
+## Basic Config
 ```json
 {
-    "type":"telegram",
-    "active":"True",
-    "api_key":"YOUR_BOT_TOKEN",
-    "chat_id":"YOUR_CHAT_ID"
+	"active": "False",
+	"type":"telegram",
+	"bot_token":"YOUR_BOT_TOKEN",
+	"chat_id":"YOUR_CHAT_ID"
 }
 ```
 
+## Advanced Config
+```json
+{
+	"active": "False",
+	"type":"telegram",
+	"bot_token":"YOUR_BOT_TOKEN",
+	"chat_id":"YOUR_CHAT_ID",
+	"pokemon" : {
+		"chat_id": "OVERRIDES_DEFAULT_CHANNEL",
+		"title": "A wild <pkmn> has appeared!",
+		"body": "<gmaps> \n Available until <24h_time> (<time_left>).",
+		"location": "True"
+	},
+	"pokestop":{
+		"chat_id": "OVERRIDES_DEFAULT_CHANNEL",
+		"title":"Someone has placed a lure on a Pokestop!",
+		"body": "<gmaps> \n Lure will expire at <24h_time> (<time_left>).",
+		"location": "True"
+	},
+	"gym":{
+		"chat_id": "OVERRIDES_DEFAULT_CHANNEL",
+		"title":"A Team <old_team> gym has fallen!",
+		"body": "<gmaps> \n It is now controlled by <new_team>.",
+		"location": "True"
+	}
+}
+```
+
+
+
+**------ Everything below this line is possibly outdated. Please refrain from opening issues for incorrect information below this line ------**
 
 ### Required Parameters
 | Parameters     | Description                            |
