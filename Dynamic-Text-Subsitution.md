@@ -1,25 +1,88 @@
 You can now customize your alarms to give any message you prefer, based on what you would like to see. For example, a Pushbullet notification text might be `<pkmn> is <dist> away!`. This would send the alert "Bulbasuar is XXm away" when a Bulbasaur is detected.
 
-The templates for the individual services are located in the alarms folder and use the file structure &lt;service_name&gt;_alarm.py.  
-
 For what fields (title, message, etc) you have the option to change, please see the file for the specific service.  A list of text substitutions are below:
+
+## Pokemon 
 
 | text           | Description                            |
 | -------------- |----------------------------------------|
 | `<id>`         | ID of the alerted pokemon              |
 | `<pkmn>`       | Name of the alerted pokemon            |
-| `<address>`    | Nearest street address of the pokemon  |
-| `<postal>`     | Postal code of of the pokemon location |
-| `<loc>`        | Latitude, Longitude of the pokemon     |
+| `<lat>`        | Latitude of the pokemon                |
+| `<lng>`        | Longitude of the pokemon               |
 | `<gmaps>`      | Gmaps link to a pin of the pokemon     |
 | `<dist>`       | *Distance from set location in meters  |
 | `<time_left>`  | Time remaining for the pokemon         |
 | `<12h_time>`   | Dissapear time in 12hour format        |
 | `<24h_time>`   | Dissapear time in 24hour format        |
 | `<dir>`        | Cardinal direction from set location   |
-* If no location has been set, dist will always return 0m
+* If no location has been set, dist will always return 0 (meters or yards)
+
+## Pokestops
+
+| text           | Description                            |
+| -------------- |----------------------------------------|
+| `<id>`         | ID of the alerted pokestop             |
+| `<lat>`        | Latitude of the pokestop               |
+| `<lng>`        | Longitude of the pokestop              |
+| `<gmaps>`      | Gmaps link to a pin of the pokestop    |
+| `<dist>`       | *Distance from set location in meters  |
+| `<time_left>`  | Time remaining for the pokestop        |
+| `<12h_time>`   | Expire time in 12hour format           |
+| `<24h_time>`   | Expire time in 24hour format           |
+| `<dir>`        | Cardinal direction from set location   |
+* If no location has been set, dist will always return 0 (meters or yards)
+
+## Gyms
+| text           | Description                            |
+| -------------- |----------------------------------------|
+| `<id>`         | ID of the alerted pokemon              |
+| `<lat>`        | Latitude of the pokemon                |
+| `<lng>`        | Longitude of the pokemon               |
+| `<gmaps>`      | Gmaps link to a pin of the pokemon     |
+| `<dist>`       | *Distance from set location in meters  |
+| `<points>`     | Number of points the gym currently has |
+| `<old_team>`   | Name of the team who lost the gym      |
+| `<new_team>`   | Name of the team who captured the gym  |
+If no location has been set, dist will always return 0 (meters or yards)
+
+## Reverse Location Text
+The following text will only work if a Google Maps API Key with Geocoding API enabled has been provided to the PokeAlarm.
+
+| text             | Description                            |
+| ---------------- |----------------------------------------|
+| `<address>`      | Address of the alert location          |
+| `<postal>`       | Postal code of the alert location      |
+| `<neighborhood>` | Neighborhood code of the alert location|
+| `<sublocality>`  | Sublocality code of the alert location |
+| `<city>`         | City code of the alert location        |
+| `<county>`       | County code of the alert location      |
+| `<state>`        | State code of the alert location       |
+| `<county>`       | County code of the alert location      |
+The fields will return None if unable to derive a proper location
+
+Each pokemon, pokestop, or gym will use up 1 point of your qouta, regardless of number of fields or alarms used.
+
+## Distance Matrix Text
+The following text will only work if a Google Maps API Key with Distance Matrix API enabled has been provided to the PokeAlarm.
+
+| text             | Description                            |
+| ---------------- |----------------------------------------|
+| `<walk_dist>`    | Estimated walking distance to the alert location |
+| `<walk_time>`    | Estimated walking time to alert location|
+
+| text             | Description                            |
+| ---------------- |----------------------------------------|
+| `<bike_dist>`    | Estimated bike distance to the alert location |
+| `<bike_time>`    | Estimated bike time to alert location|
 
 
+| text             | Description                            |
+| ---------------- |----------------------------------------|
+| `<drive_dist>`    | Estimated drive distance to the alert location |
+| `<drive_time>`    | Estimated drive time to alert location|
+
+Each table represents 1 qoute used for all parameters per pokemon, pokestop, or gym regardless of number of fields or alarms specified. For example, walk_time and drive_time would require 2 points, but walk_time and walk_dist would only require 1 (per alert).
 
 ### Sample Notification Template - Slack
 
