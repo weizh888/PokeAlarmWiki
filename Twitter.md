@@ -1,4 +1,5 @@
-## Example Config
+
+## Basic Config
 ```json
 {
 	"active": "False",
@@ -9,6 +10,31 @@
 	"consumer_secret": "YOUR_CONSUMER_SECRET"
 }
 ```
+
+## Advanced Config
+```json
+{
+	"active": "False",
+	"type": "twitter",
+	"access_token": "YOUR_ACCESS_TOKEN",
+	"access_secret": "YOUR_ACCESS_SECRET",
+	"consumer_key": "YOUR_CONSUMER_KEY",
+	"consumer_secret": "YOUR_CONSUMER_SECRET",
+	"pokemon":{
+		"status": "A wild <pkmn> has appeared! Available until <24h_time> (<time_left>). <gmaps>",
+	},
+	"pokestop":{
+		"status": "Someone has placed a lure on a Pokestop! Lure will expire at <24h_time> (<time_left>).  <gmaps>",
+	},
+	"gym":{
+		"status":"A Team <old_team> gym has fallen! It is now controlled by <new_team>. <gmaps>"
+	}
+}
+```
+
+
+
+**------ Everything below this line is possibly outdated. Please refrain from opening issues for incorrect information below this line ------**
 
 ### Required Parameters
 
