@@ -1,12 +1,43 @@
-## Example Config
-
+## Basic Config
 ```json
 {
-    "type":"slack",
-    "active":"True",
-    "api_key":"YOUR_API_KEY_HERE"
+	"active":"True",
+	"type":"pushbullet",
+	"api_key":"YOUR_API_KEY"
 }
 ```
+
+## Advanced Config
+```json
+{
+	"active":"True",
+	"type":"pushbullet",
+	"api_key":"YOUR_API_KEY",
+	"channel":"DEFAULT_CHANNEL",
+	"pokemon":{
+		"title":"A wild <pkmn> has appeared!",
+		"url":"<gmaps>",
+		"body":"Available until <24h_time> (<time_left>).",
+		"channel":"OVERRIDES_DEFAULT_CHANNEL"
+	},
+	"pokestop":{
+		"title":"Someone has placed a lure on a Pokestop!",
+		"url":"<gmaps>",
+		"body":"Lure will expire at <24h_time> (<time_left>).",
+		"channel":"OVERRIDES_DEFAULT_CHANNEL"
+	},
+	"gym":{
+		"title":"A Team <old_team> gym has fallen!",
+		"url":"<gmaps>",
+		"body":"It is now controlled by <new_team>.",
+		"channel":"OVERRIDES_DEFAULT_CHANNEL"
+	}
+}
+```
+
+
+
+**------ Everything below this line is possibly outdated. Please refrain from opening issues for incorrect information below this line ------**
 
 ### Required Parameters
 | Parameters     | Description                            |
