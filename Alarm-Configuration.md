@@ -53,7 +53,7 @@ In order to customize an Alert, you must specify what type of alert you want to 
 	}
 }
 ```
-For more information about Dynamic Text Substitutions (the <text>), please see the specific wiki page. 
+For more information about Dynamic Text Substitutions (the `<text>`), please see the specific wiki page. 
 
 For what service has what fields, please check the specific wiki page for that service.
 
