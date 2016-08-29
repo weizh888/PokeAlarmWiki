@@ -2,7 +2,7 @@
 ## Basic Config
 ```json
 {
-	"active":"False",
+	"active":"True",
 	"type":"pushbullet",
 	"api_key":"YOUR_API_KEY"
 }
@@ -11,7 +11,7 @@
 ## Advanced Config
 ```json
 {
-	"active":"False",
+	"active":"True",
 	"type":"pushbullet",
 	"api_key":"YOUR_API_KEY",
 	"channel":"DEFAULT_CHANNEL",
