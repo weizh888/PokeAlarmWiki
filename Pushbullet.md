@@ -38,7 +38,7 @@
 
 
 
-**------ Everything below this line is possibly outdated. Please refrain from opening issue's for incorrect information below this line ------**
+**------ Everything below this line is possibly outdated. Please refrain from opening issues for incorrect information below this line ------**
 
 ### Required Parameters
 
