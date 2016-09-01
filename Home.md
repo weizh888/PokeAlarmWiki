@@ -19,9 +19,9 @@ Visit us at our [**Discord channel**](https://discordapp.com/invite/am66rag) if 
 ### Github
 If you are experiencing issues with the alarm or would like to see new features, please open a ticket on github [here](https://github.com/kvangent/PokeAlarm/issues/new). Be sure to complete the included suppport template and provide as much information as possible.  **Support tickets that do not fully complete the request template may be closed without notice.**
 
-## What exactly is PokeAlarm? How does it work?
+## What exactly is PokeAlarm?
 
-PokeAlarm is a lightweight webserver that receives POST requests from PokemonGo-Map. It filters these requests down based on your configuration, make sure to relay the message when something interesting happens - either your favorite pokemon spawning or your rival team taking down a nearby gym. 
+PokeAlarm is a lightweight webserver designed to receive POST requests from your local PokemonGo-Map server. It sorts through these requests, letting you know through your favorite service something has happend. It might be a tweet when a rare pokemon spawning down the street, a Telegram message letting you know a lured pokestop only a few minutes away, or else a Pushbullet notification letting you know your teams gym has fallen.
 
 ## FAQ
 
