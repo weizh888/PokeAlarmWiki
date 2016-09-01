@@ -10,12 +10,13 @@ We currently support the following services:
 
 ## Support
 
-** READ THE WIKI BEFORE ASKING FOR HELP!!!** It contains all the setup and configuration information for PokeAlarm. 
-
-### [Discord](https://discordapp.com/invite/am66rag) <--- VISIT ONLY AFTER YOU HAVE READ THE WIKI
-For questions about setup, visit us at our [Discord channel](https://discordapp.com/invite/am66rag). Please stick to the `#general` and `#troubleshooting` chats and avoid sending private messages to devs. We're working hard, we promise!
+### [Discord Link](https://discordapp.com/invite/am66rag) <---- Visit us here first!!!
+For questions about set up, please visit us at our [Discord channel](https://discordapp.com/invite/am66rag). Stick to the #general and #troubleshooting chats and avoid sending private messages to devs. We're working hard, we promise!
 
 If you are experiencing issues with the alarm or would like to see new features, please open a ticket on github [here](https://github.com/kvangent/PokeAlarm/issues/new). Be sure to complete the included suppport template and provide as much information as possible.  **Support tickets that do not fully complete the request template may be closed without notice.**
+
+Our PokeAlarm reddit thread is located [here](https://www.reddit.com/r/pokemongodev/comments/4wl5my/pokealarm_v21_external_alerts_from_your_favorite).
+
 
 ## Upcoming Features
 
@@ -42,10 +43,28 @@ PokeAlarm is under development. Though school, work, and a few other big life ev
 
 #### Can I run multiple simultaneous alarms services?
 
-* Yes. You may configure as few or as many simultaneous alarm services in `alarms.json` like Twitter, Slack and Telegram.  For example, you can post to 2 Twitter accounts, 3 Slack channels and have a Twilio SMS service running from one `alarms.json` configuration. Visit the Alarm Configuation wiki for more details.
+* Yes. You may configure as few or as many simultaneous alarm services in `alarms.json` like Twitter, Slack and Telegram.  For example, you can post to 2 Twitter accounts, 3 Slack channels and have a Twilio SMS service running from one `alarms.json` configuration. Visit the Alarm Configuation wiki for details.
 
-Alternatively, you can run PokemonGo-Map with multiple webhooks and have multiple instances of PokeAlarm, each assigned to a different `http://<host>:<port>`, e.g., `http://127.0.0.1:4000`, `http://127.0.0.1:4001`, `http://127.0.0.1:4002`.
+Alternatively, you can run PokemonGo-Map with multiple webhooks and have multiple instances of PokeAlarm assigned to a different http://host:port (e.g., http://127.0.0.1:4000, http://127.0.0.1:4001, http://127.0.0.1:4002).
 
 #### I'm having issues with setting a location, it is not showing distance, maps are not showing up, walking directions, etc.
 
-* These errors are Google Maps API related. Ensure you have an API key with all the necssary APIs enabled.  Visit the Google Maps API Key wiki for more details.
+* These errors are all map related.  Sign up for a Google Maps API key and enable Static Maps in the console. See the Google Maps documentation [here](https://developers.google.com/maps/documentation/static-maps/intro). To test if your key is working, visit the URL below and replace `YOUR_API_KEY` with your Google Maps API key.
+
+```javascript
+https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=YOUR_API_KEY
+```
+If your key is valid, you should see this same static map image in your browser:
+![](images/staticmaptest.png)
+
+If your key has issues, you will get the error `The Google Maps API server rejected your request. The provided API key is invalid.`
+
+
+
+#### Problems with receiving in UTC time or Notifications not sending because 'time_left has passed'.
+
+* This error should now be corrected. Please make sure you have updated to the latest version of PokemonGo-Map. If you are still experiencing issues, please open a ticket. 
+
+#### Windows: socket.error: [Errno 10053] An established connection was aborted by the software in your host machine OR Linux: socket.error: [Errno 32] Broken pipe
+
+* This error should now be corrected. Please make sure you have updated to the latest version of PokemonGo-Map. If you are still experiencing issues, please open a ticket.

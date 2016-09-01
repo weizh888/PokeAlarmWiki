@@ -1,6 +1,7 @@
 ### **Wiki Contents**  
 [Home] (https://github.com/kvangent/PokeAlarm/wiki)  
 [Installation] (https://github.com/kvangent/PokeAlarm/wiki/Installation)  
+[Execution] (https://github.com/kvangent/PokeAlarm/wiki/Execution)  
 [Alarm Configuration] (https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration)  
 [Dynamic Text Substitution] (https://github.com/kvangent/PokeAlarm/wiki/Dynamic-Text-Subsitution)
 
