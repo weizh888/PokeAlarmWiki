@@ -11,7 +11,7 @@ We currently support the following services:
 ## Support
 
 ### Wiki
-Please read the [**Wiki**](https://github.com/kvangent/PokeAlarm/wiki) before contacting us for support. It should answer all your questions about installation and configuration.
+Please read the [**Wiki**](https://github.com/kvangent/PokeAlarm/wiki) and the FAQ below before contacting us for support. It should answer all your questions about installation and configuration.
 
 ### Discord
 Visit us at our [**Discord channel**](https://discordapp.com/invite/am66rag) if you still have issues with your setup. Please stick to the `#troubleshooting` and `#general` chats and avoid sending private messages to devs. We're working hard, we promise!
