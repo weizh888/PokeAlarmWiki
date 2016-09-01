@@ -1,5 +1,3 @@
-# Geofencing
-
 ## Overview 
 * [Introduction](#introduction)
 * [Instructions](#instructions)
