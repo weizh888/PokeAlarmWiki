@@ -19,11 +19,15 @@ Visit us at our [**Discord channel**](https://discordapp.com/invite/am66rag) if 
 ### Github
 If you are experiencing issues with the alarm or would like to see new features, please open a ticket on github [here](https://github.com/kvangent/PokeAlarm/issues/new). Be sure to complete the included suppport template and provide as much information as possible.  **Support tickets that do not fully complete the request template may be closed without notice.**
 
-## Upcoming Features
+## What exactly is PokeAlarm? How does it work?
 
-PokeAlarm is under development. Though school, work, and a few other big life events are quickly approaching, I still plan to add updates and provide support in my free time. If you are interested in helping out, please contact me via the [discord channel](https://discordapp.com/invite/am66rag).
+PokeAlarm is a lightweight webserver that receives POST requests from PokemonGo-Map. It filters these requests down based on your configuration, make sure to relay the message when something interesting happens - either your favorite pokemon spawning or your rival team taking down a nearby gym. 
 
 ## FAQ
+
+#### I am receiving an error about JSON input from PokeAlarm (e.g., "expecting delimiter"). What gives?
+
+* If you are a Windows user, stop using notepad and start using Notepad++. Make a fresh copy of the alarms.json and remake your changes. If you aren't a Windows user (or you are already using Notepad++) check your JSON format with a JSON formatter for issues ([jsoneditoronline.org](http://www.jsoneditoronline.org) is an excellent site to start.)
 
 #### Which version of PokemonGo-Map do I need?
 
@@ -38,10 +42,6 @@ PokeAlarm is under development. Though school, work, and a few other big life ev
 #### I am receiving XYZ error from PokemonGo-Map! What do I do?
 * Visit our [Discord channel](https://discordapp.com/invite/am66rag), Checkout the [PokemonGo-Map Wiki](https://github.com/kvangent/PokeAlarm/wiki) or the reddit thread to see if anyone has any suggestions for you.
 
-#### I am receiving an error about JSON input from PokeAlarm (e.g., "expecting delimiter"). What gives?
-
-* If you are a Windows user, stop using notepad and start using Notepad++. Make a fresh copy of the alarms.json and remake your changes. If you aren't a Windows user (or you are already using Notepad++) check your JSON format with a JSON formatter for issues ([jsoneditoronline.org](http://www.jsoneditoronline.org) is an excellent site to start.)
-
 #### Can I run multiple simultaneous alarms services?
 
 * Yes. You may configure as few or as many simultaneous alarm services in `alarms.json` like Twitter, Slack and Telegram.  For example, you can post to 2 Twitter accounts, 3 Slack channels and have a Twilio SMS service running from one `alarms.json` configuration. Visit the Alarm Configuation wiki for more details.
@@ -50,4 +50,4 @@ Alternatively, you can run PokemonGo-Map with multiple webhooks and have multipl
 
 #### I'm having issues with setting a location, it is not showing distance, maps are not showing up, walking directions, etc.
 
-* These errors are Google Maps API related. Ensure you have an API key with all the necssary APIs enabled.  Visit the Google Maps API Key wiki for more details.
+* These errors are Google Maps API related. Ensure you have an API key with all the necessary APIs enabled.  Visit the Google Maps API Key wiki for more details.
