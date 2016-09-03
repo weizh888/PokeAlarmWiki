@@ -1,7 +1,8 @@
 PokeAlarm is a third party extension of [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) that allows you to receive external notifications via one or more message services.  Customized notifications are available by configuring the `alarms.json` file.
 
 We currently support the following services:
-* [Pushbullet](https://github.com/kvangent/PokeAlarm/wiki/Pushbullet) (support likely be discontinued soon due to changes in the API pricing structure)
+* [Boxcar](https://github.com/kvangent/PokeAlarm/wiki/Boxcar)
+* [Pushbullet](https://github.com/kvangent/PokeAlarm/wiki/Pushbullet)
 * [Pushover](https://github.com/kvangent/PokeAlarm/wiki/Pushover)  
 * [Slack](https://github.com/kvangent/PokeAlarm/wiki/Slack)
 * [Telegram](https://github.com/kvangent/PokeAlarm/wiki/Telegram) 
