@@ -1,5 +1,47 @@
+## Overview
+* [Prerequisities](#prerequisities)
+* [Introduction](#introduction)
+* [Basic Config](#basic-config)
+  * [Required Parameters](#required-parameters)
+  * [Example: Basic Alarm Configuration using Required Parameters](#example-basic-alarm-configuration-using-required-parameters)
+* [Advanced Config](#advanced-config)
+  * [Optional Parameters](#optional-parameters)
+  * [Example: Alarm Configuration Using Optional Parameters](#example-alarm-configuration-using-optional-parameters)
+* [How to Get a Twitter API Key](#how-to-get-a-twitter-api-key)
+
+
+## Prerequisities
+This guide assumes: 
+
+1. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
+2. You have read and understood the [Alarm Configuration](https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration) Wiki
+3. You are comfortable with the layout of `alarms.json`.
+
+Please familiarize yourself with all of the above before proceeding.
+
+## Introduction
+**Twitter** is an online social networking service that enables users to send and read short 140-character messages called "tweets". Registered users can read and post tweets, but those who are unregistered can only read them. Users access Twitter through the website interface, SMS or mobile device app.
+
+PokeAlarm offers the following for Twitter:
+
+* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Subsitution.md)
+
 
 ## Basic Config
+
+### Required Parameters
+These `alarm.json` parameters are required to enable the Twitter alarm service:
+
+| Parameters       | Description                            |
+|:-----------------|:----------------------------------------|
+| `type`           | must be `twitter`                      |
+| `active`         |`True` for alarm to be active           |
+| `access_token`   | Your twitter access token              |
+| `access_secret`  | Your twitter access secret             |
+| `consumer_key`   | Your twitter consumer key              |
+| `consumer_secret`| Your twitter consumer secret           |
+
+### Example: Basic Alarm Configuration using Required Parameters
 ```json
 {
 	"active": "False",
@@ -10,8 +52,28 @@
 	"consumer_secret": "YOUR_CONSUMER_SECRET"
 }
 ```
+**Note:** The above code is to be inserted into the alarms section of `alarms.json`.  It does not represent the entire `alarms.json` file.
 
 ## Advanced Config
+
+### Optional Parameters
+In addition to the required parameters, several `alarm.json` optional parameters are available to personalize your notifications.  Below is an example of these optional parameters and how they are incorporated into a functional alarm layout.
+
+These optional parameters, `startup_message`, and `startup_list`, are entered at the same level as `"type":"twitter"`.
+
+| Parameters         | Description                                                | Default                      |
+|:-------------------|:-----------------------------------------------------------|:-----------------------------|
+| `startup_message`  | Confirmation post when PokeAlarm initialized               | `True`                       |
+| `startup_list`     | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`            |
+
+These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
+
+
+| Parameters      | Description                                       | Default                                       |
+|:----------------|:--------------------------------------------------|:----------------------------------------------|
+| `status`        | Message to post as status                         | `A wild <pkmn> has appeared! Available until <24h_time> (<time_left>). <gmaps>`                      |
+
+### Example: Alarm Configuration Using Optional Parameters
 ```json
 {
 	"active": "False",
@@ -31,31 +93,11 @@
 	}
 }
 ```
-
-
-
-**------ Everything below this line is possibly outdated. Please refrain from opening issues for incorrect information below this line ------**
-
-### Required Parameters
-
-| Parameters     | Description                            |
-| -------------- |----------------------------------------|
-| type           | must be `twitter`                      |
-| active         |`True` for alarm to be active           |
-| access_token   | Your twitter access token              |
-| access_secret  | Your twitter access secret             |
-| consumer_key   | Your twitter consumer key              |
-| consumer_secret| Your twitter consumer secret           |
-
-### Optional Parameters
-| Parameters     | Description                                       | Default                                       |
-| -------------- |---------------------------------------------------|-----------------------------------------------|
-| message        | Message to post as status                         | `A wild <pkmn> has appeared! Available until <24h_time> (<time_left>). <gmaps>`                      |
-                                
+**Note:** The above code is to be inserted into the alarms section of `alarms.json`.  It does not represent the entire `alarms.json` file.
 
 For more information on text substitutions, please see the main configuration page.
 
-## How to get an API Key
+## How to get a Twitter API Key
 
 ### Step 1: Create a Twitter account
 * Go to [Twitter's signup page](https://twitter.com/signup)
