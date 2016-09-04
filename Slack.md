@@ -2,9 +2,11 @@
 * [Prerequisities](#prerequisities)
 * [Introduction](#introduction)
 * [Basic Config](#basic-config)
-* [Advanced Config](#advanced-config)
   * [Required Parameters](#required-parameters)
+  * [Example: Basic Alarm Configuration using Required Parameters](#example-basic-alarm-configuration-using-required-parameters)
+* [Advanced Config](#advanced-config)
   * [Optional Parameters](#optional-parameters)
+  * [Example: Alarm Configuration Using Optional Parameters](#example-alarm-configuration-using-optional-parameters)
   * [Mini Map Configuration](#mini-map-configuration)
 * [How to Get a Slack API Key](#how-to-get-a-slack-api-key)
 
@@ -34,7 +36,17 @@ PokeAlarm offers the following for Slack:
 
 
 ## Basic Config
-These 3 required parameters - `active`, `type`, and `api_key` - are required to enable the Slack alarm service:
+
+### Required Parameters
+These `alarms.json` parameters - `active`, `type`, and `api_key` - are required to enable the Slack alarm service:
+
+| Parameters     | Description                            |
+| -------------- |----------------------------------------|
+| type           | must be `slack`                        |
+| active         | `True` for alarm to be active          |
+| api_key        | Your API key                           |
+
+### Example: Basic Alarm Configuration using Required Parameters
 ```json
 {
 	"active": "True",
@@ -42,14 +54,34 @@ These 3 required parameters - `active`, `type`, and `api_key` - are required to 
 	"api_key":"YOUR_API_KEY"
 }
 ```
+**Note:** The above code is to be inserted into the alarms section of alarms.json. It does not represent the entire alarms.json file.
 
 ## Advanced Config
+
+### Optional Parameters
 In addition to the 3 required parameters, several optional parameters are available to personalize your Slack notifications.  Below is an example of these optional parameters and how they are incorporated into a functional alarm layout for Slack.
 
+These optional parameters, `startup_message`, and `startup_list`, are entered at the same level as `"type":"slack"`.
 
+| Parameters         | Description                                                | Default                      |
+|--------------------|------------------------------------------------------------|------------------------------|
+| `startup_message`  | confirmation post when PokeAlarm initialized               | `True`                       |
+| `startup_list`     | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`            |
 
+These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
 
+| Parameters       | Description                                       | Default                                       |
+| -----------------|---------------------------------------------------|-----------------------------------------------|
+| `channel`        | Send messages to this channel.. `#<pkmn>` pushes to pokemon name* | `#general`                    |
+| `username`       | Username the bot should post the message as       | `<pkmn>`                                      | 
+| `icon_url`       | URL path to pokemon icon	   					   |												 |
+| `title`          | Notification text to begin the message            | `A wild <pkmn> has appeared!`                 |
+| `url`            | Link to be added to notification text             | `<gmaps>`                                     |
+| `body`           | Additional text to be added to the message        | `Available until <24h_time> (<time_left>).`   | 
+| `map`            | Specify a json object to describe the map         | See Mini Map Configuration for more details   |
+*Note: Nidorans will be `nidoranf` or `nidoranm`, Farfetch'd will be `farfetchd`, and Mr. Mime will be `mrmime`. Channels that do not exist (channels cannot be created by bots) will default to general instead.
 
+## Example: Alarm Configuration Using Optional Parameters
 ```json
 {
 	"active": "True",
@@ -91,35 +123,7 @@ In addition to the 3 required parameters, several optional parameters are availa
 	}
 }
 ```
-
-### Required Parameters
-| Parameters     | Description                            |
-| -------------- |----------------------------------------|
-| type           | must be `slack`                        |
-| active         | `True` for alarm to be active          |
-| api_key        | Your API key                           |
-
-### Optional Parameters
-
-These optional parameters, `channel`, `startup_message`, and `startup_list`, are entered at the same level as `"type":"slack"`.
-
-| Parameters         | Description                                                | Default                      |
-|--------------------|------------------------------------------------------------|------------------------------|
-| `startup_message`  | confirmation post when PokeAlarm initialized               | `True`                       |
-| `startup_list`     | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`            |
-
-These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
-
-| Parameters       | Description                                       | Default                                       |
-| -----------------|---------------------------------------------------|-----------------------------------------------|
-| `channel`        | Send messages to this channel.. `#<pkmn>` pushes to pokemon name* | `#general`                    |
-| `username`       | Username the bot should post the message as       | `<pkmn>`                                      | 
-| `icon_url`       | URL path to pokemon icon	   					   |												 |
-| `title`          | Notification text to begin the message            | `A wild <pkmn> has appeared!`                 |
-| `url`            | Link to be added to notification text             | `<gmaps>`                                     |
-| `body`           | Additional text to be added to the message        | `Available until <24h_time> (<time_left>).`   | 
-| `map`            | Specify a json object to describe the map         | See Mini Map Configuration for more details   |
-*Note: Nidorans will be `nidoranf` or `nidoranm`, Farfetch'd will be `farfetchd`, and Mr. Mime will be `mrmime`. Channels that do not exist (channels cannot be created by bots) will default to general instead.
+**Note:** The above code is to be inserted into the alarms section of alarms.json. It does not represent the entire alarms.json file.
 
 
 ### Mini Map Configuration
