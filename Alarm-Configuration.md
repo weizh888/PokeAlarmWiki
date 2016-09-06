@@ -191,7 +191,7 @@ In order to customize an Alert, you must specify what type of alert you want to 
 	"gym":{
 		"channel":"Gyms",
 		"title":"Someone  has placed a lure on a Pokestop!",
-		"body":"Better hurry! The lure only has <time_left> remaining!."
+		"body":"Better hurry! The lure only has <time_left> remaining!"
 	}
 }
 ```
