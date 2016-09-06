@@ -83,10 +83,10 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 	"consumer_key": "YOUR_CONSUMER_KEY",
 	"consumer_secret": "YOUR_CONSUMER_SECRET",
 	"pokemon":{
-		"status": "A wild <pkmn> has appeared! Available until <24h_time> (<time_left>). <gmaps>",
+		"status": "A wild <pkmn> has appeared! Available until <24h_time> (<time_left>). <gmaps>"
 	},
 	"pokestop":{
-		"status": "Someone has placed a lure on a Pokestop! Lure will expire at <24h_time> (<time_left>).  <gmaps>",
+		"status": "Someone has placed a lure on a Pokestop! Lure will expire at <24h_time> (<time_left>).  <gmaps>"
 	},
 	"gym":{
 		"status":"A Team <old_team> gym has fallen! It is now controlled by <new_team>. <gmaps>"
@@ -110,7 +110,7 @@ For more information on text substitutions, please see the main configuration pa
 * Read the Developer Agreement, and check the box at the bottom if you agree. Then click on the ‘Create your Twitter application’ button.
 
 ### Step 3: Keys and Access tokens
-* After creating your new app, you were redirected to its own page. If you weren’t, go to [app.twitter.com](https://apps.twitter.com) and click on your apps name.
+* After creating your new app, you were redirected to its own page. If you weren’t, go to [apps.twitter.com](https://apps.twitter.com) and click on your apps name.
 * On the app’s page, click on the ‘Keys and Access Tokens’ page.
 * At the bottom of this page, click on the ‘Create my access token’ button.
 * Take note of **Consumer Key (API Key), Consumer Secret (API Secret), Access Token, & Access Token Secret**. These are the are required in the Twitter Config.
