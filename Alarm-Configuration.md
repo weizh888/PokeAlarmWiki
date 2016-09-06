@@ -188,8 +188,8 @@ In order to customize an Alert, you must specify what type of alert you want to 
 		"title":"A GIANT <pkmn> jumped out of the grass!",
 		"body": "Available until <24h_time> (<time_left>)."
 	},
-	"gym":{
-		"channel":"Gyms",
+	"pokestop":{
+		"channel":"Pokestop",
 		"title":"Someone  has placed a lure on a Pokestop!",
 		"body":"Better hurry! The lure only has <time_left> remaining!"
 	}
