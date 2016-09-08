@@ -17,7 +17,7 @@
 ```
 
 ## Pokestops
-#### Example***:
+#### Example:
 ```json
 { 
     "type": "pokestop",
