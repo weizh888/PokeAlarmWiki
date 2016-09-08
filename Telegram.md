@@ -67,6 +67,7 @@ These optional parameters, `startup_message`, and `startup_list`, are entered at
 |:-------------------|:-----------------------------------------------------------|:-----------------------------|
 | `startup_message`  | Confirmation post when PokeAlarm initialized               | `True`                       |
 | `startup_list`     | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`            |
+| `location`         | Minimap in alerts.                                         | `True`            |
 
 These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
 
@@ -74,7 +75,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 | -----------|:-------------------------------------------------|:----------------------------------------------------------|
 | `title`    | Header text for the message						| `A wild <pkmn> has appeared!`								|
 | `body`     | Additional text to be added to the message		| `"<gmaps> \n Available until <24h_time> (<time_left>)."`	| 
-| `location` | Pokemon minimap in alerts						| `True`													| 
+| `location` | Minimap in alerts. Overrides channel level setting.						| `True`													| 
 
 ### Example: Alarm Configuration Using Optional Parameters
 Below is how an advanced alarm configuration would appear in `alarms.json`. Note that this is **not** the entire `alarms.json`, but only the section pertaining to the alarm portion of the JSON file.
