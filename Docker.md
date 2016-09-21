@@ -63,12 +63,10 @@ This will create an image with the tag pokealarm, the dot indicates it should us
 With the docker image created, we can launch a PokéAlarm container. To do so is as simple as executing:
 
 ```
-docker run --name alarm -d pokealarm -k YOUR_GMAPS_API_KEY -H 0.0.0.0
+docker run --name alarm -d pokealarm -k YOUR_GMAPS_API_KEY
 ```
 
 This will launch a docker container named `alarm` using the image we just created and tagged `pokealarm`
-
-As you can see, we added the `-H` flag and set its value to `0.0.0.0`, this is necessary when running PokéAlarm as docker containers because otherwise it would listen only to calls made from inside the host container.
 
 ### Stopping PokéAlarm
 
@@ -83,7 +81,7 @@ We will cover 3 scenarios for integration with your PokémonGo-Map. For the firs
 If you have followed the PokémonGo-Map documentation for docker, you probably have a docker network already setup. All you would need to do is to add the network's name to you docker run command that was used before, like this:
 
 ```
-docker run --name alarm --net=NETWORK_NAME -d pokealarm -k YOUR_GMAPS_API_KEY -H 0.0.0.0
+docker run --name alarm --net=NETWORK_NAME -d pokealarm -k YOUR_GMAPS_API_KEY
 ```
 
 Once that's done, you are able to reach your PokéAlarm container from any other container in the same network, using the container's name as host value. For example, you could add `-wh 'http://alarm:4000'` to your PokémonGo-Map instances.
@@ -97,7 +95,7 @@ If you are not running a docker network what you need to do is to link your Pok�
 If you are not running PokémonGo-Map on docker, what we need to do for it to be reachable is to bind a port on your host to the container's port. This is easily done by adding the `-p` docker flag to your docker run command:
 
 ```
-docker run --name alarm -d -p 4000:4000 pokealarm -k YOUR_GMAPS_API_KEY -H 0.0.0.0
+docker run --name alarm -d -p 4000:4000 pokealarm -k YOUR_GMAPS_API_KEY
 ```
 
 Once you execute that, you will be able to reach your PokéAlarm container on port `4000` by port `4000` on your localhost. This means you could add `-wh 'http://127.0.0.1:4000'` to your `./runserver.py` command and it would be able to post to the webhook.
@@ -111,9 +109,9 @@ If you want to update the `alarms.json` or `config.ini` files or wish to create 
 All you have to do is to execute the appropriate (described above) docker run command multiple times, giving each container a new name. For example, this is how we could do that using the docker network approach described before: 
 
 ```
-docker run --name commons --net=NETWORK_NAME -d pokealarm -k YOUR_GMAPS_API_KEY -H 0.0.0.0
-docker run --name rares --net=NETWORK_NAME -d pokealarm -k YOUR_GMAPS_API_KEY -H 0.0.0.0 -c rares.json
-docker run --name ultra --net=NETWORK_NAME -d pokealarm -k YOUR_GMAPS_API_KEY -H 0.0.0.0 -c ultra-rares.json
+docker run --name commons --net=NETWORK_NAME -d pokealarm -k YOUR_GMAPS_API_KEY
+docker run --name rares --net=NETWORK_NAME -d pokealarm -k YOUR_GMAPS_API_KEY -c rares.json
+docker run --name ultra --net=NETWORK_NAME -d pokealarm -k YOUR_GMAPS_API_KEY -c ultra-rares.json
 ```
 
 In the above block we are launching 3 containers of the `pokealarm` image in a docker network, all of which could be accessed by other containers in the network by their names.
@@ -125,9 +123,9 @@ In the above block we are launching 3 containers of the `pokealarm` image in a d
 If running PokémonGo-Map without docker, you would simply have to add different port bindings to each container, like: 
 
 ```
-docker run --name commons -p 4000:4000 -d pokealarm -k YOUR_GMAPS_API_KEY -H 0.0.0.0
-docker run --name rares -p 4001:4000 -d pokealarm -k YOUR_GMAPS_API_KEY -H 0.0.0.0 -c rares.json
-docker run --name ultra -p 4002:4000 -d pokealarm -k YOUR_GMAPS_API_KEY -H 0.0.0.0 -c ultra-rares.json
+docker run --name commons -p 4000:4000 -d pokealarm -k YOUR_GMAPS_API_KEY
+docker run --name rares -p 4001:4000 -d pokealarm -k YOUR_GMAPS_API_KEY -c rares.json
+docker run --name ultra -p 4002:4000 -d pokealarm -k YOUR_GMAPS_API_KEY -c ultra-rares.json
 ```
 
 Meaning that the containers would be reachable on `http://localhost:4000`, `http://localhost:4001` and `http://localhost:4002` respectively.
