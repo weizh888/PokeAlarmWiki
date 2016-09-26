@@ -22,4 +22,5 @@
 [Twitter] (https://github.com/kvangent/PokeAlarm/wiki/Twitter)
 
 ### **Documentation**
-[Webhook Standard] (https://github.com/kvangent/PokeAlarm/wiki/Webhook-Standard) 
+[Webhook Standard] (https://github.com/kvangent/PokeAlarm/wiki/Webhook-Standard)  
+[PokeAlarm API](https://github.com/kvangent/PokeAlarm/wiki/PokeAlarm-API)  
