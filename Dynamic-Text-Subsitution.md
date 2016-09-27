@@ -57,7 +57,7 @@ For what fields (title, message, etc) you have the option to change, please see 
 ## Pokemon Text
 
 
-NoteThere are **two** `pokemon` keys in `alarms.json`.  The follow text substitutions below pertain to the `pokemon` field in the `alarms:{}` section.
+**Note:** There are **two** `pokemon` keys in `alarms.json` - one at the top level, and another optional at the alarm level.  The follow text substitutions below pertain to the `pokemon` field in the `alarms:[]` level.
 
 | Text            | Description                            |
 |:----------------|:---------------------------------------|
@@ -72,6 +72,12 @@ NoteThere are **two** `pokemon` keys in `alarms.json`.  The follow text substitu
 | `<24h_time>`    | Dissapear time in 24hour format        |
 | `<dir>`         | Cardinal direction from set location   |
 | `<respawn_text>`| **Respawn Message                      |
+| `<iv>`          | Percent IV of the alerted pokemon      |
+| `<atk>`         | Attack IV of the alerted pokemon       |
+| `<def>`         | Defense IV of the alerted pokemon      |
+| `<sta>`         | Stamina IV of the alerted pokemon      |
+| `<move1>`       | Quick move of the alerted pokemon      |
+| `<move2>`       | Charge move of the alerted pokemon     |
 *If no location has been set, dist will always return 0 (meters or yards)
 
 **For map tools supporting this feature, this will show messages for spawned pokemon, that'll be back after a hidden phase. I.e. for pokemon from a 2x15 point it'll show '15m later back for 15m.', when scanned during the first 15 minutes.
@@ -143,269 +149,80 @@ The following text substitutions will only work if a Google Maps API Key with Di
 | `<drive_dist>`   | Estimated drive distance to the alert location |
 | `<drive_time>`   | Estimated drive time to alert location			|
 
-Each table represents 1 API quota used for all parameters per pokemon, pokestop, or gym regardless of number of fields or alarms specified. For example, walk_time and drive_time would require 2 points, but walk_time and walk_dist would only require 1 (per alert).
+Each table represents 1 API quota used for all parameters per pokemon, pokestop, or gym regardless of number of fields or alarms specified. For example, `<walk_time>` and `<drive_time>` would require 2 points, but `<walk_time>` and `<walk_dist>` would only require 1 (per alert).
 
 ## Example: Slack
 
-Below is an example `alarm.json` for a single Slack alarm.
+Below is an example for a single Slack alarm.
 
-Let's say that a dratini spawns nearby.  You want PokeAlarm to post to your Slack **#general** channel with the format below:
+Let's say that a Dragonite spawns nearby.  You want PokeAlarm to post to your Slack **#general** channel with the format below:
 
->Dratini (#147) at 830 5th Avenue 10065 (328m SW) until 17:40:37 (13m 57s remaining)!
+> Dragonite (#149) at 830 5th Avenue 10065 (328m SW) - Available until 15:40:37 (14m 45s remaining)
 
-In other words, there is a dratini, pokemon number 147, at the given address, 328 meters southwest of your stated location when you launched `runwebhook.py` _(assuming you ran with the `-l` argument and provided an address or coordinates)_.  It will be there until 17:40:37 (5:40pm), and you have 13 minutes and 57 seconds to catch it.
+>**Walking:** 328m SW, ~3 mins
 
-To use this format, edit the beginning of your `alarms.json` like so, near the top where `"alarms"` is:
+>**Moves:** Dragon Breath / Dragon Claw
 
-```
+>**IVs:** 100% (15/15/15)
+
+(Pretend that the above is single spaced - silly github.)
+
+In other words, there is a Dragonite, pokemon number 149, at the given address, 328 meters southwest of your stated location when you launched `runwebhook.py` (assuming you ran with the `-l` argument and provided an address or coordinates).  It will be there until 17:40:37 (5:40pm), and you have 14 minutes and 45 seconds to catch it.
+
+```json
 {
 	"alarms":[
 		{
 			"active": "True",
 			"type":"slack",
-			"api_key":"YOUR_API_KEY",
-			"startup_message":"True",
-			"startup_list":"True",
+			"api_key":"YOUR_SLACK_API_KEY",
+			"startup_message":"False",
+			"startup_list":"False",
 			"pokemon":{
-				"channel":"general",
-				"username":"<pkmn>",
-				"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<id>.png",
-				"title":"<pkmn> (#<id>) at <addr> <postal>",
+				"channel":"#brooklyn",
+				"username":"Pokemon",
+				"title":"<pkmn> #<id> at <address> <postal>",
 				"url":"<gmaps>",
-				"body": "(<dist> <dir>) until <24h_time> (<time_left> remaining)!",
+				"body":"Available until <24h_time> (<time_left>). \n*Walking:* <walk_dist> <dir>, ~<walk_time> \nMoves: <move1> / <move2> \n**IVs:** <iv>% (<atk>/<def>/<sta>)",
 				"map": { 
-					"enabled":"true",
-					"width":"250",
-					"height":"125",
+					"enabled":"True",
+					"width":"330",
+					"height":"250",
+					"maptype":"roadmap",
+					"zoom": "17"
+				}
+			},
+			"pokestop":{
+				"channel":"pokestops",
+				"username":"Pokestop",
+				"icon_url":"https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png",
+				"title":"New lure placed at <address> <city> <postal>",
+				"url":"<gmaps>",
+				"body":"expires at <24h_time> (<time_left>).",
+				"map": { 
+					"enabled":"True",
+					"width":"330",
+					"height":"250",
 					"maptype":"roadmap",
 					"zoom": "15"
+				}
+			},
+			"gym":{
+				"channel":"gyms",
+				"username":"Gym",
+				"icon_url":"https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym.png",
+				"title":"A Team <old_team> gym has fallen at <address> <city> <postal>",
+				"url":"<gmaps>",
+				"body": "It is now controlled by <new_team>.",
+				"map": { 
+					"enabled":"True",
+					"width":"250",
+					"height":"250",
+					"maptype":"roadmap",
+					"zoom": "13"
 				}
 			}
 		}
 	],
-```
-
-From above, we've taken advantage of the `<pkmn>`, `<id>`, `<addr>`, `<postal>`, `<gmaps>`, `<dist>`, `<dir>`, `<24h_time>`, and `<time_left>` variables to customize our notification message of the nearby dratini.
-
-* Add your own [Slack API Key](https://get.slack.help/hc/en-us/articles/215770388-Creating-and-regenerating-API-tokens) after `"api_key"`.
-* Change "general" in `"Channel":"#general"` to whatever channel you'd like PokeAlarm to post to.
-* Edit the` "title"` key to whatever you'd like, using the above text substitutions to customize your messages.
-* The `"url"` key will hyperlink your title to google maps directions.
-* The `"body"` key is additional text in slack that will not be hyperlinked.
-* Change the `"width"`, `"height"`, `"maptype"`, and `"zoom"` of the static map as you'd like
-* Be conscious about JSON format
-
-Great.  Now that you have your formatting perfect, you want to handpick your pokemon to be notified of.  You can see in the pokemon list below that some are set to `"True"` (Lapras, Kabutops) while others are set to a numeric value, e.g. `"75"` (eevee) or `"1000"` (dragonite, etc.) The numeric values indicate to PokeAlarm that you want to be notified only if that pokemon is within x meters of a given location (again, assuming `python ./runwebhook.py -l 'your location'`).  If you don't supply a location then any of the pokemon in the list with numeric values default to `"True"`, and you'll get notified of that Eevee and Dragonite, no matter how far away.
-
-
-Below is a complete `alarms.json` for Slack:
-
-```
-{
-	"alarms":[
-		{
-			"active": "True",
-			"type":"slack",
-			"api_key":"YOUR_API_KEY",
-			"startup_message":"True",
-			"startup_list":"True",
-			"pokemon":{
-				"channel":"general",
-				"username":"<pkmn>",
-				"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<id>.png",
-				"title":"A wild <pkmn> has appeared!",
-				"url":"<gmaps>",
-				"body": "Available until <24h_time> (<time_left>).",
-				"map": { 
-					"enabled":"true",
-					"width":"250",
-					"height":"125",
-					"maptype":"roadmap",
-					"zoom": "15"
-				}
-			},
-			"pokestop":{
-				"channel":"general",
-				"username":"Pokestop",
-				"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png",
-				"title":"Someone has placed a lure on a Pokestop!",
-				"url":"<gmaps>",
-				"body":"Lure will expire at <24h_time> (<time_left>)."
-			},
-			"gym":{
-				"channel":"general",
-				"username":"Pokemon Gym",
-				"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym.png",
-				"title":"A Team <old_team> gym has fallen!",
-				"url":"<gmaps>",
-				"body": "It is now controlled by <new_team>."
-			}
-		}		
-	],
-	"gyms":{
-		"To_Valor":"False",
-		"To_Mystic":"False",
-		"To_Instinct":"False",
-		"From_Valor":"False",
-		"From_Mystic":"False",
-		"From_Instinct":"False"
-	},
-	"pokestops":{
-		"Lured":"false"
-	},
-	"pokemon":{
-		"Bulbasaur":"False",
-		"Ivysaur":"False",
-		"Venusaur":"False",
-		"Charmander":"False",
-		"Charmeleon":"False",
-		"Charizard":"False",
-		"Squirtle":"False",
-		"Wartortle":"False",
-		"Blastoise":"False",
-		"Caterpie":"False",
-		"Metapod":"False",
-		"Butterfree":"False",
-		"Weedle":"False",
-		"Kakuna":"False",
-		"Beedrill":"False",
-		"Pidgey":"False",
-		"Pidgeotto":"False",
-		"Pidgeot":"False",
-		"Rattata":"False",
-		"Raticate":"False",
-		"Spearow":"False",
-		"Fearow":"False",
-		"Ekans":"False",
-		"Arbok":"False",
-		"Pikachu":"False",
-		"Raichu":"False",
-		"Sandshrew":"False",
-		"Sandslash":"False",
-		"Nidoran♀":"False",
-		"Nidorina":"False",
-		"Nidoqueen":"False",
-		"Nidoran♂":"False",
-		"Nidorino":"False",
-		"Nidoking":"False",
-		"Clefairy":"False",
-		"Clefable":"False",
-		"Vulpix":"False",
-		"Ninetales":"False",
-		"Jigglypuff":"False",
-		"Wigglytuff":"False",
-		"Zubat":"False",
-		"Golbat":"False",
-		"Oddish":"False",
-		"Gloom":"False",
-		"Vileplume":"False",
-		"Paras":"False",
-		"Parasect":"False",
-		"Venonat":"False",
-		"Venomoth":"False",
-		"Diglett":"False",
-		"Dugtrio":"False",
-		"Meowth":"False",
-		"Persian":"False",
-		"Psyduck":"False",
-		"Golduck":"False",
-		"Mankey":"False",
-		"Primeape":"False",
-		"Growlithe":"False",
-		"Arcanine":"False",
-		"Poliwag":"False",
-		"Poliwhirl":"False",
-		"Poliwrath":"False",
-		"Abra":"False",
-		"Kadabra":"False",
-		"Alakazam":"False",
-		"Machop":"False",
-		"Machoke":"False",
-		"Machamp":"False",
-		"Bellsprout":"False",
-		"Weepinbell":"False",
-		"Victreebel":"False",
-		"Tentacool":"False",
-		"Tentacruel":"False",
-		"Geodude":"False",
-		"Graveler":"False",
-		"Golem":"False",
-		"Ponyta":"False",
-		"Rapidash":"False",
-		"Slowpoke":"False",
-		"Slowbro":"False",
-		"Magnemite":"False",
-		"Magneton":"False",
-		"Farfetch'd":"False",
-		"Doduo":"False",
-		"Dodrio":"False",
-		"Seel":"False",
-		"Dewgong":"False",
-		"Grimer":"False",
-		"Muk":"False",
-		"Shellder":"False",
-		"Cloyster":"False",
-		"Gastly":"False",
-		"Haunter":"False",
-		"Gengar":"False",
-		"Onix":"False",
-		"Drowzee":"False",
-		"Hypno":"False",
-		"Krabby":"False",
-		"Kingler":"False",
-		"Voltorb":"False",
-		"Electrode":"False",
-		"Exeggcute":"False",
-		"Exeggutor":"False",
-		"Cubone":"False",
-		"Marowak":"False",
-		"Hitmonlee":"False",
-		"Hitmonchan":"False",
-		"Lickitung":"False",
-		"Koffing":"False",
-		"Weezing":"False",
-		"Rhyhorn":"False",
-		"Rhydon":"False",
-		"Chansey":"False",
-		"Tangela":"False",
-		"Kangaskhan":"False",
-		"Horsea":"False",
-		"Seadra":"False",
-		"Goldeen":"False",
-		"Seaking":"False",
-		"Staryu":"False",
-		"Starmie":"False",
-		"Mr. Mime":"False",
-		"Scyther":"False",
-		"Jynx":"False",
-		"Electabuzz":"False",
-		"Magmar":"False",
-		"Pinsir":"False",
-		"Tauros":"False",
-		"Magikarp":"False",
-		"Gyarados":"False",
-		"Lapras":"False",
-		"Ditto":"False",
-		"Eevee":"False",
-		"Vaporeon":"False",
-		"Jolteon":"False",
-		"Flareon":"False",
-		"Porygon":"False",
-		"Omanyte":"False",
-		"Omastar":"False",
-		"Kabuto":"False",
-		"Kabutops":"False",
-		"Aerodactyl":"False",
-		"Snorlax":"False",
-		"Articuno":"False",
-		"Zapdos":"False",
-		"Moltres":"False",
-		"Dratini":"False",
-		"Dragonair":"False",
-		"Dragonite":"False",
-		"Mewtwo":"False",
-		"Mew":"False"
-	}
 }
-
 ```
