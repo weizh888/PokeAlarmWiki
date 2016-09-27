@@ -140,10 +140,10 @@ What you need to modify in the default `alarms.json` is:
 2.  Enabled/disable the gyms, pokestops, and pokemon you wish you to be notified.
 
 ## Configuring Multiple Different Alarm Services
-Coming soon
+Wiki description coming soon.  Please visit the discord channel for assistance.
 
 ## Configuring Multiple of the Same Alarm Services
-Coming soon
+Wiki description coming soon.  Please visit the discord channel for assistance.
  
 ## Editing or Adding Alarms
 To add, edit, or remove alarms, edit the `alarms.json` file. If you haven't created an `alarms.json` file before, you can make a copy of `alarms.json.{locale}.default` and rename it appropriately.
@@ -228,14 +228,16 @@ Notice that the above config has 3 alarms set up, but only 2 are enabled. This a
 
 ## Enabling/Disabling Pokemon
 
-At the bottom of the default `alarms.json` is the pokemon section is where you would enable/disable/distance-limit pokemon.  It has the list of all 151 generation 1 pokemon.  A portion of this section looks like:
+At the bottom of the default `alarms.json` is the pokemon section. It has the list of all 151 generation 1 pokemon.  A portion of this section looks like:
 ```
 	"pokemon":{
-		"Bulbasaur":"False",
+		"max_dist":"inf",
+		"min_iv":"0",
+		"Bulbasaur":{ "max_dist":"1000", "min_iv":"100", "move_1":"all", "move_2":"Power Whip Seed Bomb" },
 		"Ivysaur":"False",
 		"Venusaur":"False",
 ```
 
 This is not to be confused with the `"pokemon"` code in the top `"alarms"` section of `alarms.json`. 
 
-Change `"False"` to `"True"` for every pokemon you want an notification.  Visit the wiki article on [Pokemon Configuration](https://github.com/kvangent/PokeAlarm/wiki/Pokemon-Configuration) for more details.
+Visit the wiki article on [Pokemon Configuration](https://github.com/kvangent/PokeAlarm/wiki/Pokemon-Configuration) for more details on how to limit pokemon notifications by distance, %IV, and moves.
