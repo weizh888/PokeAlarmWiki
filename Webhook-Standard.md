@@ -1,20 +1,27 @@
 ## ***Pokemon***
+Pokemon standard now includes moveset and IVs as of commit [oc1b4](https://github.com/kvangent/PokeAlarm/commit/0c1b4cce80e0ceb3cc6dbb2d802204af4dd3ce60).
 #### Example:
 ```json
 {
 	"type": "pokemon",
-    "message": {
-		"encounter_id": 0,
-		"spawnpoint_id": 0,
+	"message": {
+		"move_1": 221,
+		"move_2": 118,
+		"disappear_time": 1375014270,
 		"pokemon_id": 1,
-		"latitude": 62.790967,
-		"longitude": 76.927920,
-		"disappear_time": 1470592235,
-		"last_modified_time": 1286668800,
-		"time_until_hidden_ms": 5000
+		"individual_stamina": 15,
+		"spawnpoint_id": "0",
+		"individual_defense": 2,
+		"longitude": -45.10312534490142,
+		"time_until_hidden_ms": 884287,
+		"latitude": 40.677737099053275,
+		"last_modified_time": 1475033386661,
+		"individual_attack": 5,
+		"encounter_id": "0"
 	}
 }
 ```
+
 
 ## Pokestops
 #### Example:
@@ -39,14 +46,14 @@
 { 
     "type": "gyms",
     "message": {
-	"gym_id": 0,
-	"team_id": 0,
-	"guard_pokemon_id": 0,
-	"gym_points": 100,
-	"enabled": "True",
-	"latitude": 62.790967,
-     "longitude":  76.927920,
-	"last_modified": 1572241600
+		"gym_id": 0,
+		"team_id": 0,
+		"guard_pokemon_id": 0,
+		"gym_points": 100,
+		"enabled": "True",
+		"latitude": 62.790967,
+		"longitude":  76.927920,
+		"last_modified": 1572241600
     }
 }
 ```
