@@ -31,7 +31,7 @@ PokeAlarm offers the following for Slack:
 * High resolution icons for pokemon, gym, or pokestop notifications
 * Notifications to multiple Slack channels and/or teams
 * Customizable Google Map image of the pokemon, gym, and/or pokestop location
-* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Subsitution.md)
+* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Subsitution)
 
 
 
