@@ -7,6 +7,7 @@ PokeAlarm is a third party extension of [PokemonGo-Map](https://github.com/Pokem
 
 We currently support the following services:
 * [Boxcar](https://github.com/kvangent/PokeAlarm/wiki/Boxcar)
+* [Discord](https://github.com/kvangent/PokeAlarm/wiki/Discord)
 * [Pushbullet](https://github.com/kvangent/PokeAlarm/wiki/Pushbullet)
 * [Pushover](https://github.com/kvangent/PokeAlarm/wiki/Pushover)  
 * [Slack](https://github.com/kvangent/PokeAlarm/wiki/Slack)

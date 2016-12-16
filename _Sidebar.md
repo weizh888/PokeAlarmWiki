@@ -14,6 +14,7 @@
 
 ### **Alarm Types**  
 [Boxcar] (https://github.com/kvangent/PokeAlarm/wiki/Boxcar)  
+[Discord] (https://github.com/kvangent/PokeAlarm/wiki/Discord)  
 [Pushbullet] (https://github.com/kvangent/PokeAlarm/wiki/Pushbullet)  
 [Pushover] (https://github.com/kvangent/PokeAlarm/wiki/Pushover)  
 [Slack] (https://github.com/kvangent/PokeAlarm/wiki/Slack)  
