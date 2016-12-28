@@ -9,6 +9,7 @@ We currently support the following services:
 * [Telegram](https://github.com/kvangent/PokeAlarm/wiki/Telegram) 
 * [Twilio (SMS)](https://github.com/kvangent/PokeAlarm/wiki/Twilio-(SMS))
 * [Twitter](https://github.com/kvangent/PokeAlarm/wiki/Twitter)
+* [Facebook Pages](https://github.com/kvangent/PokeAlarm/wiki/Facebook-Pages)
 
 ## Support
 
