@@ -63,13 +63,13 @@ In addition to the required parameters, several `alarm.json` optional parameters
 
 Parameters at the alarm level will be the default to alert-level parameters.
 
-| Parameters         | Description                                                | Default                      |
-|:-------------------|:-----------------------------------------------------------|:-----------------------------|
-| `location`         | Sends minimap after main message.                                        | `True`            |
-| `disable_map_notification`	| Disables map notifications.  Set to `False` if you are experiencing notification issues on Android                | `True`                       |
-| `venue`	| Sends location in main message.              | `False`                       |
-| `startup_message`  | Confirmation post when PokeAlarm initialized               | `True`                       |
-| `startup_list`     | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`            |
+| Parameters                 | Description                                                          | Default |
+|:---------------------------|:---------------------------------------------------------------------|:--------|
+| `location`                 | Sends minimap after main message.                                    | `True`  |
+| `disable_map_notification` | Disables map notifications.  Set to `False` if you are experiencing notification issues on Android | `True` |
+| `venue`                    | Sends location in main message.                                      | `False` |
+| `startup_message`          | Confirmation post when PokeAlarm initialized                         | `True`  |
+| `startup_list`             | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`  |
 
 These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file. These parameters overide the alarm-level settings for this alert.
 
@@ -77,9 +77,10 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 | -----------|:-------------------------------------------------|:----------------------------------------------------------|
 | `title`    | Header text for the message						| `A wild <pkmn> has appeared!`								|
 | `body`     | Additional text to be added to the message		| `"<gmaps> \n Available until <24h_time> (<time_left>)."`	| 
-| `location`         | Sends minimap after main message.                                        | `True`            |
-| `disable_map_notification`	| Disables map notifications.  Set to `False` if you are experiencing notification issues on Android                | `True`                       |
-| `venue`	| Sends location in main message.              | `False`                       | 
+| `location` | Sends minimap after main message.                | `True`                                                    |
+| `disable_map_notification` | Disables map notifications.  Set to `False` if you are experiencing notification issues on Android | `True` |
+| `venue`	 | Sends location in main message.                  | `False`                                                   | 
+| `stickers` | Sends pokemon images as stickers in the message  | `True`                                                    |
 
 ### Example: Alarm Configuration Using Optional Parameters
 Below is how an advanced alarm configuration would appear in `alarms.json`. Note that this is **not** the entire `alarms.json`, but only the section pertaining to the alarm portion of the JSON file.
@@ -91,6 +92,7 @@ Below is how an advanced alarm configuration would appear in `alarms.json`. Note
 	"chat_id":"YOUR_CHAT_ID",
 	"startup_message:":"True",
 	"startup_list:":"True",
+	"stickers": "True",
 	"pokemon" : {
 		"chat_id": "OVERRIDES_DEFAULT_CHANNEL",
 		"title": "A wild <pkmn> has appeared!",
