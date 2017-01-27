@@ -48,7 +48,7 @@ PokeAlarm is a lightweight webserver designed to receive POST requests from your
 * Open an issue on github and fill out the appropriate issue template and we'll look into it.
 
 #### I am receiving XYZ error from PokemonGo-Map! What do I do?
-* Visit our [Discord channel](https://discordapp.com/invite/am66rag), Checkout the [PokemonGo-Map Wiki](https://github.com/kvangent/PokeAlarm/wiki) or the reddit thread to see if anyone has any suggestions for you.
+* Visit our [Discord channel](https://discord.gg/TNcqsRr), Checkout the [PokemonGo-Map Wiki](https://github.com/kvangent/PokeAlarm/wiki) or the reddit thread to see if anyone has any suggestions for you.
 
 #### Can I run multiple simultaneous alarms services?
 
