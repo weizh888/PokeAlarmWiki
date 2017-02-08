@@ -1,0 +1,371 @@
+# PokeAlarm Version 3 Quick Start Guide
+Updated: 8 Feb 2017
+
+## Purpose
+* This document is intended to quickly provide PokeAlarm v3 users with info to get started. It is not intended to replace the full wiki (which is being written up.)
+
+## Overview
+
+* [Before you begin](#before-you-begin)
+* [Notes](#notes)
+* [Known issues](#known-issues)
+* [Introduction](#introduction)
+* [Command line parameters for `start_pokealarm.py`](#command-line-parameters-for-start_pokealarmpy)
+  * [Changes to JSON files](#changes-to-json-files)
+    * [Config file: `filters.json`](#config-file-filtersjson)
+        * [Gyms](#gyms)
+        * [Changes in move filtering](#changes-in-move-filtering)
+            * [Filtering on a single `move_1` move](#filtering-on-a-single-move_1-move)
+            * [Filtering on multiple `move_2` moves](#filtering-on-multiple-move_2-moves)
+            * [NEW: filtering on `moveset`](#new-filtering-on-moveset)
+        * [New: Optional ignoring of pokemon with missing IVs or moves](#new-optional-ignoring-of-pokemon-with-missing-ivs-or-moves)
+    * [Config file: `geofence.txt` (optional)](#config-file-geofencetxt-optional)
+    * [Config file: `alarms.json`](#config-file-alarmsjson)
+        * [New and updated Dynamic Text Substitutions](#new-and-updated-dynamic-text-substitutions) 
+* [Running PokeAlarm v3](#running-pokealarm-v3)
+    * [Running multiple alarms, filters, etc., in a single `start_pokealarm.py` instance from the command line](#running-multiple-alarms-filters-etc-in-a-single-start_pokealarmpy-instance-from-the-command-line)
+    * [Running one Manager from the command line](#running-one-manager-from-the-command-line)
+    * [Running two Managers from the command line](#running-two-managers-from-the-command-line)
+    * [Special case: using one `filters.json`, `geofence.txt`, `alarms.json`, etc., for all Managers in the command line](#special-case-using-one-filtersjson-geofencetxt-alarmsjson-etc-for-all-managers-from-the-command-line)
+    * [Using `config.ini` to simplify Manager... management](#using-configini-to-simplify-manager-management)
+    * [Naming your Managers](#naming-your-managers)
+* [Final notes](#final-notes)
+
+## Before you begin
+* Deadly has to eat! Get the word out about PokeAlarm and [send a tip his way for a job well done and to keep the features coming.](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD)
+* Version 3 is now in the master branch
+* Version 2 is now in a separate branch, [v2](https://github.com/kvangent/PokeAlarm/tree/v2)
+* If you have experience with PokeAlarm v2, use the .example files in v3 root to quickly get started
+* This document is a work in progress. I'm splitting time between keeping the docs up and catching the Pokes =P 
+* Features are constantly being added. Always visit the #announcements discord channel for udpates
+* Contact us in the [#troubleshooting discord channel](https://discordapp.com/channels/215181169761714177/218822834225545216) or open a ticket on our [github page](https://github.com/kvangent/PokeAlarm/issues)
+
+## Notes
+
+* If RocketMap is not configured to send moves or IVs for particular pokemon, e.g., `-eblk`, then you will get a `unknown` message for notifications if you do not set that particular pokemon to `"false"` in `filters.json`.  This behavior is intentional in PokeAlarm v3. This is to ensure that you get the snorlax notification even if RocketMap sends the webhook without IVs or moves.  To bypass, use `"ignore_missing":"True"` in your `filters.json` either globally or individually for each Pokemon.
+* Remember - you only need to edit the JSON, `geofence.txt`, and `config.ini` files.  Other modifications to the code are not supported!!!
+* PyCharm is a great IDE to manage your JSON and config files.  The EDU edition is free: https://www.jetbrains.com/pycharm-edu . This will will help you avoid those pesky formatting errors.
+* Alternatively, use an online JSON editor like http://www.jsoneditoronline.org which will yell at you if the json is incorrectly formatted
+
+## Known issues
+* RocketMap webhooks have been recently undergoing changes.  You may see errors in the PokeAlarm v3 log such as `[MainProcess][Structures][ERROR] Invalid type specified (scheduler). Are you using the correct map type?` This is because RocketMap is sending new webhook information that PokeAlarm hasn't yet incorporated.  Your PokeAlarm setup will still function normally
+
+## Introduction
+PokeAlarm v3 takes advantage of multiprocessing to simplify running multiple configurations. To further simplify configuration, the `alarms.json` as you know it in v2 has been split into `alarms.json` and `filters.json`.  Geofencing is still handled by `geofence.txt`, which now allows for multiple geofences in the same file.  You can add multiple config files in a list in `config.ini`.
+
+Here's a visual on the PokeAlarm v3 workflow:
+
+![](images/v3_overview.png)
+
+* The PokeAlarm Server is initiated by `start_pokealarm.py`
+* The number of managers is set etiher in the command line or `config.ini`
+* Each Manager is assigned a `filters.json`, `geofence.txt` (optional), and `alarms.json`
+* `filters.json` contains the pokemon, gym, and pokestop configs
+* `geofences.txt` is optional, and contains coordinates for one or more areas to limit notifications
+* `alarms.json` contains one or more services, e.g., twitter, slack, discord, to send the custom notifications
+
+
+
+## Command line parameters for `start_pokealarm.py`
+```
+usage: start_pokealarm.py [-h] [-d] [-H HOST] [-P PORT] [-m MANAGER_COUNT]
+                          [-M MANAGER_NAME] [-k KEY] [-f FILTERS] [-a ALARMS]
+                          [-gf GEOFENCES] [-l LOCATION]
+                          [-L {de,en,es,fr,it,zh_hk}] [-u {metric,imperial}]
+                          [-tl TIMELIMIT] [-tz TIMEZONE]
+
+Args that start with '--' (eg. -d) can also be set in a config file
+(C:\Users\PokeAlarm\config/config.ini). Config file syntax
+allows: key=value, flag=true, stuff=[a,b,c] (for details, see syntax at
+https://goo.gl/R74nmi). If an arg is specified in more than one place, then
+commandline values override config file values which override defaults.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d, --debug           Debug Mode
+  -H HOST, --host HOST  Set web server listening host
+  -P PORT, --port PORT  Set web server listening port
+  -m MANAGER_COUNT, --manager_count MANAGER_COUNT
+                        Number of Manager processes to start.
+  -M MANAGER_NAME, --manager_name MANAGER_NAME
+                        Names of Manager processes to start.
+  -k KEY, --key KEY     Specify a Google API Key to use.
+  -f FILTERS, --filters FILTERS
+                        Filters configuration file. default: filters.json
+  -a ALARMS, --alarms ALARMS
+                        Alarms configuration file. default: alarms.json
+  -gf GEOFENCES, --geofences GEOFENCES
+                        Alarms configuration file. default: None
+  -l LOCATION, --location LOCATION
+                        Location, can be an address or coordinates
+  -L {de,en,es,fr,it,zh_hk}, --locale {de,en,es,fr,it,zh_hk}
+                        Locale for Pokemon and Move names: default en, check
+                        locale folder for more options
+  -u {metric,imperial}, --units {metric,imperial}
+                        Specify either metric or imperial units to use for
+                        distance measurements.
+  -tl TIMELIMIT, --timelimit TIMELIMIT
+                        Minimum number of seconds remaining on a pokemon to
+                        send a notify
+  -tz TIMEZONE, --timezone TIMEZONE
+                        Timezone used for notifications. Ex:
+                        "America/Los_Angeles"
+```
+
+* timezone format: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+## Changes to JSON files
+The `alarms.json` in PokeAlarm v2 contained four sections - alarms, gyms, pokemon, pokestops.
+
+In PokeAlarm v3, the configuration has been split between three files - filters, geofences, and alarms:
+
+| config file | desciption |
+|:-----------:|:----------|
+`filters.json` | enables pokemon, gym, and pokestop settings
+`geofence.txt` | optional, handles geofence(s)
+`alarms.json` | configures alarms only
+
+See the .example files in your PokeAlarm root directory for sample setups.
+
+### Config file: `filters.json`
+* This is a **required** file
+* The `pokemon:` section in the PokeAlarm v2 has been moved to its own file, `filters.json`.
+
+#### Gyms
+ A new key, `ignore_neutral`, has been added.  This is to prevent those "It is now controlled by Neutral" gym messages.
+
+### Changes in move filtering
+
+#### Filtering on a single `move_1` move
+The following example will filter for Dragonites with Dragon Breath.  In Version 3, you must wrap the move in brackets `[ ]`.
+
+`"Dragonite": { "move_1": [ "Dragon Breath" ] }`
+
+#### Filtering on multiple `move_2` moves
+The following example will filter for Dragonites with either Dragon Claw or Hyper Beam.  In Version 3, you must wrap the moves in brackets `[ ]`, and separate each move with a comma `,`.
+
+`"Dragonite": { "move_2": [ "Dragon Claw", "Hyper Beam" ] }`
+
+#### NEW: filtering on `moveset`
+New to PokeAlarm Version 3 is the ability to filter on a moveset, that is, a specific combination of `move_1` AND `move_2`.  This is useful for looking for attacking or defending Pokemon.
+
+The following example will filter for Dewgong with Frost Breath and Blizzard:
+
+`"Dewgong": { "moveset": [ "Frost Breath/Blizzard" ] }`
+
+The following example will filter for Dragonites with either
+* Dragon Breath AND Dragon Claw
+
+OR
+
+* Steel Wing AND Dragon Pulse
+
+`"Dragonite": { "moveset": [ "Dragon Breath/Dragon Claw", "Steel Wing/Dragon Pulse" ] }`
+
+#### New: Optional ignoring of pokemon with missing IVs or moves
+If RocketMap is not configured to send moves or IVs for particular pokemon, e.g., `-eblk`, then you will get a `unknown` message for notifications if you do not set that particular pokemon to `"false"` in `filters.json`. This behavior is intentional in PokeAlarm v3. This is to ensure that you get the snorlax notification even if RocketMap sends the webhook without IVs or moves.
+
+To bypass, use `"ignore_missing":"True"` in your `filters.json` either globally or individually for each Pokemon.
+
+`"Pidgey": { "ignore_missing:"True" }`
+
+It is highly recommended to disable this option for the rares - snorax, dragonite, lapras - since you'll want to be notified of those, regardless of stats.
+
+### Config file: `geofence.txt` (optional)
+* This is an *optional* file
+* In version 3, you are permitted to have multiple geofences in a single file.  In order to distinguish between different geofences, each set of coordinates in your geofence.txt file must contain a header with a set of brackets, like so:
+
+```
+[Central Park]
+40.801206,-73.958520
+40.767827,-73.982835
+40.763798,-73.972808
+40.797343,-73.948385
+
+[Other Place]
+61.801206,-100.958520
+61.767827,-100.982835
+61.763798,-100.972808
+61.797343,-100.948385
+
+```
+
+PokeAlarm v3 will fail otherwise.
+
+### Config file: `alarms.json`
+* This is a **required** file
+* the `alarms:[]` section in PokeAlarm v2 configuration file has been moved into its own file, `alarms.json`
+* The `alarms:` key has been removed from the file. Otherwise, everything is the same from v2
+* You may copy your alarm configuration from v2 into v3
+* The existing documentation for Alarm services should still be applicable to PokeAlarm v3
+
+#### New and updated Dynamic Text Substitutions
+Version 3 adds new DTS options and makes slight changes to some existing ones.
+
+| Version 2 | Version 3  | Notes |
+|:---------:|:----------:|:-----
+| `<id>`    | `<pkmn_id>`| Pokemon ID. Primarily affects Pokemon image URL in notification
+| `<move1>` | `<move_1>` | Added underscore to match code styling of project
+| `<move2>` | `<move_2>` | Added underscore to match code styling of project 
+|           | `<min_dist>` | New option
+|           | `<max_iv>` | New option. When coupled with `<min_iv>`, useful for filtering on a specific IV range of pokemon.  Or useful for finding 0% IV pokemon? :)
+|           | `<iv_0>` | IV, rounded to 0 decimals (great for Twitter)
+|           | `<iv_2>` | IV, rounded to 2 decimals
+| | `<move_1_damage>` | |
+| | `<move_1_dps>` | |
+| | `<move_1_duration>`
+| | `<move_1_energy>`
+| | `<move_2_damage>`
+| | `<move_2_dps>`
+| | `<move_2_duration>`
+| | `<move_2_energy>`
+Want more options? [Buy Deadly a beer](#https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD) and maybe he'll come around. =P
+
+ 
+ 
+## Running PokeAlarm v3
+Running `start_pokealarm.py` will start the PokeAlarm server and assume the following as default:
+
+```
+Host: 127.0.0.1
+Port: 4000
+filters: filters.json
+alarms: alarms.json
+```
+
+Which is equivalent to running the command below:
+
+`start_pokealarm.py -H 127.0.0.1 -P 4000 -f filters.json -a alarms.json`
+
+### Running multiple alarms, filters, etc., in a single `start_pokealarm.py` instance from the command line
+Version 3 requires `filters.json` and `alarms.json`.  `Geofence.txt` is optional.
+
+| Command line parameter | default | Desciption |
+|-----------|:----------:|---------------------|
+`-f FILTERS.JSON` | `filters.json` | your desired pokemon, gym, and pokestop filters.  Visit the [Filters](Filters.md) wiki article for more details.
+`-gf GEOFENCE_FILE` | `geofence.txt` | File containing a list of coordinates for one or more geofence. Requires a header, in brackets `[ ]`, before each list of coordinates.  Visit the [Geofences](Geofences.md) wiki article for more details.
+`-a ALARMS.JSON` | `alarms.json` | set of alarms, or services, e.g., Twitter, Discord, Slack.  Visit the [Alarms](Alarms.md) wiki article for details.
+`-m NUMBER_OF_MANAGERS` | `1` | number of total PokeAlarm Managers (processes)
+
+### Running one Manager from the command line
+If you want just one manager with one geofence, filter, and alarm config, run like so:
+
+`start_pokealarm.py -m 1 -f filters.json -gf geofences.txt -a alarms.json`
+
+(`-m 1` is the default.  It's added above just for clarity. You can skip if you plan on running only 1 Manager.)
+
+### Running two Managers from the command line
+If you want to run 2 managers, each with it's own filters, geofence, and alarms, you need to specify them in the desired order like so:
+ 
+`start_pokealarm.py -m 2 -f filters1.json -gf geofences1.txt -a alarms1.json -f filters2.json -gf geofences2.txt -a alarms2.json`
+
+This way, the configs are matched like so:
+
+| Manager Number | filter | geofence | alarm |
+|:--------------:|:------:|:--------:|:-----:|
+| Manager 1 | `filters1.json`| `geofences1.txt` | `alarms1.json` |
+| Manager 2 | `filters2.json`|`geofences2.txt` | `alarms2.json` |
+
+### Special case: using one `filters.json`, `geofence.txt`, `alarms.json`, etc., for all Managers from the command line
+Let's say you want one `filters_all.json` for two managers, like so:
+
+
+
+| Manager | Description |
+|:-------:|:-----------:|
+| PokeAlarm Manager 1 | `filters_all.json`, `geofences1.txt`, and `alarms1.json`
+| PokeAlarm Manager 2 | `filters_all.json`, `geofences2.txt`, and `alarms2.json`
+
+If you run `start_pokealarm.py` with more than one manager and only specify one `-f filters_all.json` in the command line, PokeAlarm v3 will assign that `filters_all.json` to all managers.  For example:
+
+`start_pokealarm.py -m 2 -f filters_all.json -gf geofences1.txt -a alarms1.json -gf geofences2.txt -a alarms2.json`
+
+### Using `config.ini` to simplify Manager... management
+To faciliate multiple combinations of managers, filters, alarms, geofences, etc., PokeAlarm v3 allows you add a list of these parameters in `config.ini`.
+
+Scenario:  Let's say you want to run PokeAlarm for 2 areas - Los Angeles and Tokyo - with 2 filters each (`filters_main.json`, `filters_nearby.json`).  Three geofences are desired (`geofence_la.txt`, `None`, and `geofence_tk.txt`), and one alarm config each (`alarms_la_v3.json` and `alarms_tk_v3.json`) is added, for a total of 4 PokeAlarm managers.
+
+In a table, it looks like this:
+
+| Manager Number | Parameter | Value |
+|:--------------:|:---------:|:-----:|
+| 1 | location | `"Los Angeles CA"` |
+| 1 | filter | `filters_main.json`|
+| 1 | geofence | `geofence_la.txt` |
+| 1 | alarms | `alarms_la.json` |
+| 1 | unit | `imperial` |
+| 1 | timezone | `Amer\Los_Angeles` |
+| --------|---------- |-------|
+| 2 | location | `"Los Angeles CA"` |
+| 2 | filter | `filters_nearby.json`|
+| 2 | geofence | `None` |
+| 2 | alarms | `alarms_la.json` |
+| 2 | unit | `imperial` |
+| 2 | timezone | `Amer\Los_Angeles` |
+| --------|---------- |-------|
+| 3 | location | `"Tokyo Japan"` |
+| 3 | filter | `filters_main.json`|
+| 3 | geofence | `geofence_tk.txt` |
+| 3 | alarms | `alarms_tk.json` |
+| 3 | unit | `metric` |
+| 3 | timezone | `Amer\Los_Angeles` |
+| --------|---------- |-------|
+| 4 | location | `"Tokyo Japan"` |
+| 4 | filter | `filters_nearby.json`|
+| 4 | geofence | `None` |
+| 4 | alarms | `alarms_tk.json` |
+| 4 | unit | `metric` |
+| 4 | timezone | `Amer\Los_Angeles` |
+
+In the CLI, it would look like this:
+
+`start_pokealarm.py -l "Los Angeles CA" -l "Los Angeles CA" -l "Tokyo Japan" -l "Tokyo Japan" -f filters_main.json -f filters_nearby.json -f filters_main.json -f filters_nearby.json -gf geofence_la.txt -gf None -gf geofence_tk.txt -gf geofence_tk.txt -a alarms_la_v3.json -a alarms_la_v3.json -a alarms_tk_v3.json -a alarms_tk_v3.json -u imperial -u imperial -u metric -u metric -tz America/Los_Angeles`
+
+Pretty beastly, right? Here's an example of how to configure `config.ini` to achieve the same goal:
+
+```
+manager_count: 4
+location: [ "Los Angeles CA",  "Los Angeles CA",    "Tokyo Japan",     "Tokyo Japan"       ]
+filter:   [ filters_main.json, filters_nearby.json, filters_main.json, filters_nearby.json ]
+geofence: [ geofence_la.txt,   None,                geofence_tk.txt,   geofence_tk.txt     ]
+alarms:   [ alarms_la_v3.json, alarms_la_v3.json,   alarms_tk_v3.json, alarms_tk_v3.json   ]
+unit:     [ imperial,          imperial,            metric,            metric              ]
+timezone: America/Los_Angeles
+
+```
+(The spacing for alignment is purely for aesthetic purposes.)
+
+You would then run the following to launch the PokeAlarm server:
+
+`start_pokealarm.py` 
+
+That's it. (=0
+
+Some notes:
+
+* Order is important - the list elements are index matched with each other
+* The geofence line in the example above contains a `None` entry, meaning that the second Manager will not use a geofence
+* Location sytax is finicky. Use `"Los Angeles CA"` but not `"Los Angeles, CA"`.  The comma will mess things up
+* The `timezone` with only one element, `America/Los_Angeles`, will apply to all 4 managers.  Don't wrap the timezone in double quotes 
+
+The following parameters can be set in a list in `config.ini`:
+* key
+* manager name
+* location
+* filters
+* geofences
+* alarms
+* unit
+* timelimit
+
+## Naming your Managers
+Similar to `-sn` in RocketMap, you can name individual PokeAlarm Managers.  This helps to make the log files easier to read.   
+
+* Use `-M "Manager 1" -M "Manager 2" -M "Manager 3"` in the commandline
+* In `config.ini`, use `manager_name: [ "Manager 1, "Manager 2", "Manager 3" ]` in a list.
+    * Tip: As I did above, you can add extra white spaces to line up the different managers in `config.ini` for aesthetics
+
+## Final notes
+* The wiki is being overhauled to reflect the above notes and more.
+* If you have questions that haven't been addressed in this quick start guide, hit us up in the discord channel or submit a ticket on the Github page.
+*  If you enjoy PokeAlarm, [please support the developer by sending a small donation.](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD) PokeAlarm is used by literally thousands of people on a daily basis. Pretty much every public twitter feed uses PokeAlarm - why not send a beer to the dev for a job well done? (=0 Happy Hunting and Good Luck!

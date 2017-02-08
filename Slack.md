@@ -14,7 +14,7 @@
 This guide assumes 
 
 1. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
-2. You have read and understood the [Alarm Configuration](https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration) Wiki
+2. You have read and understood the [Alarms](https://github.com/kvangent/PokeAlarm/wiki/Alarms) Wiki
 3. You are comfortable with the layout of `alarms.json`.
 
 Please familiarize yourself with all of the above before proceeding.
@@ -84,43 +84,43 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 ## Example: Alarm Configuration Using Optional Parameters
 ```json
 {
-	"active": "True",
-	"type":"slack",
-	"api_key":"YOUR_API_KEY",
-	"channel":"general",
-	"startup_message":"True",
-	"startup_list":"True",
-	"pokemon":{
-		"channel":"general",
-		"username":"<pkmn>",
-		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<id>.png",
-		"title":"A wild <pkmn> has appeared!",
-		"url":"<gmaps>",
-		"body": "Available until <24h_time> (<time_left>).",
-		"map": { 
-			"enabled":"true",
-			"width":"250",
-			"height":"125",
-			"maptype":"roadmap",
-			"zoom": "15"
-		}
-	},
-	"pokestop":{
-		"channel":"general",
-		"username":"Pokestop",
-		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png",
-		"title":"Someone has placed a lure on a Pokestop!",
-		"url":"<gmaps>",
-		"body":"Lure will expire at <24h_time> (<time_left>)."
-	},
-	"gym":{
-		"channel":"general",
-		"username":"Pokemon Gym",
-		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym.png",
-		"title":"A Team <old_team> gym has fallen!",
-		"url":"<gmaps>",
-		"body": "It is now controlled by <new_team>."
-	}
+    "active": "True",
+    "type":"slack",
+    "api_key":"YOUR_API_KEY",
+    "channel":"general",
+    "startup_message":"True",
+    "startup_list":"True",
+    "pokemon":{
+        "channel":"general",
+        "username":"<pkmn>",
+        "icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+        "title":"A wild <pkmn> has appeared!",
+        "url":"<gmaps>",
+        "body": "Available until <24h_time> (<time_left>).",
+        "map": { 
+            "enabled":"true",
+            "width":"250",
+            "height":"125",
+            "maptype":"roadmap",
+            "zoom": "15"
+        }
+    },
+    "pokestop":{
+        "channel":"general",
+        "username":"Pokestop",
+        "icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png",
+        "title":"Someone has placed a lure on a Pokestop!",
+        "url":"<gmaps>",
+        "body":"Lure will expire at <24h_time> (<time_left>)."
+    },
+    "gym":{
+        "channel":"general",
+        "username":"Pokemon Gym",
+        "icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym.png",
+        "title":"A Team <old_team> gym has fallen!",
+        "url":"<gmaps>",
+        "body": "It is now controlled by <new_team>."
+    }
 }
 ```
 **Note:** The above code is to be inserted into the alarms section of alarms.json. It does not represent the entire alarms.json file.
@@ -138,7 +138,7 @@ Below is an example of enabling the mini map for pokemon.
 	"pokemon":{
 		"channel":"general",
 		"username":"<pkmn>",
-		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<id>.png",
+		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
 		"title":"A wild <pkmn> has appeared!",
 		"url":"<gmaps>",
 		"body": "Available until <24h_time> (<time_left>).",

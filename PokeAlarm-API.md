@@ -1,3 +1,5 @@
+**DEPRECIATED - feature is still in codebase but not supported at the moment.  Contact the dev team if you would like to contribute**
+
 ## Overview
 * [Prerequisites](#prerequisites)
 * [Introduction](#introduction)

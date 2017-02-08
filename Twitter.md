@@ -14,7 +14,7 @@
 This guide assumes: 
 
 1. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
-2. You have read and understood the [Alarm Configuration](https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration) Wiki
+2. You have read and understood the [Alarms](https://github.com/kvangent/PokeAlarm/wiki/Alarms) Wiki
 3. You are comfortable with the layout of `alarms.json`.
 
 Please familiarize yourself with all of the above before proceeding.
@@ -24,7 +24,7 @@ Please familiarize yourself with all of the above before proceeding.
 
 PokeAlarm offers the following for Twitter:
 
-* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Subsitution.md)
+* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Substitution.md)
 
 
 ## Basic Config

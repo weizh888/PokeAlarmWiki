@@ -61,7 +61,7 @@ For what fields (title, message, etc) you have the option to change, please see 
 
 | Text            | Description                            |
 |:----------------|:---------------------------------------|
-| `<id>`          | ID of the alerted pokemon              |
+| `<pkmn_id>`     | ID of the alerted pokemon              |
 | `<pkmn>`        | Name of the alerted pokemon            |
 | `<lat>`         | Latitude of the pokemon                |
 | `<lng>`         | Longitude of the pokemon               |
