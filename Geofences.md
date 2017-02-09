@@ -57,8 +57,6 @@ If successful, you should receive a confirmation in your log:
 2016-08-20 10:32:09,710 [          geofence] [   INFO] Geofence established!
 ```
 
-Once running, visually confirm your geofenced area by visiting `http://<POKEALARM_HOST>:<POKEALARM_PORT>/geofence` in your web browser.  With the default settings, this would be `http://127.0.0.1:4000/geofence`.
-
 For our Central Park example, all 4 points encompass the entire park.  The visual of the geofenced area is below.  The red marker in the image denotes a selected location, here, "The Pond, Central Park, NY".
 
 ![](images/geofence_central_park_bounded.png)
