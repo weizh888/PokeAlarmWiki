@@ -1,9 +1,9 @@
 ### **Wiki Contents**  
 [Home](https://github.com/kvangent/PokeAlarm/wiki)  
-[Quick Start Guide](https://github/kvangent/PokeAlarm/wiki/v3-Quick-Start)  
+[Quick Start Guide](https://github.com/kvangent/PokeAlarm/wiki/v3-Quick-Start)  
 [Installation](https://github.com/kvangent/PokeAlarm/wiki/Installation)  
 [Command Line Execution](https://github.com/kvangent/PokeAlarm/wiki/Execution)      
-[Dynamic Text Substitution](https://github.com/kvangent/PokeAlarm/wiki/Dynamic-Text-Subsitution)  
+[Dynamic Text Substitution](https://github.com/kvangent/PokeAlarm/wiki/Dynamic-Text-Substitution)  
 [Google Maps API Key](https://github.com/kvangent/PokeAlarm/wiki/Google-Maps-API-Key)  
 
 ### **Settings**    
