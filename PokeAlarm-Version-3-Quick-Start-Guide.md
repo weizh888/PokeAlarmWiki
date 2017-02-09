@@ -1,8 +1,7 @@
-# PokeAlarm Version 3 Quick Start Guide
-Updated: 8 Feb 2017
+Updated: 9 Feb 2017
 
 ## Purpose
-* This document is intended to quickly provide PokeAlarm v3 users with info to get started. It is not intended to replace the full wiki (which is being written up.)
+* This document is intended to quickly provide PokeAlarm users with info to get started. It is not intended to replace the full wiki.
 
 ## Overview
 
@@ -10,7 +9,6 @@ Updated: 8 Feb 2017
 * [Notes](#notes)
 * [Known issues](#known-issues)
 * [Introduction](#introduction)
-* [Command line parameters for `start_pokealarm.py`](#command-line-parameters-for-start_pokealarmpy)
   * [Changes to JSON files](#changes-to-json-files)
     * [Config file: `filters.json`](#config-file-filtersjson)
         * [Gyms](#gyms)
@@ -23,6 +21,7 @@ Updated: 8 Feb 2017
     * [Config file: `alarms.json`](#config-file-alarmsjson)
         * [New and updated Dynamic Text Substitutions](#new-and-updated-dynamic-text-substitutions) 
 * [Running PokeAlarm v3](#running-pokealarm-v3)
+    * [Optional Arguments for `start_pokealarm.py`](#optional-arguments-for-start_pokealarmpy)
     * [Running multiple alarms, filters, etc., in a single `start_pokealarm.py` instance from the command line](#running-multiple-alarms-filters-etc-in-a-single-start_pokealarmpy-instance-from-the-command-line)
     * [Running one Manager from the command line](#running-one-manager-from-the-command-line)
     * [Running two Managers from the command line](#running-two-managers-from-the-command-line)
@@ -64,62 +63,12 @@ Here's a visual on the PokeAlarm v3 workflow:
 * `geofences.txt` is optional, and contains coordinates for one or more areas to limit notifications
 * `alarms.json` contains one or more services, e.g., twitter, slack, discord, to send the custom notifications
 
-
-
-## Command line parameters for `start_pokealarm.py`
-```
-usage: start_pokealarm.py [-h] [-d] [-H HOST] [-P PORT] [-m MANAGER_COUNT]
-                          [-M MANAGER_NAME] [-k KEY] [-f FILTERS] [-a ALARMS]
-                          [-gf GEOFENCES] [-l LOCATION]
-                          [-L {de,en,es,fr,it,zh_hk}] [-u {metric,imperial}]
-                          [-tl TIMELIMIT] [-tz TIMEZONE]
-
-Args that start with '--' (eg. -d) can also be set in a config file
-(C:\Users\PokeAlarm\config/config.ini). Config file syntax
-allows: key=value, flag=true, stuff=[a,b,c] (for details, see syntax at
-https://goo.gl/R74nmi). If an arg is specified in more than one place, then
-commandline values override config file values which override defaults.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -d, --debug           Debug Mode
-  -H HOST, --host HOST  Set web server listening host
-  -P PORT, --port PORT  Set web server listening port
-  -m MANAGER_COUNT, --manager_count MANAGER_COUNT
-                        Number of Manager processes to start.
-  -M MANAGER_NAME, --manager_name MANAGER_NAME
-                        Names of Manager processes to start.
-  -k KEY, --key KEY     Specify a Google API Key to use.
-  -f FILTERS, --filters FILTERS
-                        Filters configuration file. default: filters.json
-  -a ALARMS, --alarms ALARMS
-                        Alarms configuration file. default: alarms.json
-  -gf GEOFENCES, --geofences GEOFENCES
-                        Alarms configuration file. default: None
-  -l LOCATION, --location LOCATION
-                        Location, can be an address or coordinates
-  -L {de,en,es,fr,it,zh_hk}, --locale {de,en,es,fr,it,zh_hk}
-                        Locale for Pokemon and Move names: default en, check
-                        locale folder for more options
-  -u {metric,imperial}, --units {metric,imperial}
-                        Specify either metric or imperial units to use for
-                        distance measurements.
-  -tl TIMELIMIT, --timelimit TIMELIMIT
-                        Minimum number of seconds remaining on a pokemon to
-                        send a notify
-  -tz TIMEZONE, --timezone TIMEZONE
-                        Timezone used for notifications. Ex:
-                        "America/Los_Angeles"
-```
-
-* timezone format: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
 ## Changes to JSON files
 The `alarms.json` in PokeAlarm v2 contained four sections - alarms, gyms, pokemon, pokestops.
 
 In PokeAlarm v3, the configuration has been split between three files - filters, geofences, and alarms:
 
-| config file | desciption |
+| config file | description |
 |:-----------:|:----------|
 `filters.json` | enables pokemon, gym, and pokestop settings
 `geofence.txt` | optional, handles geofence(s)
@@ -219,11 +168,37 @@ Version 3 adds new DTS options and makes slight changes to some existing ones.
 | | `<move_2_dps>`
 | | `<move_2_duration>`
 | | `<move_2_energy>`
-Want more options? [Buy Deadly a beer](#https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD) and maybe he'll come around. =P
+Want more options? [Buy Deadly a beer](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD) and maybe he'll come around. =P
 
  
  
 ## Running PokeAlarm v3
+PokeAlarm v3 is now started by running `start_pokealarm.py`.
+
+### Optional Arguments for `start_pokealarm.py`
+Type `start_pokealarm.py -h` to view a list of arguments.  Arguments that start with `--`, e.g., `--key`,  can also be set in `config.ini`, located in the `config` folder of your PokeAlarm root directory.  Command line values will override values stored in `config.ini`.
+
+The list of arguments are below:
+
+                        
+| Argument    | Default | Description
+|:------------|:-------:|:-----------|
+| `-h`, `--help`  | | show this help message and exit
+| `-d`, `--debug` |  |          Debug Mode
+| `-H HOST`, `--host HOST` | `127.0.0.1` | Set web server listening host
+| `-P PORT`, `--port PORT` | `4000` |  Set web server listening port
+| `-m MANAGER_COUNT`, `--manager_count MANAGER_COUNT` | `1` | Number of Manager processes to start
+| `-M MANAGER_NAME`, `--manager_name MANAGER_NAME` | | Names of Manager processes to start
+| `-k KEY`, `--key KEY` | | Specify a Google API Key to use.
+| `-f FILTERS`, `--filters FILTERS` | `filters.json` | Filters configuration file
+| `-a ALARMS`, `--alarms ALARMS` | `alarms.json` | Alarms configuration file
+| `-gf GEOFENCES`, `--geofences GEOFENCES` | | file containing list of coordinates to define a geofence
+| `-l LOCATION`, `--location LOCATION` | | Location, can be an address or coordinates
+| `-L {de,en,es,fr,it,zh_hk}`, `--locale {de,en,es,fr,it,zh_hk}` | |Locale for Pokemon and Move names: default en, check locale folder for more options
+| `-u {metric,imperial}`, `--units {metric,imperial}` | | Specify either metric or imperial units to use for distance measurements.
+| `-tl TIMELIMIT`, `--timelimit TIMELIMIT` | | Minimum number of seconds remaining on a pokemon to send a notify
+| `-tz TIMEZONE`, `--timezone TIMEZONE` | |  Timezone used for notifications. Ex: `America/Los_Angeles`. Visit https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for a list of timezones.
+
 Running `start_pokealarm.py` will start the PokeAlarm server and assume the following as default:
 
 ```
@@ -268,8 +243,6 @@ This way, the configs are matched like so:
 
 ### Special case: using one `filters.json`, `geofence.txt`, `alarms.json`, etc., for all Managers from the command line
 Let's say you want one `filters_all.json` for two managers, like so:
-
-
 
 | Manager | Description |
 |:-------:|:-----------:|
