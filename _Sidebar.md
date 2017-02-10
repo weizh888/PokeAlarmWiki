@@ -1,6 +1,6 @@
 ### **Wiki Contents**  
 [Home](https://github.com/kvangent/PokeAlarm/wiki)  
-[Quick Start Guide](https://github.com/kvangent/PokeAlarm/wiki/v3-Quick-Start)  
+[Quick Start Guide](https://github.com/kvangent/PokeAlarm/wiki/PokeAlarm-Version-3-Quick-Start-Guide)  
 [Installation](https://github.com/kvangent/PokeAlarm/wiki/Installation)  
 [Command Line Execution](https://github.com/kvangent/PokeAlarm/wiki/Execution)      
 [Dynamic Text Substitution](https://github.com/kvangent/PokeAlarm/wiki/Dynamic-Text-Substitution)  
