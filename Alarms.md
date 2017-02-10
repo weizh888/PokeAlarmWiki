@@ -181,7 +181,7 @@ Below is a working alarm configuration for discord and slack:
       "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
       "title": "*<pkmn>* (<iv>% <atk>/<def>/<sta>) in <neighborhood> at <address> <postal>",
       "url": "<gmaps>",
-      "body": "Available until <24h_time> (<time_left>)\n*Moves:* <move1> / <move2>",
+      "body": "Available until <24h_time> (<time_left>)\n*Moves:* <move_1> / <move2_>",
       "map": {
         "enabled": "True",
         "width": "330",
