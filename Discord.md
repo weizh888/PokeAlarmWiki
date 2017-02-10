@@ -84,7 +84,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 	"startup_list":"True",
 	"pokemon":{
 		"username":"<pkmn>",
-		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<id>.png",
+		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
 		"title":"A wild <pkmn> has appeared!",
 		"url":"<gmaps>",
 		"body": "Available until <24h_time> (<time_left>)."
