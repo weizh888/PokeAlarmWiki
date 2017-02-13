@@ -33,7 +33,7 @@ These `alarms.json` parameters - `active`, `type`, and `page_access_token` - are
 
 | Parameters         | Description                            |
 | --------------     |----------------------------------------|
-| type               | must be `facebookpages`                |
+| type               | must be `facebook_page`                |
 | active             | `True` for alarm to be active          |
 | page_access_token  | Your permanent FB page access token    |
 
@@ -41,7 +41,7 @@ These `alarms.json` parameters - `active`, `type`, and `page_access_token` - are
 ```json
 {
 	"active": "True",
-	"type":"facebookpages",
+	"type":"facebook_page",
 	"page_access_token":"YOUR_PAGE_ACCESS_TOKEN"
 }
 ```
