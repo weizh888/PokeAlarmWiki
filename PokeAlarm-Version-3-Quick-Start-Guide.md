@@ -1,4 +1,4 @@
-Updated: 9 Feb 2017
+Updated: 13 Feb 2017
 
 ## Purpose
 * This document is intended to quickly provide PokeAlarm users with info to get started. It is not intended to replace the full wiki.
@@ -81,7 +81,19 @@ See the .example files in your PokeAlarm root directory for sample setups.
 * The `pokemon:` section in the PokeAlarm v2 has been moved to its own file, `filters.json`.
 
 #### Gyms
- A new key, `ignore_neutral`, has been added.  This is to prevent those "It is now controlled by Neutral" gym messages.
+    {
+    "gyms":{
+		"enabled":"False",
+		"ignore_neutral":"True",
+		"min_dist":"0",
+		"max_dist":"inf",
+        "Valor":"True",
+        "Mystic":"True",
+        "Instinct":"True"
+    },
+
+* A new key, `ignore_neutral`, has been added.  This is to prevent those "It is now controlled by Neutral" gym messages.
+* The keys for each team have been simplified. Setting a team value to `True` will filter for any gym action for that particular team.
 
 ### Changes in move filtering
 
