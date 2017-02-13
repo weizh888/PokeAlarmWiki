@@ -81,7 +81,7 @@ See the .example files in your PokeAlarm root directory for sample setups.
 * The `pokemon:` section in the PokeAlarm v2 has been moved to its own file, `filters.json`.
 
 #### Gyms
-    {
+  {
     "gyms":{
 		"enabled":"False",
 		"ignore_neutral":"True",
@@ -90,7 +90,7 @@ See the .example files in your PokeAlarm root directory for sample setups.
         "Valor":"True",
         "Mystic":"True",
         "Instinct":"True"
-    },
+  },
 
 * A new key, `ignore_neutral`, has been added.  This is to prevent those "It is now controlled by Neutral" gym messages.
 * The keys for each team have been simplified. Setting a team value to `True` will filter for any gym action for that particular team.
