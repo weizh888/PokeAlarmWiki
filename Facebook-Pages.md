@@ -77,7 +77,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 	"startup_message":"True",
 	"startup_list":"True",
 	"pokemon":{
-		"message": "<pkmn> available. <move1>/<move2> (<iv>% - <atk>/<def>/<sta>)",
+		"message": "<pkmn> available. <move_1>/<move_2> (<iv>% - <atk>/<def>/<sta>)",
 		"link": "<gmaps>"
 	},
 	"pokestop":{
