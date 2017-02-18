@@ -148,7 +148,7 @@ Below is a working alarm configuration for discord and slack:
       "api_key":"DISCORD_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
       "username":"<pkmn>",
       "icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
-      "title": "[<neighborhood>] <pkmn> (<iv>% <atk>/<def>/<sta>, <move1> / <move2>) at <address> <postal>",
+      "title": "[<neighborhood>] <pkmn> (<iv>% <atk>/<def>/<sta>, <move_1> / <move_2>) at <address> <postal>",
       "url": "<gmaps>",
       "body": "Available until <24h_time> (<time_left> remaining)"
     },
