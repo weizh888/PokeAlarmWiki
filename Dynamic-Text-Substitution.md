@@ -76,8 +76,8 @@ For what fields (title, message, etc) you have the option to change, please see 
 | `<atk>`         | Attack IV of the alerted pokemon       |
 | `<def>`         | Defense IV of the alerted pokemon      |
 | `<sta>`         | Stamina IV of the alerted pokemon      |
-| `<move1>`       | Quick move of the alerted pokemon      |
-| `<move2>`       | Charge move of the alerted pokemon     |
+| `<move_1>`       | Quick move of the alerted pokemon      |
+| `<move_2>`       | Charge move of the alerted pokemon     |
 | `<encounter_id>`| Database encounter_id of the pokemon   |
 *If no location has been set, dist will always return 0 (meters or yards)
 
