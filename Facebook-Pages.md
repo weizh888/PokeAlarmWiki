@@ -72,7 +72,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 ```json
 {
 	"active": "True",
-	"type":"facebookpages",
+	"type":"facebook_page",
 	"page_access_token":"YOUR_PAGE_ACCESS_TOKEN",
 	"startup_message":"True",
 	"startup_list":"True",
