@@ -1,4 +1,4 @@
-Updated: 13 Feb 2017
+Updated: 19 Feb 2017
 
 ## Purpose
 * This document is intended to quickly provide PokeAlarm users with info to get started. It is not intended to replace the full wiki.
@@ -20,6 +20,7 @@ Updated: 13 Feb 2017
     * [Config file: `geofence.txt` (optional)](#config-file-geofencetxt-optional)
     * [Config file: `alarms.json`](#config-file-alarmsjson)
         * [New and updated Dynamic Text Substitutions](#new-and-updated-dynamic-text-substitutions) 
+* [Upgrading from PokeAlarm Version 2 to Version 3](#upgrading-from-pokealarm-version-2-to-version-3)
 * [Running PokeAlarm v3](#running-pokealarm-v3)
     * [Optional Arguments for `start_pokealarm.py`](#optional-arguments-for-start_pokealarmpy)
     * [Running multiple alarms, filters, etc., in a single `start_pokealarm.py` instance from the command line](#running-multiple-alarms-filters-etc-in-a-single-start_pokealarmpy-instance-from-the-command-line)
@@ -183,8 +184,19 @@ Version 3 adds new DTS options and makes slight changes to some existing ones.
 | | `<move_2_energy>`
 Want more options? [Buy Deadly a beer](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD) and maybe he'll come around. =P
 
+## Upgrading from PokeAlarm Version 2 to Version 3
  
- 
+Run the following commands: 
+```
+git pull
+pip install -r requirements.txt
+```
+
+If you run into significant issues during the pull, back up your JSON and config.ini files, then clone Pokelarm again.
+
+Remember that there are significant changes to the JSON files, so be sure that you've completed the prior steps before running PokeAlarm version 3. 
+
+
 ## Running PokeAlarm v3
 PokeAlarm v3 is now started by running `start_pokealarm.py`.
 
