@@ -184,7 +184,7 @@ In other words, there is a Dragonite, pokemon number 149, at the given address, 
 				"username":"Pokemon",
 				"title":"<pkmn> #<id> at <address> <postal>",
 				"url":"<gmaps>",
-				"body":"Available until <24h_time> (<time_left>). \n*Walking:* <walk_dist> <dir>, ~<walk_time> \nMoves: <move1> / <move2> \n**IVs:** <iv>% (<atk>/<def>/<sta>)",
+				"body":"Available until <24h_time> (<time_left>). \n*Walking:* <walk_dist> <dir>, ~<walk_time> \nMoves: <move_1> / <move_2> \n**IVs:** <iv>% (<atk>/<def>/<sta>)",
 				"map": { 
 					"enabled":"True",
 					"width":"330",
