@@ -211,7 +211,7 @@ In other words, there is a Dragonite, pokemon number 149, at the given address, 
 			"gym":{
 				"channel":"gyms",
 				"username":"Gym",
-				"icon_url":"https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym.png",
+				"icon_url":"https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png",
 				"title":"A Team <old_team> gym has fallen at <address> <city> <postal>",
 				"url":"<gmaps>",
 				"body": "It is now controlled by <new_team>.",

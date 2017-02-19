@@ -98,7 +98,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 	},
 	"gym":{
 		"username":"Pokemon Gym",
-		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym.png",
+		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png",
 		"title":"A Team <old_team> gym has fallen!",
 		"url":"<gmaps>",
 		"body": "It is now controlled by <new_team>."

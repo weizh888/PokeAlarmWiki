@@ -163,7 +163,7 @@ Below is a working alarm configuration for discord and slack:
     "gym":{
       "api_key":"DISCORD_WEBHOOK_URL_FOR_GYM_CHANNEL",
       "username":"Pokemon Gym",
-      "icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<new_team>.png",
+      "icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png",
       "title": "[<neighborhood>] <address> <postal>",
       "url": "<gmaps>",
       "body": "A team <old_team> gym has fallen to <new_team>."
@@ -208,7 +208,7 @@ Below is a working alarm configuration for discord and slack:
     "gym": {
       "channel": "gyms",
       "username": "Gym",
-      "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<new_team>.png",
+      "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png",
       "title": "[<neighborhood>] <address> <postal>",
       "url": "<gmaps>",
       "body": "A team <old_team> gym has fallen to <new_team>.",
