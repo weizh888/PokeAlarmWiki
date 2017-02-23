@@ -119,14 +119,16 @@ The following text substitutions will only work if a Google Maps API Key with Ge
 
 | Text             | Description                            |
 |:---------------- |:---------------------------------------|
-| `<address>`      | Address of the alert location          |
+| `<street_num>`   | Street number of the alert location
+| `<street>`       | Street name of the alert location
+| `<address>`      | Address of the alert location, includes both street number and street name, in that order only
 | `<postal>`       | Postal code of the alert location      |
 | `<neighborhood>` | Neighborhood code of the alert location|
 | `<sublocality>`  | Sublocality code of the alert location |
 | `<city>`         | City code of the alert location        |
 | `<county>`       | County code of the alert location      |
 | `<state>`        | State code of the alert location       |
-| `<county>`       | County code of the alert location      |
+| `<country>`       | Country code of the alert location    |
 The fields will return `None` if unable to derive a proper location
 
 Each pokemon, pokestop, or gym will use up 1 point of your API quota, regardless of number of fields or alarms used.
