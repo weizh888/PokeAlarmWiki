@@ -76,9 +76,12 @@ For what fields (title, message, etc) you have the option to change, please see 
 | `<atk>`         | Attack IV of the alerted pokemon       |
 | `<def>`         | Defense IV of the alerted pokemon      |
 | `<sta>`         | Stamina IV of the alerted pokemon      |
-| `<move_1>`       | Quick move of the alerted pokemon      |
-| `<move_2>`       | Charge move of the alerted pokemon     |
+| `<move_1>`      | Quick move of the alerted pokemon      |
+| `<move_2>`      | Charge move of the alerted pokemon     |
 | `<encounter_id>`| Database encounter_id of the pokemon   |
+| `<gender>`      | Gender of the alerted pokemon          |
+| `<height>`      | Height of the alerted pokemon          |
+| `<weight>`      | Weight of the alerted pokemon          |
 *If no location has been set, dist will always return 0 (meters or yards)
 
 **For map tools supporting this feature, this will show messages for spawned pokemon, that'll be back after a hidden phase. I.e. for pokemon from a 2x15 point it'll show '15m later back for 15m.', when scanned during the first 15 minutes.
