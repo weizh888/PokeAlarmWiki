@@ -1,4 +1,4 @@
-Updated: 19 Feb 2017
+Updated: 6 March 2017
 
 ## Purpose
 * This document is intended to quickly provide PokeAlarm users with info to get started. It is not intended to replace the full wiki.
@@ -16,6 +16,7 @@ Updated: 19 Feb 2017
             * [Filtering on a single `move_1` move](#filtering-on-a-single-move_1-move)
             * [Filtering on multiple `move_2` moves](#filtering-on-multiple-move_2-moves)
             * [NEW: filtering on `moveset`](#new-filtering-on-moveset)
+            * [NEW: filtering on `size`](#new-filtering-on-size)
         * [New: Optional ignoring of pokemon with missing IVs or moves](#new-optional-ignoring-of-pokemon-with-missing-ivs-or-moves)
     * [Config file: `geofence.txt` (optional)](#config-file-geofencetxt-optional)
     * [Config file: `alarms.json`](#config-file-alarmsjson)
@@ -29,10 +30,11 @@ Updated: 19 Feb 2017
     * [Special case: using one `filters.json`, `geofence.txt`, `alarms.json`, etc., for all Managers in the command line](#special-case-using-one-filtersjson-geofencetxt-alarmsjson-etc-for-all-managers-from-the-command-line)
     * [Using `config.ini` to simplify Manager... management](#using-configini-to-simplify-manager-management)
     * [Naming your Managers](#naming-your-managers)
+    * [Running Multiple Instances of the PokeAlarm Server](#running-multiple-instances-of-the-pokealarm-server)
 * [Final notes](#final-notes)
 
 ## Before you begin
-* Deadly has to eat! Get the word out about PokeAlarm and [send a tip his way for a job well done and to keep the features coming.](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD)
+* Deadly has to eat! Get the word out about PokeAlarm and [send a Paypal tip](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD) or [Patreon pledge](https://www.patreon.com/pokealarm) his way for a job well done and to keep the features coming.
 * Version 3 is now in the master branch
 * Version 2 is now in a separate branch, [v2](https://github.com/kvangent/PokeAlarm/tree/v2)
 * If you have experience with PokeAlarm v2, use the .example files in v3 root to quickly get started
@@ -125,6 +127,17 @@ OR
 
 `"Dragonite": { "moveset": [ "Dragon Breath/Dragon Claw", "Steel Wing/Dragon Pulse" ] }`
 
+### NEW: filtering on `size`
+Want those tiny Rattata and big Magikarp badges?  Here's how to add them to your `filters.json`.  (Remember, you'll need two different JSON files if you're looking for either high IV or XL karp.)
+```buildoutcfg
+"Rattata":{"size":["XS"] },
+"Magikarp":{ "size":["XL"] },
+```
+| Filter | Default | Description |
+|:------:|:-------:|:------------|
+| `size` | | `"XS"`,`"Small"`, `"Normal"`, `"Large"`, `"XL"`
+
+
 #### New: Optional ignoring of pokemon with missing IVs or moves
 If RocketMap is not configured to send moves or IVs for particular pokemon, e.g., `-eblk`, then you will get a `unknown` message for notifications if you do not set that particular pokemon to `"false"` in `filters.json`. This behavior is intentional in PokeAlarm v3. This is to ensure that you get the snorlax notification even if RocketMap sends the webhook without IVs or moves.
 
@@ -162,6 +175,9 @@ PokeAlarm v3 will fail otherwise.
 * You may copy your alarm configuration from v2 into v3
 * The existing documentation for Alarm services should still be applicable to PokeAlarm v3
 
+#### New Filters
+
+
 #### New and updated Dynamic Text Substitutions
 Version 3 adds new DTS options and makes slight changes to some existing ones.
 
@@ -182,6 +198,10 @@ Version 3 adds new DTS options and makes slight changes to some existing ones.
 | | `<move_2_dps>`
 | | `<move_2_duration>`
 | | `<move_2_energy>`
+| | `<gender>`
+| | `<weight>`
+| | `<height>`
+| | `<size>`
 Want more options? [Buy Deadly a beer](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD) and maybe he'll come around. =P
 
 ## Upgrading from PokeAlarm Version 2 to Version 3
@@ -209,6 +229,7 @@ The list of arguments are below:
 | Argument    | Default | Description
 |:------------|:-------:|:-----------|
 | `-h`, `--help`  | | show this help message and exit
+| `-cf`, `--config`| `config/config.ini` | Specify configuration file other than config.ini
 | `-d`, `--debug` |  |          Debug Mode
 | `-H HOST`, `--host HOST` | `127.0.0.1` | Set web server listening host
 | `-P PORT`, `--port PORT` | `4000` |  Set web server listening port
@@ -356,12 +377,19 @@ The following parameters can be set in a list in `config.ini`:
 * unit
 * timelimit
 
-## Naming your Managers
+### Naming your Managers
 Similar to `-sn` in RocketMap, you can name individual PokeAlarm Managers.  This helps to make the log files easier to read.   
 
 * Use `-M "Manager 1" -M "Manager 2" -M "Manager 3"` in the commandline
 * In `config.ini`, use `manager_name: [ "Manager 1, "Manager 2", "Manager 3" ]` in a list.
     * Tip: As I did above, you can add extra white spaces to line up the different managers in `config.ini` for aesthetics
+
+### Running Multiple Instances of the PokeAlarm Server
+Use the `-cf` flag for each instance you plan to run.  Make sure that each instance is using a different port.
+```
+start_pokealarm.py -cf config1.ini
+start pokealarm.py -cf config2.ini
+```
 
 ## Final notes
 * The wiki is being overhauled to reflect the above notes and more.

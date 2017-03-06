@@ -230,7 +230,6 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
     }
 ```
 
-
 **Filtering on a combination of parameters.** Let's say we want to be notified of any Pokemon with at least 90% IVs within 5000m of our set location. We also want to be notified of 100% IV Bulbasaur within 1000m of our location with either Power Whip or Seed Bomb as a charge move.  We don't want Ivysaur or Charmander.  We do want 90%+ Venusaurs within 5000m. The Pokemon configuration would be as below:
 ```json
     "pokemon":{
@@ -246,6 +245,12 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
         "Charmander":"False"
     }
 ```
+
+**filtering on size**`
+Want those tiny Rattata and big Magikarp badges?  Here's how to add them to your `filters.json`.  (Remember, you'll need two different JSON files if you're looking for either high IV or XL karp.)
+```buildoutcfg
+"Rattata":{"size":["XS"] },
+"Magikarp":{ "size":["XL"] },
 
 ## Final Words
 The `filters.json.example` file contains the entire list of generation 1 Pokemon, and includes some examples of how the various parameters can be used to fit your needs.  Add the optional key-value pairs for each of your specific Pokemon. Remember that keys such as `max_dist` and `min_iv` set at the specific Pokemon level will override the values of `max_dist` and `min_iv` set at the top Pokemon level.
