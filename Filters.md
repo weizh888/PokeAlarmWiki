@@ -159,6 +159,7 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
 | `move_2`   | `"all"` | Charge moves for the specific Pokemon.  Can contain multiple moves for the specific Pokemon, separated by whitespace. Set to `"all"` to notify on any charge moves.  Leaving out this parameter is the equivalent of notifying on all charge moves.
 | `moveset` | `"all"` | Combination of `move_1` and `move_2`, useful for filtering on best attacking or defending moves. Format is`"moveset":[ "QUICK_MOVE_NAME/CHARGE_MOVE_NAME" ]`. Example - `"moveset":[ "Dragon Breath/Dragon Claw", "Steel Wing/Dragon Pulse" ]`
 | `ignore_missing` | `True` | Prevents PokeAlarm from notifying on Pokemon without moves or IVs.  WARNING: enabling this could potentially result in losing a snorlax, lapras, dragonite, etc., if RocketMap screws up and sends the webhook without info. A better way is to configure your blacklist or whitelist in RocketMap and set the unwanted Pokemon in filters.json to `False`.
+| `size` | | Useful for the tiny Rattata and big Magikarp badges.  Filter with  `"XS`, `"Small"`, `"Normal"`, `"Large"`, and `"XL"`
 
 ### Example Specific Pokemon Config
 
@@ -246,7 +247,7 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
     }
 ```
 
-**filtering on size**`
+**Filtering on size.**
 Want those tiny Rattata and big Magikarp badges?  Here's how to add them to your `filters.json`.  (Remember, you'll need two different JSON files if you're looking for either high IV or XL karp.)
 ```buildoutcfg
 "Rattata":{"size":["XS"] },
