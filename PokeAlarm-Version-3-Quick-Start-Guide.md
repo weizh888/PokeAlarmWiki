@@ -34,7 +34,7 @@ Updated: 6 March 2017
 * [Final notes](#final-notes)
 
 ## Before you begin
-* Deadly has to eat! Get the word out about PokeAlarm and [send a Paypal tip](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD) or [Patreon pledge](https://www.patreon.com/pokealarm) his way for a job well done and to keep the features coming.
+* Deadly has to eat! Get the word out about PokeAlarm and send a [Paypal tip](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD) or [Patreon pledge](https://www.patreon.com/pokealarm) his way for a job well done and to keep the features coming.
 * Version 3 is now in the master branch
 * Version 2 is now in a separate branch, [v2](https://github.com/kvangent/PokeAlarm/tree/v2)
 * If you have experience with PokeAlarm v2, use the .example files in v3 root to quickly get started
