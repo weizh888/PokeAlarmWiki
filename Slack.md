@@ -16,6 +16,7 @@ This guide assumes
 1. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
 2. You have read and understood the [Alarms](https://github.com/kvangent/PokeAlarm/wiki/Alarms) Wiki
 3. You are comfortable with the layout of `alarms.json`.
+4. You are using the latest version of PokeAlarm.
 
 Please familiarize yourself with all of the above before proceeding.
 
@@ -38,20 +39,22 @@ PokeAlarm offers the following for Slack:
 ## Basic Config
 
 ### Required Parameters
-These `alarms.json` parameters - `active`, `type`, and `api_key` - are required to enable the Slack alarm service:
+These parameters below are required to enable the Slack alarm service:
 
-| Parameters     | Description                            |
-| -------------- |----------------------------------------|
-| type           | must be `slack`                        |
-| active         | `True` for alarm to be active          |
-| api_key        | Your API key                           |
+| Parameters        | Default | Description                            |
+| ----------------- |---------|----------------------------------------|
+| `type`            | `slack` | `slack`                                |
+| `active`          | `False` | `True` for alarm to be active          |
+| `api_key`         |         | Your Slack API key                     |
+| `channel`         | `"general"` | Default channel to post notifications
 
 ### Example: Basic Alarm Configuration using Required Parameters
 ```json
 {
 	"active": "True",
 	"type":"slack",
-	"api_key":"YOUR_API_KEY"
+	"api_key":"YOUR_API_KEY",
+	"channel":"general"
 }
 ```
 **Note:** The above code is to be inserted into the alarms section of alarms.json. It does not represent the entire alarms.json file.
@@ -61,12 +64,11 @@ These `alarms.json` parameters - `active`, `type`, and `api_key` - are required 
 ### Optional Parameters
 In addition to the 3 required parameters, several optional parameters are available to personalize your Slack notifications.  Below is an example of these optional parameters and how they are incorporated into a functional alarm layout for Slack.
 
-These optional parameters, `startup_message`, and `startup_list`, are entered at the same level as `"type":"slack"`.
+These optional parameters are entered at the same level as `"type":"slack"`.
 
-| Parameters         | Description                                                | Default                      |
-|--------------------|------------------------------------------------------------|------------------------------|
-| `startup_message`  | confirmation post when PokeAlarm initialized               | `True`                       |
-| `startup_list`     | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`            |
+| Parameters         | Description                                   
+|--------------------|---------------------------------------------
+| `startup_message`  | confirmation post when PokeAlarm initialized
 
 These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
 
@@ -89,7 +91,6 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
     "api_key":"YOUR_API_KEY",
     "channel":"general",
     "startup_message":"True",
-    "startup_list":"True",
     "pokemon":{
         "channel":"general",
         "username":"<pkmn>",
@@ -154,11 +155,11 @@ Below is an example of enabling the mini map for pokemon.
 
 | Parameters     | Description                                       | Default                                       |
 | -------------- |---------------------------------------------------|-----------------------------------------------|
-| enabled        | Turns the map on or off                           | `True`                                        |
-| width          | Width of the map                                  | `250` px                                      |
-| height         | Height of the map                                 | `150` px                                      | 
-| maptype        | Link to be added to notification text             | `roadmap`                                     |
-| zoom           | Specifies the zoom of the map                     | `15`                                          | 
+| `enabled`      | Turns the map on or off                           | `True`                                        |
+| `width`        | Width of the map                                  | `250` px                                      |
+| `height`       | Height of the map                                 | `150` px                                      | 
+| `maptype`      | Link to be added to notification text             | `roadmap`                                     |
+| `zoom`         | Specifies the zoom of the map                     | `15`                                          | 
 
  
 ## How to get a Slack API Key
