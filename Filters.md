@@ -9,7 +9,7 @@
       * [Example Pokemon Config](#example-pokemon-config)
       * [List of Optional Parameters for Specific Pokemon](#list-of-optional-parameters-for-specific-pokemon)
       * [Example Specific Pokemon Config](#example-specific-pokemon-config)
-        * [Multifilters](#multifilters)
+        * [Filtering on multiple combinations of parameters, a.k.a., "Multifiltering"](#filtering-on-multiple-combinations-of-parameters-a.k.a.-Multifiltering)
 * [Final Words](#final-words)
 ## Prerequisites
 This guide assumes:
@@ -260,12 +260,13 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
     }
 ```
 
-**Filtering on multiple combinations of parameter, a.k., "Multifiltering".** You can have multiple.  For example, we want either:
+####Filtering on multiple combinations of parameters, a.k.a., "Multifiltering".
+You can have multiple filter sets for a particular pokemon.  For example, if we want either:
 
-1) A perfect Bulbasaur within 100m that has either Power Whip or Seed Bomb as a charge move
+1) A perfect Bulbasaur within 100m that has either Power Whip or Seed Bomb as a charge move, or
 2) Any Bulbasaur within 150m
 
-To accomplish this within the same `filters.json`, use the following as a template:
+we would configure our `filters.json` for Bulbasaur like so:
 
 ```json
     "pokemon":{
