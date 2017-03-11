@@ -1,3 +1,4 @@
+# Pushover support has been dropped as of PokeAlarm version 3.1.  Do not raise issues on github or Discord regarding this service.
 
 ## Basic Config
 ```json
