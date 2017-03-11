@@ -130,7 +130,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 ### Mini Map Configuration
 ![](images/minimap.png)
 
-You can enable a small Google Static Maps image after your Slack post, showing the location of the alarmed pokemon, gym, or lure.  This is done by adding the `map` parameter to your `pokemon`, `gym`, or `lure` sections of your Slack alarm. 
+You can enable a small Google Static Maps image after your Slack post, showing the location of the alarmed pokemon, gym, or pokestop.  This is done by adding the `map` parameter to your `pokemon`, `gym`, or `pokestop` sections of your Slack alarm. 
 
 
 
