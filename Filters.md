@@ -280,7 +280,7 @@ we would configure our `filters.json` for Bulbasaur like so:
         "Bulbasaur": [
             { "max_dist":"1000", "min_iv":"100", "charge_move":["Power Whip", "Seed Bomb"] },
             { "max_dist":"150" }
-        ]
+        ],
         "Ivysaur":"False",
         "Venusaur":"True",
         "Charmander":"False"
