@@ -15,6 +15,7 @@ This guide assumes:
 2. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
 3. You have read and understood the [Alarm Configuration](https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration) Wiki
 4. You are comfortable with the layout of `alarms.json`.
+5. You are using the latest version of PokeAlarm
 
 ## Introduction
 
@@ -76,13 +77,25 @@ For what fields (title, message, etc) you have the option to change, please see 
 | `<atk>`         | Attack IV of the alerted pokemon       |
 | `<def>`         | Defense IV of the alerted pokemon      |
 | `<sta>`         | Stamina IV of the alerted pokemon      |
-| `<move_1>`      | Quick move of the alerted pokemon      |
-| `<move_2>`      | Charge move of the alerted pokemon     |
+| `<quick_move>`  | Quick move of the alerted pokemon      |
+| `<charge_move>` | Charge move of the alerted pokemon     |
+| `<quick_id>`    | ID number of the quick move  |
+| `<quick_damage>` | Damage value of quick move
+| `<quick_duration>` | Duration value of quick move
+| `<quick_dps>` | Damage per second value of quick move
+| `<quick_energy>` | Energy of quick move
+| `<charge_id>` | ID number of charge move
+| `<charge_damage>` |  Damage value of charge move
+| `<charge_duration>` | Duration value of charge move
+| `<charge_dps>` | Damage per second value of charge move
+| `<charge_energy>` | Energy of charge move
 | `<encounter_id>`| Database encounter_id of the pokemon   |
 | `<gender>`      | Gender of the alerted pokemon          |
 | `<height>`      | Height of the alerted pokemon          |
 | `<weight>`      | Weight of the alerted pokemon          |
 | `<size>`        | Size of the alerted pokemon            |
+| `<geofence>`     | Geofence name of where the alerted pokemon originated |
+| `<gmaps>` | Google Maps URL to pokemon location
 *If no location has been set, dist will always return 0 (meters or yards)
 
 **For map tools supporting this feature, this will show messages for spawned pokemon, that'll be back after a hidden phase. I.e. for pokemon from a 2x15 point it'll show '15m later back for 15m.', when scanned during the first 15 minutes.
@@ -108,11 +121,11 @@ A list of text substitutions for the `gym` field in the alarm section are below:
 
 | Text           | Description                            |
 |:-------------- |:---------------------------------------|
-| `<id>`         | ID of the alerted pokemon              |
-| `<lat>`        | Latitude of the pokemon                |
-| `<lng>`        | Longitude of the pokemon               |
-| `<gmaps>`      | Gmaps link to a pin of the pokemon     |
-| `<dist>`       | *Distance from set location in meters  |
+| `<id>`         | ID of the alerted gym              |
+| `<lat>`        | Latitude of the gym                |
+| `<lng>`        | Longitude of the gym               |
+| `<gmaps>`      | Gmaps link to a pin of the gym     |
+| `<dist>`       | *Distance from set location  |
 | `<points>`     | Number of points the gym currently has |
 | `<old_team>`   | Name of the team who lost the gym      |
 | `<new_team>`   | Name of the team who captured the gym  |
@@ -184,13 +197,13 @@ In other words, there is a Dragonite, pokemon number 149, at the given address, 
 			"type":"slack",
 			"api_key":"YOUR_SLACK_API_KEY",
 			"startup_message":"False",
-			"startup_list":"False",
+			"channel":"#general",
 			"pokemon":{
 				"channel":"#brooklyn",
 				"username":"Pokemon",
 				"title":"<pkmn> #<id> at <address> <postal>",
 				"url":"<gmaps>",
-				"body":"Available until <24h_time> (<time_left>). \n*Walking:* <walk_dist> <dir>, ~<walk_time> \nMoves: <move_1> / <move_2> \n**IVs:** <iv>% (<atk>/<def>/<sta>)",
+				"body":"Available until <24h_time> (<time_left>). \n*Walking:* <walk_dist> <dir>, ~<walk_time> \nMoves: <quick_move> / <charge_move> \n**IVs:** <iv>% (<atk>/<def>/<sta>)",
 				"map": { 
 					"enabled":"True",
 					"width":"330",
