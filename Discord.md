@@ -7,6 +7,7 @@
 * [Advanced Config](#advanced-config)
   * [Optional Parameters](#optional-parameters)
   * [Example: Alarm Configuration Using Optional Parameters](#example-alarm-configuration-using-optional-parameters)
+  * [Mini Map Configuration](#mini-map-configuration)
 * [How to Enable Discord Webhooks](#how-to-enable-discord-webhooks)
 
 ## Prerequisites
@@ -15,6 +16,7 @@ This guide assumes
 1. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
 2. You have read and understood the [Alarms](https://github.com/kvangent/PokeAlarm/wiki/Alarms) Wiki
 3. You are comfortable with the layout of `alarms.json`.
+4. You are using the latest version of PokeAlarm.
 
 Please familiarize yourself with all of the above before proceeding.
 
@@ -33,35 +35,38 @@ PokeAlarm offers the following for Discord:
 ## Basic Config
 
 ### Required Parameters
-These `alarms.json` parameters - `active`, `type`, and `api_key` - are required to enable the Discord alarm service:
+The parameters below are required to enable the Discord alarm service:
 
 | Parameters     | Description                            |
 | -------------- |----------------------------------------|
-| type           | must be `discord`                        |
-| active         | `True` for alarm to be active          |
-| api_key        | Your Webhook URL for a specific channel                           |
+| `type`         | must be `discord`                      |
+| `active`       | `True` for alarm to be active          |
+| `webhook_url`* | Your Webhook URL for a specific channel|
+**Note:** *In PokeAlarm version 3.1, `webhook_url` replaced `api_key`.
 
 ### Example: Basic Alarm Configuration using Required Parameters
+
+**Note:** The above below is to be inserted into the alarms section of `alarms.json`. It does not represent the entire `alarms.json` file.
+
 ```json
 {
 	"active": "True",
 	"type":"discord",
-	"api_key":"YOUR_WEBHOOK_URL"
+	"webhook_url":"YOUR_WEBHOOK_URL"
 }
 ```
-**Note:** The above code is to be inserted into the alarms section of alarms.json. It does not represent the entire alarms.json file.
+
 
 ## Advanced Config
 
 ### Optional Parameters
-In addition to the 3 required parameters, several optional parameters are available to personalize your Discord notifications.  Below is an example of these optional parameters and how they are incorporated into a functional alarm layout for Discord.
+In addition to the required parameters, several optional parameters are available to personalize your notifications.  Below is an example of these optional parameters and how they are incorporated into a functional alarm layout.
 
-These optional parameters, `startup_message`, and `startup_list`, are entered at the same level as `"type":"discord"`.
+These optional parameters are entered at the same level as `"type":"discord"`.
 
-| Parameters         | Description                                                | Default                      |
-|--------------------|------------------------------------------------------------|------------------------------|
-| `startup_message`  | confirmation post when PokeAlarm initialized               | `True`                       |
-| `startup_list`     | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`            |
+| Parameters         | Description
+|--------------------|----------------------------------------------|
+| `startup_message`  | confirmation post when PokeAlarm initialized |
 
 These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
 
@@ -74,12 +79,16 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 | `body`           | Additional text to be added to the message        | `Available until <24h_time> (<time_left>).`   | 
 *Note: Nidorans will be `nidoranf` or `nidoranm`, Farfetch'd will be `farfetchd`, and Mr. Mime will be `mrmime`.
 
+
 ## Example: Alarm Configuration Using Optional Parameters
+
+**Note:** The code below is to be inserted into the alarms section of `alarms.json`. It does not represent the entire `alarms.json` file.
+
 ```json
 {
 	"active": "True",
 	"type":"discord",
-	"api_key":"YOUR_WEBHOOK_URL",
+	"webhook_url":"YOUR_WEBHOOK_URL",
 	"startup_message":"True",
 	"startup_list":"True",
 	"pokemon":{
@@ -105,8 +114,38 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 	}
 }
 ```
-**Note:** The above code is to be inserted into the alarms section of alarms.json. It does not represent the entire alarms.json file.
 
+### Mini Map Configuration
+![](images/minimap.png)
+
+You can enable a small Google Static Maps image after your post, showing the location of the alarmed pokemon, gym, or pokestop.  This is done by adding the `map` parameter to your `pokemon`, `gym`, or `pokestop` sections of your alarm. 
+
+Below is an example of enabling the mini map for pokemon.
+```json
+	"pokemon":{
+		"channel":"general",
+		"username":"<pkmn>",
+		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+		"title":"A wild <pkmn> has appeared!",
+		"url":"<gmaps>",
+		"body": "Available until <24h_time> (<time_left>).",
+		"map": {             
+			"enabled":"true", 
+			"width":"250",    
+			"height":"125",  
+			"maptype":"roadmap",
+			"zoom": "15"      
+		}                      
+	},
+```
+
+| Parameters     | Description                                       | Default                                       |
+| -------------- |---------------------------------------------------|-----------------------------------------------|
+| `enabled`      | Turns the map on or off                           | `True`                                        |
+| `width`        | Width of the map                                  | `250` px                                      |
+| `height`       | Height of the map                                 | `150` px                                      | 
+| `maptype`      | Link to be added to notification text             | `roadmap`                                     |
+| `zoom`         | Specifies the zoom of the map                     | `15`                                          | 
  
 ## How to enable Discord webhooks
 
