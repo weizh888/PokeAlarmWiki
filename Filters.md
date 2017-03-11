@@ -97,6 +97,12 @@ You may filter on lured pokestops within a minimum and maximum distance from you
     },
 ```
 
+| Parameter        | Default | Description
+|:----------------:|:-------:|:-------
+| `enabled`        | `False` | Set to `True` to enable gym filtering
+| `min_dist`       | `"0"`   | Minimum distance to alarm on pokestop notifications.
+| `max_dist`       | `"inf"` | Maximum distance to alarm on pokestop notifications. Use `"Inf"` to notify on any distance.
+
 ## Pokemon Filters
 You may set filters for Pokemon at 2 levels of the `"Pokemon":` section of `filters.json`:
 
@@ -126,12 +132,12 @@ Below is a description of all filters available at both Default and Specific Pok
 | `max_dist` | `"inf"`  | Maximum distance from current location by which the specific Pokemon will trigger configured alarm(s). Pokemon farther than this value will not trigger configured alarm(s). Can be an integer, e.g., `"1000"`, or `"inf"` for unlimited range.
 | `min_iv`   | `"0"`   | Minimum percent IV for all Pokemon. 0 to 100.
 | `max_iv`   | `"100"` | Maximum percent IV for all Pokemon. 0 to 100.
-| `min_atk` | "0" | Value, 0-15, corresponding to the attack IV 
-| `max_atk` | "15"| Value, 0-15, corresponding to the attack IV 
-| `min_def` | "0" | Value, 0-15, corresponding to the defense IV 
-| `max_def` | "15"| Value, 0-15, corresponding to the defense IV 
-| `min_sta` | "0" | Value, 0-15, corresponding to the stamina IV 
-| `max_sta` | "15"| Value, 0-15, corresponding to the stamina IV
+| `min_atk` | `"0"` | Value, 0-15, corresponding to the attack IV 
+| `max_atk` | `"15"`| Value, 0-15, corresponding to the attack IV 
+| `min_def` | `"0"` | Value, 0-15, corresponding to the defense IV 
+| `max_def` | `"15"`| Value, 0-15, corresponding to the defense IV 
+| `min_sta` | `"0"` | Value, 0-15, corresponding to the stamina IV 
+| `max_sta` | `"15"`| Value, 0-15, corresponding to the stamina IV
 | `quick_move`   |  | Quick moves for the specific Pokemon.  Can contain multiple moves for the specific Pokemon, separated by whitespace. Set to `"all"` to notify on any quick moves.  Leaving out this parameter is the equivalent of notifying on all quick moves.
 | `charge_move`   |  | Charge moves for the specific Pokemon.  Can contain multiple moves for the specific Pokemon, separated by whitespace. Set to `"all"` to notify on any charge moves.  Leaving out this parameter is the equivalent of notifying on all charge moves.
 | `moveset` |  | Combination of `quick_move` and `charge_move`, useful for filtering on best attacking or defending moves. Format is`"moveset":[ "QUICK_MOVE_NAME/CHARGE_MOVE_NAME" ]`. Example - `"moveset":[ "Dragon Breath/Dragon Claw", "Steel Wing/Dragon Pulse" ]`
