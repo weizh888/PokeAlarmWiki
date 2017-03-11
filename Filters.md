@@ -1,15 +1,15 @@
+##Attention! PokeAlarm version 3.1 contains significant changes to `filters.json` compared to previous versions.  Read the patch notes if you are upgrading from a working v3 installation.
+
 ## Overview
 * [Prerequisites](#prerequisites)
 * [Introduction](#introduction)
 * [Gym Filters](#gym-filters)
 * [Pokestop Filters](#pokestop-filters)
 * [Pokemon Filters](#pokemon-filters)
-    * [Pokemon Level Options](#pokemon-level-options)
-    * [Specific Pokemon Level Options](#specific-pokemon-level-options)
-      * [Example Pokemon Config](#example-pokemon-config)
-      * [List of Optional Parameters for Specific Pokemon](#list-of-optional-parameters-for-specific-pokemon)
-      * [Example Specific Pokemon Config](#example-specific-pokemon-config)
-        * [Filtering on multiple combinations of parameters, a.k.a., "Multifiltering"](#filtering-on-multiple-combinations-of-parameters-aka-multifiltering)
+  * [Example Pokemon Config](#example-pokemon-config)
+  * [List of Optional Parameters for Specific Pokemon](#list-of-optional-parameters-for-specific-pokemon)
+  * [Example Specific Pokemon Config](#example-specific-pokemon-config)
+    * [Filtering on multiple combinations of parameters, a.k.a., "Multifiltering"](#filtering-on-multiple-combinations-of-parameters-aka-multifiltering)
 * [Final Words](#final-words)
 ## Prerequisites
 This guide assumes:
@@ -19,8 +19,6 @@ This guide assumes:
 3. You are using the latest version of PokeAlarm
 
 ## Introduction
-
-**Note:** PokeAlarm version 3.1 contains significant changes to `filters.json` compared to previous versions.
 
 The `filters.json` configuration file filters Pokemon, Gym, and Pokestop notifications so that you receive only the notifications you want.
 
@@ -46,7 +44,19 @@ The basic structure of `filters.json` contains 3 sections:
 **Note for locale:** PokeAlarm will only notify on correctly spelled Pokemon for the selected locale.
 
 ## Gym Filters
-You may filter on gyms based on teams, and within a minimum / maximum distance from your set location.  Gyms within these parameters will trigger your Gym alarm notification.  For example:
+You may filter on gyms based on team activity, and within a minimum / maximum distance from your set location.  Gyms within these parameters will trigger your Gym alarm notification.  You may have have multiple filter conditions within the same "gyms" filter block.
+
+| Parameter        | Default | Description
+|:----------------:|:-------:|:-------
+| `enabled`        | `False` | Set to `True` to enable gym filtering
+| `ignore_neutral` | `False` | Set to `True` to prevent the `"is now controled by team Neutral"` gym notifications
+| `from_team`      |         | Array of defeated gym team names. Use `"Instinct"`, `"Mystic"`, or `"Valor"`. Wrap list in brackets `[ ]`. Each element must be in quotes, separated by comma `,`. 
+| `to_team`        |         | Array of new gym owner team names. Use `"Instinct"`, `"Mystic"`, or `"Valor"`. Wrap list in brackets `[ ]`. Each element must be in quotes, separated by comma `,`.
+| `min_dist`       | `"0"`   | Minimum distance to alarm on gym notifications.
+| `max_dist`       | `"inf"` | Maximum distance to alarm on gym notifications. Use `"Inf"` to notify on any distance.
+
+
+**Example: Alarm on all gym team activity at any distance**
 ```json
     "gyms":{
         "enabled":"True",
@@ -59,7 +69,23 @@ You may filter on gyms based on teams, and within a minimum / maximum distance f
         ]
     },
 ```
-* `"ignore_neutral"`, if set to `"True"`, will prevent the "is now controled by team Neutral" gym notifications. It is recommended to set this value to `True`.
+
+**Example:  Alert on Instinct defeated gyms within 500m, or all Valor gym activity anywhere**
+```json
+    "gyms":{
+        "enabled":"True",
+        "ignore_neutral":"False",
+        "filters":[
+            {
+                "from_team":["Instinct"], "to_team":["Valor", "Instinct", "Mystic"],
+                "min_dist":"0", "max_dist":"500"
+            },
+            {
+                "from_team":["Valor"], "to_team":["Valor"]
+            }
+        ]
+    },
+```
 
 ## Pokestop Filters
 You may filter on lured pokestops within a minimum and maximum distance from your set location.  Lured pokestops within this range will trigger your Pokestop alarm notification.
@@ -77,10 +103,7 @@ You may set filters for Pokemon at 2 levels of the `"Pokemon":` section of `filt
 1. Default level
 2. Specific Pokemon level, e.g., at the bulbasaur line
 
-Filters at the Default level will act as the defaults for all Pokemon.  Filters at the Specific Pokemon level will only apply to that particular Pokemon.
-
-### Pokemon Level Options
-The first 5 parameters - `<min_dist>`, `<max_dist>`, `<min_iv>`, `<max_iv`>, and `<ignore_missing>` - set default limits for all Pokemon based on distance, percent IV, or webhooks missing pokemon stat information. These same values can be overridden at the specific Pokemon level.
+Filters at the Default level will act as the default for all Pokemon.  Filters at the Specific Pokemon level will override the default settings and only apply to that particular Pokemon.
 
 Below is an example of the Default level options:
 
@@ -95,10 +118,12 @@ Below is an example of the Default level options:
         },
 ```
 
+Below is a description of all filters available at both Default and Specific Pokemon level:
+
 | Parameter  | Default | Description |
 |:-----------|:--------|:------------------------------------------------------------|
-| `min_dist` | `"0"`   | Minimum distance from current location by which all Pokemon will trigger configured alarm(s).  Overrides Pokemon level default. Pokemon farther than this value will not trigger configured alarm(s). Can be an integer, e.g., `"1000".
-| `max_dist` | `"inf"  | Maximum distance from current location by which the specific Pokemon will trigger configured alarm(s). Overrides Pokemon level default. Pokemon farther than this value will not trigger configured alarm(s). Can be an integer, e.g., `"1000"`, or `"inf"` for unlimited range.
+| `min_dist` | `"0"`   | Minimum distance from current location by which all Pokemon will trigger configured alarm(s).  Pokemon farther than this value will not trigger configured alarm(s). Can be an integer, e.g., `"1000".
+| `max_dist` | `"inf"`  | Maximum distance from current location by which the specific Pokemon will trigger configured alarm(s). Pokemon farther than this value will not trigger configured alarm(s). Can be an integer, e.g., `"1000"`, or `"inf"` for unlimited range.
 | `min_iv`   | `"0"`   | Minimum percent IV for all Pokemon. 0 to 100.
 | `max_iv`   | `"100"` | Maximum percent IV for all Pokemon. 0 to 100.
 | `min_atk` | "0" | Value, 0-15, corresponding to the attack IV 
@@ -113,8 +138,8 @@ Below is an example of the Default level options:
 | `ignore_missing` | `True` | Prevents PokeAlarm from notifying on Pokemon without moves or IVs.  WARNING: enabling this could potentially result in losing a snorlax, lapras, dragonite, etc., if RocketMap screws up and sends the webhook without info. A better way is to configure your blacklist or whitelist in RocketMap and set the unwanted Pokemon in filters.json to `False`.
 | `size` | null| Useful for the tiny Rattata and big Magikarp badges.  Filter with  `"Tiny`, `"Small"`, `"Normal"`, `"Large"`, and `"Big"`
 | `ignore_missing` | `True` | Prevents PokeAlarm from notifying on Pokemon without moves or IVs.  WARNING: enabling this could potentially result in losing a snorlax, lapras, dragonite, etc., if RocketMap errors and sends the snorlax webhook without info. A better way is to configure your blacklist or whitelist in RocketMap and set the unwanted Pokemon in filters.json to `False`.
-     
-### Example Pokemon Level Configs
+  
+### Example Pokemon Config
 
 By default, PokeAlarm will notify on any Pokemon set to `"True"`, at any distance and with any %IV.  A config to notify for any Bulbasaur or Venusaur would look like below:
 ```json
@@ -134,7 +159,6 @@ By default, PokeAlarm will notify on any Pokemon set to `"True"`, at any distanc
 ```
 **Setting Default Distance for all Pokemon.** Let's say we want to be notified of any Pokemon within **5000m** from our current location.  We update `"max_dist"` to accomplish this:
 ```json
-    "pokemon":{
     "pokemon":{
         "enabled":"True",
         "default": {
@@ -167,8 +191,6 @@ By default, PokeAlarm will notify on any Pokemon set to `"True"`, at any distanc
 ```
 ## Specific Pokemon Level Options
 At the lower specific Pokemon level, each Pokemon can have a configuration that will override the defaults that was set at the Default level.
-
-
 
 ### Example Specific Pokemon Config
 
@@ -289,12 +311,14 @@ we would configure our `filters.json` for Bulbasaur like so:
 ```
 
 **Filtering on size.**
-Want those tiny Rattata and big Magikarp badges?  Here's how to add them to your `filters.json`.  (Note, you'll need to use multifiltering or two different filters.json files if you're looking for either high IV or big Magikarp.)
+
+You may filter on pokemon size.  Options are, from smallest to largest: `"Tiny"`, `"Small"`, `"Normal"`, `"Large"`, or `"Big"`.  Options must be wrapped in `[ ]`, similar to `quick_move`, `charge_move`, and `moveset`.
+
+Example:  Filtering for tiny Ratatta or big Magikarp
 ```json
 "Rattata":{"size":["Tiny"] },
 "Magikarp":{ "size":["Big"] },
 ```
-
 
 ## Final Words
 The `filters.json.example` file contains the entire list of generation 1 and 2 Pokemon, and includes some examples of how the various parameters can be used to fit your needs.  Add the optional key-value pairs for each of your specific Pokemon. Remember that keys such as `max_dist` and `min_iv` set at the specific Pokemon level will override the values of `max_dist` and `min_iv` set at the Default level.
