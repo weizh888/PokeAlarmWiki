@@ -32,6 +32,8 @@
 #####Dynaimic Text Subsitutions
 * `<geofence>` added - the name of the first geofence in which the notifcation is in
 * `<size>` now list either 'tiny', 'small', 'normal', 'large', or 'big'
+* Quick moves now use the following:  `<quick_move>, <quick_id>, <quick_damage>, <quick_dps>, <quick_duration>, <quick_energy>`
+* Charges moves now use the following: `<charge_move>, <charge_id>, <charge_damage>, <charge_dps>, <charge_duration>, <charge_energy>`
     
 ####Alarms
 * All Services
