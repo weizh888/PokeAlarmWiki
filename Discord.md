@@ -72,6 +72,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 
 | Parameters       | Description                                       | Default                                       |
 | -----------------|---------------------------------------------------|-----------------------------------------------|
+| `webhook_url`    | URL of specific channel name.  Overrides `webhook_url` at Alarm level.  Use to post only 
 | `username`       | Username the bot should post the message as       | `<pkmn>`                                      | 
 | `icon_url`       | URL path to pokemon icon	   					   |												 |
 | `title`          | Notification text to begin the message            | `A wild <pkmn> has appeared!`                 |
@@ -92,6 +93,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 	"startup_message":"True",
 	"startup_list":"True",
 	"pokemon":{
+	    "webhook_url":"YOUR_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
 		"username":"<pkmn>",
 		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
 		"title":"A wild <pkmn> has appeared!",
@@ -99,6 +101,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 		"body": "Available until <24h_time> (<time_left>)."
 	},
 	"pokestop":{
+	    "webhook_url":"YOUR_WEBHOOK_URL_FOR_POKESTOP_CHANNEL",
 		"username":"Pokestop",
 		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png",
 		"title":"Someone has placed a lure on a Pokestop!",
@@ -106,6 +109,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 		"body":"Lure will expire at <24h_time> (<time_left>)."
 	},
 	"gym":{
+	    "webhook_url":"YOUR_WEBHOOK_URL_FOR_GYM_CHANNEL",
 		"username":"Pokemon Gym",
 		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png",
 		"title":"A Team <old_team> gym has fallen!",
@@ -118,12 +122,12 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 ### Mini Map Configuration
 ![](images/minimap.png)
 
-You can enable a small Google Static Maps image after your post, showing the location of the alarmed pokemon, gym, or pokestop.  This is done by adding the `map` parameter to your `pokemon`, `gym`, or `pokestop` sections of your alarm. 
+You can enable a small Google Static Maps image after your post, showing the location of the alarmed pokemon, gym, or pokestop.  This is done by adding the `map` parameter at the Alarm level (which will apply maps for any notification), or individually to the `pokemon`, `gym`, or `pokestop` sections of your alarm.
 
 Below is an example of enabling the mini map for pokemon.
 ```json
 	"pokemon":{
-		"channel":"general",
+		"webhook_url":"YOUR_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
 		"username":"<pkmn>",
 		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
 		"title":"A wild <pkmn> has appeared!",
