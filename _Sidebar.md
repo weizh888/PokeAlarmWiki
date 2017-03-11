@@ -26,3 +26,4 @@
 ### **Documentation**
 [Webhook Standards](https://github.com/kvangent/PokeAlarm/wiki/Webhook-Standard)  
 [Blog](blog_content)  
+[Patch Notes](patch_notes)

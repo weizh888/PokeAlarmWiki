@@ -5,6 +5,8 @@
 
 PokeAlarm is a third party extension of [PokemonGo-Map](https://github.com/PokemonGoMap/PokemonGo-Map) that allows you to receive external notifications via one or more message services.  Customized notifications are available by configuring the `alarms.json` file.
 
+### [Latest Patch Notes](patch_notes)
+
 We currently support the following services:
 * [Boxcar](https://github.com/kvangent/PokeAlarm/wiki/Boxcar)
 * [Discord](https://github.com/kvangent/PokeAlarm/wiki/Discord)
