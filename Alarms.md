@@ -12,7 +12,7 @@
 ## Prerequisites
 This guide assumes:
 
-1. You have a working PokemonGo-Map installation
+1. You have a working RocketMap installation
 2. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
 
 ## Introduction

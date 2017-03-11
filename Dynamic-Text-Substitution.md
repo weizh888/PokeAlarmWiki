@@ -11,7 +11,7 @@
 ## Prerequisites
 This guide assumes:
 
-1. You have a working PokemonGo-Map installation
+1. You have a working RocketMap installation
 2. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
 3. You have read and understood the [Alarm Configuration](https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration) Wiki
 4. You are comfortable with the layout of `alarms.json`.

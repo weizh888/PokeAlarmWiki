@@ -1,4 +1,4 @@
-Updated: 6 March 2017
+Updated: 13 March 2017
 
 ## Purpose
 * This document is intended to quickly provide PokeAlarm users with info to get started. It is not intended to replace the full wiki.
@@ -7,14 +7,13 @@ Updated: 6 March 2017
 
 * [Before you begin](#before-you-begin)
 * [Notes](#notes)
-* [Known issues](#known-issues)
 * [Introduction](#introduction)
   * [Changes to JSON files](#changes-to-json-files)
     * [Config file: `filters.json`](#config-file-filtersjson)
         * [Gyms](#gyms)
         * [Changes in move filtering](#changes-in-move-filtering)
-            * [Filtering on a single `move_1` move](#filtering-on-a-single-move_1-move)
-            * [Filtering on multiple `move_2` moves](#filtering-on-multiple-move_2-moves)
+            * [Filtering on a single `quick_move`](#filtering-on-a-single-quick_move)
+            * [Filtering on more than one `charge_move`](#filtering-on-more-than-one-charge_move)
             * [NEW: filtering on `moveset`](#new-filtering-on-moveset)
             * [NEW: filtering on `size`](#new-filtering-on-size)
         * [New: Optional ignoring of pokemon with missing IVs or moves](#new-optional-ignoring-of-pokemon-with-missing-ivs-or-moves)
@@ -35,22 +34,20 @@ Updated: 6 March 2017
 
 ## Before you begin
 * Deadly has to eat! Get the word out about PokeAlarm and send a [Paypal tip](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD) or [Patreon pledge](https://www.patreon.com/pokealarm) his way for a job well done and to keep the features coming.
-* Version 3 is now in the master branch
+* Version 3.1 is now in the master branch.  Read the patch notes if you are upgrading from version 3.
 * Version 2 is now in a separate branch, [v2](https://github.com/kvangent/PokeAlarm/tree/v2)
-* If you have experience with PokeAlarm v2, use the .example files in v3 root to quickly get started
-* This document is a work in progress. I'm splitting time between keeping the docs up and catching the Pokes =P 
+* If you have experience with PokeAlarm v2, use the .example files in v3 root to quickly get started 
 * Features are constantly being added. Always visit the #announcements discord channel for udpates
 * Contact us in the [#troubleshooting discord channel](https://discordapp.com/channels/215181169761714177/218822834225545216) or open a ticket on our [github page](https://github.com/kvangent/PokeAlarm/issues)
 
 ## Notes
 
-* If RocketMap is not configured to send moves or IVs for particular pokemon, e.g., `-eblk`, then you will get a `unknown` message for notifications if you do not set that particular pokemon to `"false"` in `filters.json`.  This behavior is intentional in PokeAlarm v3. This is to ensure that you get the snorlax notification even if RocketMap sends the webhook without IVs or moves.  To bypass, use `"ignore_missing":"True"` in your `filters.json` either globally or individually for each Pokemon.
+* If RocketMap is not configured to send moves or IVs for particular pokemon, e.g., `-eblk`, then you will get a `unkn` message for stats if you do not set that particular pokemon to `"false"` in `filters.json`.  This behavior is intentional in PokeAlarm v3. This is to ensure that you get the snorlax notification even if RocketMap sends the webhook without IVs or moves.  To bypass, use `"ignore_missing":"True"` in your `filters.json` either globally or individually for each Pokemon.
+* RocketMap webhooks have been recently undergoing changes.  You may see errors in the PokeAlarm v3 log such as `[    MainProcess][WebhookStr][   ERROR] Encountered error while processing webhook (TypeError: int() argument must be a string or a number, not 'NoneType')
+`. This is because RocketMap is sending new webhook information that PokeAlarm hasn't yet incorporated.  Your PokeAlarm setup will still function normally.
 * Remember - you only need to edit the JSON, `geofence.txt`, and `config.ini` files.  Other modifications to the code are not supported!!!
 * PyCharm is a great IDE to manage your JSON and config files.  The EDU edition is free: https://www.jetbrains.com/pycharm-edu . This will will help you avoid those pesky formatting errors.
 * Alternatively, use an online JSON editor like http://www.jsoneditoronline.org which will yell at you if the json is incorrectly formatted
-
-## Known issues
-* RocketMap webhooks have been recently undergoing changes.  You may see errors in the PokeAlarm v3 log such as `[MainProcess][Structures][ERROR] Invalid type specified (scheduler). Are you using the correct map type?` This is because RocketMap is sending new webhook information that PokeAlarm hasn't yet incorporated.  Your PokeAlarm setup will still function normally
 
 ## Introduction
 PokeAlarm v3 takes advantage of multiprocessing to simplify running multiple configurations. To further simplify configuration, the `alarms.json` as you know it in v2 has been split into `alarms.json` and `filters.json`.  Geofencing is still handled by `geofence.txt`, which now allows for multiple geofences in the same file.  You can add multiple config files in a list in `config.ini`.
@@ -84,16 +81,18 @@ See the .example files in your PokeAlarm root directory for sample setups.
 * The `pokemon:` section in the PokeAlarm v2 has been moved to its own file, `filters.json`.
 
 #### Gyms
+
 ```
-    "gyms":{
-		"enabled":"False",
-		"ignore_neutral":"True",
-		"min_dist":"0",
-		"max_dist":"inf",
-        "Valor":"True",
-        "Mystic":"True",
-        "Instinct":"True"
-    },
+"gyms":{
+    "enabled":"False",
+    "ignore_neutral":"False",
+    "filters":[
+        {
+            "from_team":["Valor", "Instinct", "Mystic"], "to_team":["Valor", "Instinct", "Mystic"],
+            "min_dist":"0", "max_dist":"inf"
+        }
+    ]
+},
 ```
 
 * A new key, `ignore_neutral`, has been added.  This is to prevent those "It is now controlled by Neutral" gym messages.
@@ -101,7 +100,7 @@ See the .example files in your PokeAlarm root directory for sample setups.
 
 ### Changes in move filtering
 
-#### Filtering on a single `move_1` move
+#### Filtering on a single `quick_move`
 The following example will filter for Dragonites with Dragon Breath.  In Version 3, you must wrap the move in brackets `[ ]`.
 
 `"Dragonite": { "move_1": [ "Dragon Breath" ] }`
@@ -129,14 +128,24 @@ OR
 
 ### NEW: filtering on `size`
 Want those tiny Rattata and big Magikarp badges?  Here's how to add them to your `filters.json`.  (Remember, you'll need two different JSON files if you're looking for either high IV or XL karp.)
-```buildoutcfg
-"Rattata":{"size":["XS"] },
-"Magikarp":{ "size":["XL"] },
+```json
+"Rattata":{"size":['tiny'] },
+"Magikarp":{ "size":['big'] },
 ```
-| Filter | Default | Description |
-|:------:|:-------:|:------------|
-| `size` | | `"XS"`,`"Small"`, `"Normal"`, `"Large"`, `"XL"`
 
+If you'd like to filter on other sizes, select from the following:
+
+**PokeAlarm Version 3**
+
+| Filter | Description, Version 3 |
+|:------:|:------------|
+| `size` | `"XS"`,`"Small"`, `"Normal"`, `"Large"`, `"XL"`
+
+**PokeAlarm Version 3.1** renames `XS` and `XL` to `tiny` and `big`, to better match in-game text.
+
+| Filter | Description, Version 3.1 |
+|:------:|:------------|
+| `size` |`"tiny"`,`"Small"`, `"Normal"`, `"Large"`, `"big"`
 
 #### New: Optional ignoring of pokemon with missing IVs or moves
 If RocketMap is not configured to send moves or IVs for particular pokemon, e.g., `-eblk`, then you will get a `unknown` message for notifications if you do not set that particular pokemon to `"false"` in `filters.json`. This behavior is intentional in PokeAlarm v3. This is to ensure that you get the snorlax notification even if RocketMap sends the webhook without IVs or moves.
@@ -173,7 +182,7 @@ PokeAlarm v3 will fail otherwise.
 * the `alarms:[]` section in PokeAlarm v2 configuration file has been moved into its own file, `alarms.json`
 * The `alarms:` key has been removed from the file. Otherwise, everything is the same from v2
 * You may copy your alarm configuration from v2 into v3
-* The existing documentation for Alarm services should still be applicable to PokeAlarm v3
+* The existing documentation for Alarm services should still be applicable to PokeAlarm v3.  Some keys have changed in v3.1
 
 #### New Filters
 
@@ -181,30 +190,33 @@ PokeAlarm v3 will fail otherwise.
 #### New and updated Dynamic Text Substitutions
 Version 3 adds new DTS options and makes slight changes to some existing ones.
 
-| Version 2 | Version 3  | Notes |
-|:---------:|:----------:|:-----
-| `<id>`    | `<pkmn_id>`| Pokemon ID. Primarily affects Pokemon image URL in notification
-| `<move1>` | `<move_1>` | Added underscore to match code styling of project
-| `<move2>` | `<move_2>` | Added underscore to match code styling of project 
-|           | `<min_dist>` | New option
-|           | `<max_iv>` | New option. When coupled with `<min_iv>`, useful for filtering on a specific IV range of pokemon.  Or useful for finding 0% IV pokemon? :)
-|           | `<iv_0>` | IV, rounded to 0 decimals (great for Twitter)
-|           | `<iv_2>` | IV, rounded to 2 decimals
-| | `<move_1_damage>` | |
-| | `<move_1_dps>` | |
-| | `<move_1_duration>`
-| | `<move_1_energy>`
-| | `<move_2_damage>`
-| | `<move_2_dps>`
-| | `<move_2_duration>`
-| | `<move_2_energy>`
-| | `<gender>`
-| | `<weight>`
-| | `<height>`
-| | `<size>`
+| Version 2 | Version 3  | Version 3.1 | Notes |
+|:---------:|:----------:|:------------:|:------|
+| | | `<geofence>` | Name of the geofence where the alerted Pokemon originated
+| `<id>`    | `<pkmn_id>`| No Change | Pokemon ID. Primarily affects Pokemon image URL in notification
+| `<move1>` | `<move_1>` | `<quick_move>` | Added underscore to match code styling of project
+| `<move2>` | `<move_2>` | `<charge_move>` | Added underscore to match code styling of project 
+|           | `<min_dist>` | No Change | New option
+|           | `<max_iv>` | No Change | | New option. When coupled with `<min_iv>`, useful for filtering on a specific IV range of pokemon.  Or useful for finding 0% IV pokemon? :)
+|           | `<iv_0>` | No Change | IV, rounded to 0 decimals (great for Twitter)
+|           | `<iv_2>` | No Change | IV, rounded to 2 decimals
+| | |`<quick_id>`
+| | `<move_1_damage>` | `<quick_damage>` |
+| | `<move_1_dps>` |`<quick_dps>` |
+| | `<move_1_duration>` | `<quick_duration>`
+| | `<move_1_energy>` | `<quick_energy>`
+| | |`<charge_id>`
+| | `<move_2_damage>` | `<charge_damage>`
+| | `<move_2_dps>` | `<charge_dps>`
+| | `<move_2_duration>` | `<charge_duration>`
+| | `<move_2_energy>` | `<charge_energgy>`
+| | `<gender>` | No Change
+| | `<weight>` | No Change
+| | `<height>`| No Change
+| | `<size>` | No Change
 Want more options? [Buy Deadly a beer](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD) and maybe he'll come around. =P
 
-## Upgrading from PokeAlarm Version 2 to Version 3
+## Upgrading from PokeAlarm Version 2 to Version 3.1
  
 Run the following commands: 
 ```
