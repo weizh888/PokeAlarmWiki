@@ -9,7 +9,7 @@
       * [Example Pokemon Config](#example-pokemon-config)
       * [List of Optional Parameters for Specific Pokemon](#list-of-optional-parameters-for-specific-pokemon)
       * [Example Specific Pokemon Config](#example-specific-pokemon-config)
-        * [Filtering on multiple combinations of parameters, a.k.a., "Multifiltering"](#filtering-on-multiple-combinations-of-parameters-a.k.a.-Multifiltering)
+        * [Filtering on multiple combinations of parameters, a.k.a., "Multifiltering"](#filtering-on-multiple-combinations-of-parameters-aka-multifiltering)
 * [Final Words](#final-words)
 ## Prerequisites
 This guide assumes:
