@@ -16,6 +16,7 @@ This guide assumes:
 
 1. You have a working RocketMap installation
 2. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
+3. You are using the latest version of PokeAlarm
 
 ## Introduction
 
