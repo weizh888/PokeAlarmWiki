@@ -1,11 +1,14 @@
 ![](images/logo.png)  
 ![Python 2.7](https://img.shields.io/badge/python-2.7-blue.svg)
 [![license](https://img.shields.io/github/license/kvangent/PokeAlarm.svg)]()
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)  
+
 
 PokeAlarm is a third party extension of [RocketMap](https://github.com/RocketMap/RocketMap) that allows you to receive customized notifications via one or more messaging services.
 
-### [Latest Patch Notes](patch_notes)
+### Support PokeAlarm [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5W9ZTLMS5NB28&lc=US&item_name=PokeAlarm&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)  [![Donate](https://img.shields.io/badge/Donate-Patron-orange.svg)](https://www.patreon.com/bePatron?u=5193416)  
+If you like PokeAlarm, and enjoying seeing updates and new features added, consider donating to us. Donating to PokeAlarm helps cover the costs of running my own maps (which I need to test PokeAlarm) and lets me spend more time working on PokeAlarm instead of on something else.
+
+### [Latest Patch Notes](patch_notes.md)
 
 We currently support the following services:
 * [Discord](Discord)
