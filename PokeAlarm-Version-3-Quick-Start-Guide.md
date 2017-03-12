@@ -275,9 +275,9 @@ Version 3 requires `filters.json` and `alarms.json`.  `Geofence.txt` is optional
 
 | Command line parameter | default | Desciption |
 |-----------|:----------:|---------------------|
-`-f FILTERS.JSON` | `filters.json` | your desired pokemon, gym, and pokestop filters.  Visit the [Filters](Filters.md) wiki article for more details.
-`-gf GEOFENCE_FILE` | `geofence.txt` | File containing a list of coordinates for one or more geofence. Requires a header, in brackets `[ ]`, before each list of coordinates.  Visit the [Geofences](Geofences.md) wiki article for more details.
-`-a ALARMS.JSON` | `alarms.json` | set of alarms, or services, e.g., Twitter, Discord, Slack.  Visit the [Alarms](Alarms.md) wiki article for details.
+`-f FILTERS.JSON` | `filters.json` | your desired pokemon, gym, and pokestop filters.  Visit the [Filters](Filters) wiki article for more details.
+`-gf GEOFENCE_FILE` | `geofence.txt` | File containing a list of coordinates for one or more geofence. Requires a header, in brackets `[ ]`, before each list of coordinates.  Visit the [Geofences](Geofences) wiki article for more details.
+`-a ALARMS.JSON` | `alarms.json` | set of alarms, or services, e.g., Twitter, Discord, Slack.  Visit the [Alarms](Alarms) wiki article for details.
 `-m NUMBER_OF_MANAGERS` | `1` | number of total PokeAlarm Managers (processes)
 
 ### Running one Manager from the command line

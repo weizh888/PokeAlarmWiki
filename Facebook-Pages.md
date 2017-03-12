@@ -24,7 +24,7 @@ Please familiarize yourself with all of the above before proceeding.
 
 PokeAlarm offers the following for Facebook Pages:
 
-* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Subsitution.md)
+* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Subsitution)
 
 ## Basic Config
 

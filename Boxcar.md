@@ -29,7 +29,7 @@ Please familiarize yourself with all of the above before proceeding.
 PokeAlarm offers the following for Boxcar:
 * High resolution icons for pokemon, gym, and pokestop notifications
 * Custom notification tones
-* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Substitution.md)
+* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Substitution)
 
 ## Basic Config
 

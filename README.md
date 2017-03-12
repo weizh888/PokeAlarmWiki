@@ -5,16 +5,16 @@
 
 PokeAlarm is a third party extension of [RocketMap](https://github.com/RocketMap/RocketMap) that allows you to receive customized notifications via one or more messaging services.
 
-### [Latest Patch Notes](patch_notes.md)
+### [Latest Patch Notes](patch_notes)
 
 We currently support the following services:
-* [Discord](Discord.md)
-* [Pushbullet](Pushbullet.md) 
-* [Slack](Slack.md)
-* [Telegram](Telegram.md) 
-* [Twilio (SMS)](Twilio.md)
-* [Twitter](Twitter.md)
-* [Facebook Pages](Facebook-Pages.md)
+* [Discord](Discord)
+* [Pushbullet](Pushbullet) 
+* [Slack](Slack)
+* [Telegram](Telegram) 
+* [Twilio (SMS)](Twilio)
+* [Twitter](Twitter)
+* [Facebook Pages](Facebook-Pages)
 
 ## What exactly is PokeAlarm?
 

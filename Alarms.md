@@ -226,4 +226,4 @@ Below is a working alarm configuration for discord and slack:
 
 Note both have `"active":"true"` set, meaning both alarms are enabled.  Setting either to "false" will disable the specific alarm.. This allows you to have alarms set up and ready to go, but only enabled when you want them.
 
-Visit the wiki article on [Filters](Filters.md) to limit pokemon notifications by distance, %IV, and moves with the `filters.json` file.
+Visit the wiki article on [Filters](Filters) to limit pokemon notifications by distance, %IV, and moves with the `filters.json` file.

@@ -29,7 +29,7 @@ PokeAlarm offers the following for Telegram:
 
 * Notifications to multiple Telegram channels
 * Customizable Google Map image of the pokemon, gym, and/or pokestop location
-* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Substitution.md)
+* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Substitution)
 
 ## Basic Config
 

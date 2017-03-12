@@ -28,7 +28,7 @@ PokeAlarm offers the following for Discord:
 
 * Custom username for posting
 * High resolution icons for pokemon, gym, or pokestop notifications
-* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Substitution.md)
+* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Substitution)
 
 
 

@@ -24,7 +24,7 @@ This guide assumes:
 
 PokeAlarm offers the following for Twilio:
 
-* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Substitution.md)
+* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Substitution)
 
 ## Basic Config
 These `alarms.json` parameters are required to enable the alarm service:
