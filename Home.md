@@ -1,4 +1,4 @@
-![](images/logo.png)  
+![](https://github.com/kvangent/PokeAlarm/wiki/images/logo.png)  
 ![Python 2.7](https://img.shields.io/badge/python-2.7-blue.svg)
 [![license](https://img.shields.io/github/license/kvangent/PokeAlarm.svg)]()
 
