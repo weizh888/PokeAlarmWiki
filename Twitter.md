@@ -24,7 +24,7 @@ Please familiarize yourself with all of the above before proceeding.
 
 PokeAlarm offers the following for Twitter:
 
-* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Substitution.md)
+* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Substitution)
 
 
 ## Basic Config
