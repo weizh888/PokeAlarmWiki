@@ -103,15 +103,15 @@ See the .example files in your PokeAlarm root directory for sample setups.
 #### Filtering on a single `quick_move`
 The following example will filter for Dragonites with Dragon Breath.  In Version 3, you must wrap the move in brackets `[ ]`.
 
-`"Dragonite": { "move_1": [ "Dragon Breath" ] }`
+`"Dragonite": { "quick_move": [ "Dragon Breath" ] }`
 
-#### Filtering on multiple `move_2` moves
+#### Filtering on multiple `charge_move` moves
 The following example will filter for Dragonites with either Dragon Claw or Hyper Beam.  In Version 3, you must wrap the moves in brackets `[ ]`, and separate each move with a comma `,`.
 
-`"Dragonite": { "move_2": [ "Dragon Claw", "Hyper Beam" ] }`
+`"Dragonite": { "charge_move": [ "Dragon Claw", "Hyper Beam" ] }`
 
 #### NEW: filtering on `moveset`
-New to PokeAlarm Version 3 is the ability to filter on a moveset, that is, a specific combination of `move_1` AND `move_2`.  This is useful for looking for attacking or defending Pokemon.
+New to PokeAlarm Version 3 is the ability to filter on a moveset, that is, a specific combination of `quick_move` AND `charge_move`.  This is useful for looking for attacking or defending Pokemon.
 
 The following example will filter for Dewgong with Frost Breath and Blizzard:
 
@@ -194,22 +194,22 @@ Version 3 adds new DTS options and makes slight changes to some existing ones.
 |:---------:|:----------:|:------------:|:------|
 | | | `<geofence>` | Name of the geofence where the alerted Pokemon originated
 | `<id>`    | `<pkmn_id>`| No Change | Pokemon ID. Primarily affects Pokemon image URL in notification
-| `<move1>` | `<move_1>` | `<quick_move>` | Added underscore to match code styling of project
-| `<move2>` | `<move_2>` | `<charge_move>` | Added underscore to match code styling of project 
+| `<move1>` | `<quick_move>` | `<quick_move>` | Added underscore to match code styling of project
+| `<move2>` | `<charge_move>` | `<charge_move>` | Added underscore to match code styling of project 
 |           | `<min_dist>` | No Change | New option
 |           | `<max_iv>` | No Change | | New option. When coupled with `<min_iv>`, useful for filtering on a specific IV range of pokemon.  Or useful for finding 0% IV pokemon? :)
 |           | `<iv_0>` | No Change | IV, rounded to 0 decimals (great for Twitter)
 |           | `<iv_2>` | No Change | IV, rounded to 2 decimals
 | | |`<quick_id>`
-| | `<move_1_damage>` | `<quick_damage>` |
-| | `<move_1_dps>` |`<quick_dps>` |
-| | `<move_1_duration>` | `<quick_duration>`
-| | `<move_1_energy>` | `<quick_energy>`
+| | `<quick_damage>` | `<quick_damage>` |
+| | `<quick_dps>` |`<quick_dps>` |
+| | `<quick_duration>` | `<quick_duration>`
+| | `<quick_energy>` | `<quick_energy>`
 | | |`<charge_id>`
-| | `<move_2_damage>` | `<charge_damage>`
-| | `<move_2_dps>` | `<charge_dps>`
-| | `<move_2_duration>` | `<charge_duration>`
-| | `<move_2_energy>` | `<charge_energgy>`
+| | `<charge_damage>` | `<charge_damage>`
+| | `<charge_dps>` | `<charge_dps>`
+| | `<charge_duration>` | `<charge_duration>`
+| | `<charge_energy>` | `<charge_energy>`
 | | `<gender>` | No Change
 | | `<weight>` | No Change
 | | `<height>`| No Change
