@@ -15,7 +15,7 @@ Geofencing will restrict PokeAlarm alerts to a defined geographical area.  The a
 
 ## Instructions
 
-Create a text file with with a series of at least 2 *latitude,longitude* sets and place this in the same folder as `start_pokealarm.py`.
+Create a text file with with a series of at least 3 *latitude,longitude* sets and place this in the same folder as `start_pokealarm.py`. (A minimum of 3 points are required as of PokeAlarm v3.1.)
 
 **To define a rectangular geofence:**  Use 2 lat/lon sets, with the first set defining the top left of the rectangle, and the second defining the bottom right of the rectangle.
 
