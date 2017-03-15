@@ -23,7 +23,7 @@
     * `filters` supports the Multifilter format with `min_dist` and `max_dist` fields
     
 * **Gym**
-    * Now only three fields `enabled`, `ignore_nuetral`, and `filters`
+    * Now only three fields `enabled`, `ignore_neutral`, and `filters`
     * `filters` supports multifilters with the following fields:
         * `"from_team` - Array of valid previous team names
         * `to_team` - Array of valid current team names
