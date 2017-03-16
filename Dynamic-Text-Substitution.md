@@ -96,6 +96,7 @@ For what fields (title, message, etc) you have the option to change, please see 
 | `<size>`        | Size of the alerted pokemon            |
 | `<geofence>`     | Geofence name of where the alerted pokemon originated |
 | `<gmaps>` | Google Maps URL to pokemon location
+| `<applemaps>` | Apple Maps URL to pokemon location |
 *If no location has been set, dist will always return 0 (meters or yards)
 
 **For map tools supporting this feature, this will show messages for spawned pokemon, that'll be back after a hidden phase. I.e. for pokemon from a 2x15 point it'll show '15m later back for 15m.', when scanned during the first 15 minutes.
