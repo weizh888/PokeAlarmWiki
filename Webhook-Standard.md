@@ -3,22 +3,25 @@ Pokemon standard now includes moveset and IVs as of commit [oc1b4](https://githu
 #### Example:
 ```json
 {
-	"type": "pokemon",
-	"message": {
-		"move_1": 221,
-		"move_2": 118,
-		"disappear_time": 1375014270,
-		"pokemon_id": 1,
-		"individual_stamina": 15,
-		"spawnpoint_id": "0",
-		"individual_defense": 2,
-		"longitude": -45.10312534490142,
-		"time_until_hidden_ms": 884287,
-		"latitude": 40.677737099053275,
-		"last_modified_time": 1475033386661,
-		"individual_attack": 5,
-		"encounter_id": "0"
-	}
+  "type": "pokemon",
+    "message": {
+        "encounter_id": "0",
+        "spawnpoint_id": "0",
+        "pokemon_id": 1,
+        "latitude": -45.10312534490142,
+        "longitude": 40.677737099053275,
+        "disappear_time": 1584828794,
+        "last_modified_time": 1475033386661,
+        "time_until_hidden_ms": 5000,
+        "individual_attack": 15,
+        "individual_defense": 15,
+        "individual_stamina": 15,
+        "move_1": 214,
+        "move_2": 90,
+        "height": 1.0,
+        "weight": 1.0,
+        "gender": 1
+    }
 }
 ```
 
