@@ -89,7 +89,7 @@ For what fields (title, message, etc) you have the option to change, please see 
 | `<charge_duration>` | Duration value of charge move
 | `<charge_dps>` | Damage per second value of charge move
 | `<charge_energy>` | Energy of charge move
-| `<encounter_id>`| Database encounter_id of the pokemon   |
+| `<id>`| Database encounter_id of the pokemon   |
 | `<gender>`      | Gender of the alerted pokemon          |
 | `<height>`      | Height of the alerted pokemon          |
 | `<weight>`      | Weight of the alerted pokemon          |
