@@ -120,9 +120,9 @@ If your key is valid, you should see this same static map image in your browser:
 
 There are 2 methods to start **PokeAlarm** with your Google Maps API key:
 
-1. Run the command `python runwebhook.py -k YOUR_GOOGLE_MAPS_API_KEY`
+1. Run the command `python start_pokealarm.py -k YOUR_GOOGLE_MAPS_API_KEY`
 
-2. Add `key:YOUR_GOOGLE_MAPS_API_KEY` to `config.ini` located in the `config` subfolder of your PokeAlarm installation, then run the command `python runwebhook.py`.
+2. Add `key:YOUR_GOOGLE_MAPS_API_KEY` to `config.ini` located in the `config` subfolder of your PokeAlarm installation, then run the command `python start_pokealarm.py`.
 
 
 

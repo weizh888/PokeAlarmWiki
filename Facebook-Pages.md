@@ -52,12 +52,11 @@ These `alarms.json` parameters - `active`, `type`, and `page_access_token` - are
 ### Optional Parameters
 In addition to the 3 required parameters, several optional parameters are available to personalize your Facebook Pages notifications.  Below is an example of these optional parameters and how they are incorporated into a functional alarm layout for Facebook Pages.
 
-These optional parameters, `startup_message`, and `startup_list`, are entered at the same level as `"type":"facebookpages"`.
+These optional parameters are entered at the same level as `"type":"facebookpages"`.
 
 | Parameters         | Description                                                | Default                      |
 |--------------------|------------------------------------------------------------|------------------------------|
 | `startup_message`  | confirmation post when PokeAlarm initialized               | `True`                       |
-| `startup_list`     | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`            |
 
 These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
 
@@ -75,7 +74,6 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 	"type":"facebook_page",
 	"page_access_token":"YOUR_PAGE_ACCESS_TOKEN",
 	"startup_message":"True",
-	"startup_list":"True",
 	"pokemon":{
 		"message": "<pkmn> available. <move_1>/<move_2> (<iv>% - <atk>/<def>/<sta>)",
 		"link": "<gmaps>"

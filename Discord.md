@@ -91,7 +91,6 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 	"type":"discord",
 	"webhook_url":"YOUR_WEBHOOK_URL",
 	"startup_message":"True",
-	"startup_list":"True",
 	"pokemon":{
 	    "webhook_url":"YOUR_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
 		"username":"<pkmn>",

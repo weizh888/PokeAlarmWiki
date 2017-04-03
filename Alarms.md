@@ -44,11 +44,6 @@ Alarms are represented as a list of JSON Objects, inside an array labeled alarms
 [
   {
     "active": "False",
-    "type": "boxcar",
-    "user_credentials": "YOUR_API_KEY"
-  },
-  {
-    "active": "False",
     "type": "discord",
     "api_key": "YOUR_WEBHOOK_URL"
   },
@@ -61,12 +56,6 @@ Alarms are represented as a list of JSON Objects, inside an array labeled alarms
     "active": "False",
     "type": "pushbullet",
     "api_key": "YOUR_API_KEY"
-  },
-  {
-    "active": "False",
-    "type": "pushover",
-    "app_token": "YOUR_APP_TOKEN",
-    "user_key": "YOUR_USER_KEY"
   },
   {
     "active": "False",
@@ -141,27 +130,26 @@ Below is a working alarm configuration for discord and slack:
   {
     "active": "True",
     "type":"discord",
-    "api_key":"DISCORD_WEBHOOK_URL_FOR_FALLBACK",
+    "webhook_url":"DISCORD_WEBHOOK_URL_FOR_FALLBACK",
     "startup_message":"False",
-    "startup_list":"False",
     "pokemon":{
-      "api_key":"DISCORD_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
+      "webhook_url":"DISCORD_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
       "username":"<pkmn>",
       "icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
-      "title": "[<neighborhood>] <pkmn> (<iv>% <atk>/<def>/<sta>, <move_1> / <move_2>) at <address> <postal>",
+      "title": "[<neighborhood>] <pkmn> (<iv>% <atk>/<def>/<sta>, <quick_move> / <charge_move>) at <address> <postal>",
       "url": "<gmaps>",
       "body": "Available until <24h_time> (<time_left> remaining)"
     },
     "pokestop":{
       "username":"Pokestop",
-      "api_key":"DISCORD_WEBHOOK_URL_FOR_POKESTOP_CHANNEL",
+      "webhook_url":"DISCORD_WEBHOOK_URL_FOR_POKESTOP_CHANNEL",
       "icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png",
       "title": "[<neighborhood>] <address> <postal>",
       "url": "<gmaps>",
       "body": "expires at <24h_time> (<time_left>)."
     },
     "gym":{
-      "api_key":"DISCORD_WEBHOOK_URL_FOR_GYM_CHANNEL",
+      "webhook_url":"DISCORD_WEBHOOK_URL_FOR_GYM_CHANNEL",
       "username":"Pokemon Gym",
       "icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png",
       "title": "[<neighborhood>] <address> <postal>",
@@ -174,14 +162,13 @@ Below is a working alarm configuration for discord and slack:
     "type": "slack",
     "api_key": "YOUR_SLACK_API_KEY",
     "startup_message": "False",
-    "startup_list": "False",
     "pokemon": {
       "channel": "pokemon",
       "username": "Pokemon",
       "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
       "title": "*<pkmn>* (<iv>% <atk>/<def>/<sta>) in <neighborhood> at <address> <postal>",
       "url": "<gmaps>",
-      "body": "Available until <24h_time> (<time_left>)\n*Moves:* <move_1> / <move2_>",
+      "body": "Available until <24h_time> (<time_left>)\n*Moves:* <quick_move> / <charge_move>",
       "map": {
         "enabled": "True",
         "width": "330",

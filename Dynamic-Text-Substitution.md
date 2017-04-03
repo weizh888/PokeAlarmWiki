@@ -188,7 +188,7 @@ Let's say that a Dragonite spawns nearby.  You want PokeAlarm to post to your Sl
 
 (Pretend that the above is single spaced - silly github.)
 
-In other words, there is a Dragonite, pokemon number 149, at the given address, 328 meters southwest of your stated location when you launched `runwebhook.py` (assuming you ran with the `-l` argument and provided an address or coordinates).  It will be there until 17:40:37 (5:40pm), and you have 14 minutes and 45 seconds to catch it.
+In other words, there is a Dragonite, pokemon number 149, at the given address, 328 meters southwest of your stated location when you launched `start_pokealarm.py` (assuming you ran with the `-l` argument and provided an address or coordinates).  It will be there until 17:40:37 (5:40pm), and you have 14 minutes and 45 seconds to catch it.
 
 ```json
 {

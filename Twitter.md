@@ -59,12 +59,11 @@ These `alarm.json` parameters are required to enable the Twitter alarm service:
 ### Optional Parameters
 In addition to the required parameters, several `alarm.json` optional parameters are available to personalize your notifications.  Below is an example of these optional parameters and how they are incorporated into a functional alarm layout.
 
-These optional parameters, `startup_message`, and `startup_list`, are entered at the same level as `"type":"twitter"`.
+These optional parameters are entered at the same level as `"type":"twitter"`.
 
 | Parameters         | Description                                                | Default                      |
 |:-------------------|:-----------------------------------------------------------|:-----------------------------|
 | `startup_message`  | Confirmation post when PokeAlarm initialized               | `True`                       |
-| `startup_list`     | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`            |
 
 These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
 

@@ -55,12 +55,11 @@ Below is how a basic Pushbullet alarm configuration would appear in `alarms.json
 In addition to the required parameters, several `alarm.json` optional parameters are available to personalize your notifications.  Below is an example of these optional parameters and how they are incorporated into a functional alarm layout.
 
 
-These optional `alarms.json` parameters are entered at the same level as `"type":"pushbullet"`.
+These optional parameters are entered at the same level as `"type":"pushbullet"`.
 
 | Parameters         | Description                                                | Default                      |
 |:-------------------|:-----------------------------------------------------------|:-----------------------------|
 | `startup_message`  | Confirmation post when PokeAlarm initialized               | `True`                       |
-| `startup_list`     | First post will list all alarmed pokemon enabled in `alarms.json`    | `True`            |
 
 These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
 
