@@ -59,13 +59,60 @@ These optional parameters are entered at the same level as `"type":"facebookpage
 | `startup_message`  | confirmation post when PokeAlarm initialized               | `True`                       |
 
 These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
+Check Image column to see where everything appears in the final publication.
 
-| Parameters       | Description                                       | Default                                       |
-| -----------------|---------------------------------------------------|-----------------------------------------------|
-| `message`        | Message to post as status message                 | `A wild <pkmn> has appeared! Available until <24h_time> (<time_left>).`                                      | 
-| `link`           | Link to be added to notification text   		   | `<gmaps>`                                     |
+![](images/Facebook.png)  
 
-*Note: Nidorans will be `nidoranf` or `nidoranm`, Farfetch'd will be `farfetchd`, and Mr. Mime will be `mrmime`.
+| Parameters       | Description                                       | Image|
+| -----------------|---------------------------------------------------|----|
+| `message`        | Message to post as status message                 | 1 |
+| `link`           | Link to be added to notification text   	       | Link |
+| `image`          | Url of the image to show as a preview (empty for linked page preview) | 2 |
+| `name`           | Link title (empty for linked page title)   		   | 3 |
+| `description`    | Link description (empty for blank description)   		   | 4 |
+| `caption`        | Link domain (empty for linked page domain)   		   | 5 |
+
+When it says `"empty for X"` it means that you can disable the default PokeAlarm value setting that parameter to `""` in your `alarms.js` file. In that case Facebook will use the link information to fill that field in the publication.
+
+For example if you have `link` as a google maps link and you disable the `image` parameter setting it to `""`, it will be a minimap image of that coordinates.
+
+
+`pokemon` default values:
+
+| Parameters       | Default                                       |
+| -----------------|-----------------------------------------------|
+| `message`        |  `A wild <pkmn> has appeared!` |
+| `link`           | `<gmaps>` |
+| `image`          | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png` |
+| `name`           | `<pkmn>`  |
+| `description`    | `Available until <24h_time> (<time_left>)`  |
+| `caption`        |  None  |
+
+
+`pokestop` default values:
+
+| Parameters       |  Default                                       |
+| -----------------|-----------------------------------------------|
+| `message`        |  `Someone has placed a lure on a Pokestop!`                                      |
+| `link`           | `<gmaps>` |
+| `image`          | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png` |
+| `name`           | `Lured Pokestop`  |
+| `description`    | `Lure will expire at <24h_time> (<time_left>)`  |
+| `caption`        | None  |
+
+
+`gym` default values:
+
+| Parameters       |  Default                                       |
+| -----------------|-----------------------------------------------|
+| `message`        | `A Team <old_team> gym has fallen!`                                      |
+| `link`           |  `<gmaps>` |
+| `image`          |  `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png` |
+| `name`           |  `<old_team> gym fallen`  |
+| `description`    | `It is now controlled by <new_team>`  |
+| `caption`        |  None  |
+
+
 
 ## Example: Alarm Configuration Using Optional Parameters
 ```json
@@ -76,15 +123,23 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, and
 	"startup_message":"True",
 	"pokemon":{
 		"message": "<pkmn> available. <move_1>/<move_2> (<iv>% - <atk>/<def>/<sta>)",
-		"link": "<gmaps>"
+		"link": "<gmaps>",
+		"image" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+		"description": "Address: <address>",
+            	"name": "<pkmn>"		
 	},
 	"pokestop":{
 		"message": "Someone has placed a lure on a Pokestop! Lure will expire at <24h_time> (<time_left>).",
-		"link": "<gmaps>"
+		"description": "Address: <address>",
+		"link": "<gmaps>",
+		"name": ""
 	},
 	"gym":{
 		"message":"A Team <old_team> gym has fallen! It is now controlled by <new_team>.",
-		"link": "<gmaps>"
+		"link": "<gmaps>",
+            	"name": "<new_team>",
+		"description": "Address: <address>",
+		"image": "",
 	}
 }
 ```
