@@ -6,13 +6,12 @@ PokeAlarm defaults to `127.0.0.1:4000`. Ensure that your RocketMap instance is r
 
 ```
 pokealarm@pokealarm:/PokeAlarm$ python start_pokealarm.py -h
-2017-03-14 03:14:15,927 [    MainProcess][    Server][    INFO] PokeAlarm is getting ready...
 usage: start_pokealarm.py [-h] [-cf CONFIG] [-d] [-H HOST] [-P PORT]
                           [-m MANAGER_COUNT] [-M MANAGER_NAME] [-k KEY]
                           [-f FILTERS] [-a ALARMS] [-gf GEOFENCES]
                           [-l LOCATION] [-L {de,en,es,fr,it,ko,zh_hk}]
                           [-u {metric,imperial}] [-tl TIMELIMIT]
-                          [-tz TIMEZONE]
+                          [-ma MAX_ATTEMPTS] [-tz TIMEZONE]
 
 Args that start with '--' (eg. -d) can also be set in a config file
 (/PokeAlarm/config/config.ini or specified via -cf). The
@@ -51,10 +50,12 @@ optional arguments:
   -tl TIMELIMIT, --timelimit TIMELIMIT
                         Minimum number of seconds remaining on a pokemon to
                         send a notify
+  -ma MAX_ATTEMPTS, --max_attempts MAX_ATTEMPTS
+                        Maximum number of attempts an alarm makes to send a
+                        notification.
   -tz TIMEZONE, --timezone TIMEZONE
                         Timezone used for notifications. Ex:
                         "America/Los_Angeles"
-
 ```
 
 
@@ -75,6 +76,7 @@ To facilitate use of PokeAlarm, all of the optional arguments above may be confi
 #manager_count: 1								# Number of Managers to run. (default: 1)
 
 # Manager-Specific Settings
+#manager_name                                   # Name of the Manager in the logs. Default(manager_0).
 #key:                                           # Google Maps API Key to use
 #filters:										# File containing filter rules (default: filters.json)
 #alarms: 										# File containing alarm rules (default: alarms.json)
@@ -83,5 +85,6 @@ To facilitate use of PokeAlarm, all of the optional arguments above may be confi
 #locale:										# Language to be used to translate names (default: en)
 #unit:											# Units used to measure distance. Either 'imperial' or 'metric' (default: imperial)
 #timelimit:										# Minimum number of seconds remaining to send a notification (default: 0)
+#max_attempts:									# Maximum number of attempts an alarm makes to send a notification. (default: 3)
 #timezone:                                      # Timezone used for notifications Ex: 'America/Los_Angeles' or '[America/Los_Angeles, America/New_York]'
 ```
