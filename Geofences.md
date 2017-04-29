@@ -132,8 +132,9 @@ You are permitted to add more than one geofence area in a single `geofences.txt`
 ```
 
 ## Geofence Generator: Draw Your Own Geofence
-Our @brettgus has developed [Geofence Generator](http://codepen.io/bgus/full/dXxLjp/), a handy web tool to easily create and visualize your desired geofence.  To use it:
+JennerPalacios's Codepen [Geofence Generator](https://codepen.io/jennerpalacios/full/mWWVeJ), a handy web tool to easily create and visualize your desired geofence.  To use it:
 
 1. Type your desired location.
 2. Click for each geofence point that you would like to add to the coordinate list.
-3. Complete your geofence area by clicking the original point.
+3. Complete your geofence area by clicking the original point, the last point, or double clicking.
+4. Click "Show Coordinates", Assign a name - ie: [Seattle] and then click "Copy to Clipboard"
