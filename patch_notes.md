@@ -3,7 +3,7 @@
 * [Patch 3.1](#Patch-3.1)
 * [Patch 3.2](#Patch_3.2)
 
-###Patch 3.2 --------------------------------------------------------------
+### Patch 3.2 --------------------------------------------------------------
 
 #### Filters
 * **Pokemon**
@@ -44,7 +44,7 @@
     * Added `'disable_embed'` that disables the discord embeds when set to `true`
     
     
-###Patch_3.1 --------------------------------------------------------------
+### Patch_3.1 --------------------------------------------------------------
 
 #### Filters
 * **Multifilters** - Each filter can now be one of the following:
