@@ -58,7 +58,7 @@ These optional parameters are entered at the same level as `"type":"facebookpage
 |--------------------|------------------------------------------------------------|------------------------------|
 | `startup_message`  | confirmation post when PokeAlarm initialized               | `True`                       |
 
-These optional parameters below are applicable to the `pokemon`, `pokestop`, and `gym` sections of the JSON file.
+These optional parameters below are applicable to the `pokemon`, `pokestop`, `gym`, `egg`, and `raid` sections of the JSON file.
 Check Image column to see where everything appears in the final publication.
 
 ![](images/Facebook.png)  
@@ -112,35 +112,71 @@ For example if you have `link` as a google maps link and you disable the `image`
 | `description`    | `It is now controlled by <new_team>`  |
 | `caption`        |  None  |
 
+`egg` default values:
+
+| Parameters       |  Default                                       |
+| -----------------|-----------------------------------------------|
+| `message`        | `A level <raid_level> raid is upcoming!` |
+| `image`          | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png`|
+| `link`           | `<gmaps>`|
+| `name`           | `Egg`|
+| `description`    | `The egg will hatch <begin_24h_time> (<begin_time_left>).`|
+| `caption`        | None |    
+    
+`raid` default values:    
+    
+| Parameters       |  Default                                       |
+| -----------------|-----------------------------------------------|
+| `message`        | `A Raid is available against <pkmn>!`|
+| `image`          | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png`|
+| `link`           | `<gmaps>`|
+| `name`           | `Raid`|
+| `description`    | `The raid is available until <24h_time> (<time_left>).`|
+| `caption`        | None |
+
 
 
 ## Example: Alarm Configuration Using Optional Parameters
 ```json
 {
-	"active": "True",
-	"type":"facebook_page",
-	"page_access_token":"YOUR_PAGE_ACCESS_TOKEN",
-	"startup_message":"True",
-	"pokemon":{
-		"message": "<pkmn> available. <move_1>/<move_2> (<iv>% - <atk>/<def>/<sta>)",
-		"link": "<gmaps>",
-		"image" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
-		"description": "Address: <address>",
-            	"name": "<pkmn>"		
-	},
-	"pokestop":{
-		"message": "Someone has placed a lure on a Pokestop! Lure will expire at <24h_time> (<time_left>).",
-		"description": "Address: <address>",
-		"link": "<gmaps>",
-		"name": ""
-	},
-	"gym":{
-		"message":"A Team <old_team> gym has fallen! It is now controlled by <new_team>.",
-		"link": "<gmaps>",
-            	"name": "<new_team>",
-		"description": "Address: <address>",
-		"image": "",
-	}
+    "active": "True",
+    "type":"facebook_page",
+    "page_access_token":"YOUR_PAGE_ACCESS_TOKEN",
+    "startup_message":"True",
+    "pokemon":{
+        "message": "<pkmn> available. <move_1>/<move_2> (<iv>% - <atk>/<def>/<sta>)",
+        "link": "<gmaps>",
+        "image" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+        "description": "Address: <address>",
+        "name": "<pkmn>"		
+    },
+    "pokestop":{
+        "message": "Someone has placed a lure on a Pokestop! Lure will expire at <24h_time> (<time_left>).",
+        "description": "Address: <address>",
+        "link": "<gmaps>",
+        "name": ""
+    },
+    "gym":{
+        "message":"A Team <old_team> gym has fallen! It is now controlled by <new_team>.",
+        "link": "<gmaps>",
+        "name": "<new_team>",
+        "description": "Address: <address>",
+        "image": ""
+    },
+    "egg": {
+        "message": "A level <raid_level> raid is upcoming!",
+        "image": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
+        "link": "<gmaps>",
+        "name": "Egg",
+        "description": "The egg will hatch <begin_24h_time> (<begin_time_left>)."
+    },
+    "raid": {
+        "message": "A Raid is available against <pkmn>!",
+        "image": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+        "link": "<gmaps>",
+        "name": "Raid",
+        "description": "The raid is available until <24h_time> (<time_left>)."
+    }
 }
 ```
 **Note:** The above code is to be inserted into the alarms section of alarms.json. It does not represent the entire alarms.json file.
