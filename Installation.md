@@ -7,7 +7,7 @@
 ## Prerequisites
 This guide assumes:
 
-1. You have a working [RocketMap](https://github.com/RocketMap/RocketMap) installation. There is a detailed wiki [here](https://github.com/RocketMap/RocketMap/wiki) and [here](https://pgm.readthedocs.io/en/develop/index.html)
+1. You have a working [RocketMap](https://github.com/RocketMap/RocketMap) installation. There is a detailed wiki [here](https://github.com/RocketMap/RocketMap/wiki) and [here](https://rocketmap.readthedocs.io/en/develop/)
 2. You have the latest version of python 2.7 installed
 3. You have a working git installation
 4. You have a good text editor installed.  Do **NOT** use Notepad or TextEdit! Use PyCharm or Notepad++

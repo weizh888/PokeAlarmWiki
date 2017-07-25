@@ -70,21 +70,21 @@ To facilitate use of PokeAlarm, all of the optional arguments above may be confi
 # To exclude an argument for a specific manager, use 'None'
 
 # Server Settings
-#debug											# Enables debugging mode
-#host:											# Address to listen on (default 127.0.0.1)
-#port:											# Port to listen on (default: 4000)
-#manager_count: 1								# Number of Managers to run. (default: 1)
+#debug						# Enables debugging mode
+#host:						# Address to listen on (default 127.0.0.1)
+#port:						# Port to listen on (default: 4000)
+#manager_count: 1				# Number of Managers to run. (default: 1)
 
 # Manager-Specific Settings
-#manager_name                                   # Name of the Manager in the logs. Default(manager_0).
-#key:                                           # Google Maps API Key to use
-#filters:										# File containing filter rules (default: filters.json)
-#alarms: 										# File containing alarm rules (default: alarms.json)
-#geofence:										# File containing geofence(s) used to filter (default: None)
-#location:										# Location for the manager. 'Name' or 'lat lng' (default: None)
-#locale:										# Language to be used to translate names (default: en)
-#unit:											# Units used to measure distance. Either 'imperial' or 'metric' (default: imperial)
-#timelimit:										# Minimum number of seconds remaining to send a notification (default: 0)
-#max_attempts:									# Maximum number of attempts an alarm makes to send a notification. (default: 3)
-#timezone:                                      # Timezone used for notifications Ex: 'America/Los_Angeles' or '[America/Los_Angeles, America/New_York]'
+#manager_name					# Name of the Manager in the logs. Default(manager_0).
+#key:						# Google Maps API Key to use
+#filters:					# File containing filter rules (default: filters.json)
+#alarms:					# File containing alarm rules (default: alarms.json)
+#geofence:					# File containing geofence(s) used to filter (default: None)
+#location:					# Location for the manager. 'Name' or 'lat lng' (default: None)
+#locale:					# Language to be used to translate names (default: en)
+#unit:						# Units used to measure distance. Either 'imperial' or 'metric' (default: imperial)
+#timelimit:					# Minimum number of seconds remaining to send a notification (default: 0)
+#max_attempts:					# Maximum number of attempts an alarm makes to send a notification. (default: 3)
+#timezone:					# Timezone used for notifications Ex: 'America/Los_Angeles' or '[America/Los_Angeles, America/New_York]'
 ```

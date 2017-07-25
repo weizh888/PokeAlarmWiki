@@ -92,7 +92,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, `gy
 	"webhook_url":"YOUR_WEBHOOK_URL",
 	"startup_message":"True",
 	"pokemon":{
-	    "webhook_url":"YOUR_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
+		"webhook_url":"YOUR_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
 		"username":"<pkmn>",
 		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
 		"title":"A wild <pkmn> has appeared!",
@@ -100,7 +100,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, `gy
 		"body": "Available until <24h_time> (<time_left>)."
 	},
 	"pokestop":{
-	    "webhook_url":"YOUR_WEBHOOK_URL_FOR_POKESTOP_CHANNEL",
+		"webhook_url":"YOUR_WEBHOOK_URL_FOR_POKESTOP_CHANNEL",
 		"username":"Pokestop",
 		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png",
 		"title":"Someone has placed a lure on a Pokestop!",
@@ -108,31 +108,31 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, `gy
 		"body":"Lure will expire at <24h_time> (<time_left>)."
 	},
 	"gym":{
-	    "webhook_url":"YOUR_WEBHOOK_URL_FOR_GYM_CHANNEL",
+		"webhook_url":"YOUR_WEBHOOK_URL_FOR_GYM_CHANNEL",
 		"username":"Pokemon Gym",
 		"icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png",
 		"title":"A Team <old_team> gym has fallen!",
 		"url":"<gmaps>",
 		"body": "It is now controlled by <new_team>."
 	},
-    "egg": {
-        "webhook_url":"DISCORD_WEBHOOK_URL_FOR_EGG_CHANNEL",
-        "username": "Egg",
-        "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
-        "avatar_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
-        "title": "Raid is incoming!",
-        "url": "<gmaps>",
-        "body": "A level <raid_level> raid will hatch <begin_24h_time> (<begin_time_left>)."
-    },
-    "raid": {
-        "webhook_url":"DISCORD_WEBHOOK_URL_FOR_RAID_CHANNEL",
-        "username": "Raid",
-        "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
-        "avatar_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
-        "title": "Level <raid_level> Raid is available against <pkmn>!",
-        "url": "<gmaps>",
-        "body": "The raid is available until <24h_time> (<time_left>)."
-    }	
+	"egg": {
+		"webhook_url":"DISCORD_WEBHOOK_URL_FOR_EGG_CHANNEL",
+		"username": "Egg",
+		"icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
+		"avatar_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
+		"title": "Raid is incoming!",
+		"url": "<gmaps>",
+		"body": "A level <raid_level> raid will hatch <begin_24h_time> (<begin_time_left>)."
+	},
+	"raid": {
+		"webhook_url":"DISCORD_WEBHOOK_URL_FOR_RAID_CHANNEL",
+		"username": "Raid",
+		"icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+		"avatar_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
+		"title": "Level <raid_level> Raid is available against <pkmn>!",
+		"url": "<gmaps>",
+		"body": "The raid is available until <24h_time> (<time_left>)."
+	}
 }
 ```
 

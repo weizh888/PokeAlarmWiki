@@ -9,11 +9,11 @@
 * **Pokemon**
     * Pokemon can now be filtered by their form_id (example": `"form": [0, 1, 2]`)
     * Pokemon can now be filtered by their gender (example": `"gender": ["male", "female"`)
+    * `'min_cp'` and `'max_cp'` are used to limit the CP of pokemon to alert
 * **Egg**
     * "Egg" section is now added to the filters.json
     * `'enabled'` allows incoming raid alerts to be toggled on or off
     * `'min_level'` and `'max_level'` are used to limit the levels of incoming raids to alert on
-
 * **Raids**
     * "Raids" section is now added to the filters.json
     * `'enabled'` allows raid alerts to be toggled on or off
@@ -28,10 +28,11 @@
     * Added support for the following subsitutions: `'cp', 'form', 'form_id', 'level'`
     * Added `'big_karp'` that displays 'big' on big magikarp and `'tiny_rat'` that displays 'tiny' on small rattata 
 * **Egg**
-    * "Egg" alerts have the following substitutions: `'type', 'id', 'raid_level', 'raid_end', 'raid_being', 'lat', 'lng'`
+    * "Egg" alerts have the following substitutions: `'type', 'id', 'raid_level', 'raid_end', 'raid_being', 'lat', 'lng', 'gym_name', 'gym_description', 'gym_url'`
 * **Raid**
-    * "Raid" alerts have the following substitutions: `'type', 'id', 'pkmn_id', 'cp', 'quick_id', 'quick_damage', 'quick_dps', 'quick_duration', 'quick_energy', 'charge_id', 'charge_damage', 'charge_dps', 'charge_duration', 'charge_energy', 'raid_level', 'raid_end', 'raid_begin' 'lat', 'lng'`
+    * "Raid" alerts have the following substitutions: `'type', 'id', 'pkmn_id', 'cp', 'quick_id', 'quick_damage', 'quick_dps', 'quick_duration', 'quick_energy', 'charge_id', 'charge_damage', 'charge_dps', 'charge_duration', 'charge_energy', 'raid_level', 'raid_end', 'raid_begin' 'lat', 'lng', 'gym_name', 'gym_description', 'gym_url'`
 * **Gyms**
+    * Added the following Gym substitutions: `'name', 'description', 'url'`
     * Added the following 'Gym Leader' substitutions: `'old_team_id', 'new_team_leader', 'old_team_leader'`
     
 #### Alarms

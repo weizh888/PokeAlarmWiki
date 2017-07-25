@@ -28,20 +28,20 @@ In order to customize an Alert, you must specify what type of alert you want to 
 
 ```json
 {
-  "type":"slack",
-  "active":"True",
-  "api_key":"YOUR_API_KEY_HERE",
-    "pokemon":{
-        "channel":"Pokemon",
-        "username":"<pkmn>",
-        "title":"A GIANT <pkmn> jumped out of the grass!",
-        "body": "Available until <24h_time> (<time_left>)."
-    },
-    "pokestop":{
-        "channel":"Pokestop",
-        "title":"Someone  has placed a lure on a Pokestop!",
-        "body":"Better hurry! The lure only has <time_left> remaining!"
-    }
+	"type":"slack",
+	"active":"True",
+	"api_key":"YOUR_API_KEY_HERE",
+	"pokemon":{
+		"channel":"Pokemon",
+		"username":"<pkmn>",
+		"title":"A GIANT <pkmn> jumped out of the grass!",
+		"body": "Available until <24h_time> (<time_left>)."
+	},
+	"pokestop":{
+		"channel":"Pokestop",
+		"title":"Someone  has placed a lure on a Pokestop!",
+		"body":"Better hurry! The lure only has <time_left> remaining!"
+	}
 }
 ```
 
@@ -74,28 +74,31 @@ For what fields (title, message, etc) you have the option to change, please see 
 | `<dir>`         | Cardinal direction from set location   |
 | `<respawn_text>`| **Respawn Message                      |
 | `<iv>`          | Percent IV of the alerted pokemon      |
+| `<iv_0>`        | Percent IV rounded to 0 decimals of the alerted pokemon      |
+| `<iv_2>`        | Percent IV rounded to 2 decimals of the alerted pokemon      |
+| `<cp>`          | CP number of the alerted pokemon       |
 | `<atk>`         | Attack IV of the alerted pokemon       |
 | `<def>`         | Defense IV of the alerted pokemon      |
 | `<sta>`         | Stamina IV of the alerted pokemon      |
 | `<quick_move>`  | Quick move of the alerted pokemon      |
 | `<charge_move>` | Charge move of the alerted pokemon     |
 | `<quick_id>`    | ID number of the quick move  |
-| `<quick_damage>` | Damage value of quick move
-| `<quick_duration>` | Duration value of quick move
-| `<quick_dps>` | Damage per second value of quick move
-| `<quick_energy>` | Energy of quick move
-| `<charge_id>` | ID number of charge move
-| `<charge_damage>` |  Damage value of charge move
-| `<charge_duration>` | Duration value of charge move
-| `<charge_dps>` | Damage per second value of charge move
-| `<charge_energy>` | Energy of charge move
+| `<quick_damage>` | Damage value of quick move  |
+| `<quick_duration>` | Duration value of quick move     |
+| `<quick_dps>` | Damage per second value of quick move |
+| `<quick_energy>` | Energy of quick move     |
+| `<charge_id>` | ID number of charge move    |
+| `<charge_damage>` |  Damage value of charge move       |
+| `<charge_duration>` | Duration value of charge move    |
+| `<charge_dps>` | Damage per second value of charge move  |
+| `<charge_energy>` | Energy of charge move      |
 | `<id>`| Database encounter_id of the pokemon   |
 | `<gender>`      | Gender of the alerted pokemon          |
 | `<height>`      | Height of the alerted pokemon          |
 | `<weight>`      | Weight of the alerted pokemon          |
 | `<size>`        | Size of the alerted pokemon            |
 | `<geofence>`     | Geofence name of where the alerted pokemon originated |
-| `<gmaps>` | Google Maps URL to pokemon location
+| `<gmaps>` | Google Maps URL to pokemon location    |
 | `<applemaps>` | Apple Maps URL to pokemon location |
 *If no location has been set, dist will always return 0 (meters or yards)
 
@@ -125,11 +128,19 @@ A list of text substitutions for the `gym` field in the alarm section are below:
 | `<id>`         | ID of the alerted gym              |
 | `<lat>`        | Latitude of the gym                |
 | `<lng>`        | Longitude of the gym               |
+| `<name>`       | Name of the gym                    |
+| `<description>`  | Description of the gym           |
+| `<url>`        | URL of the gym                     |
 | `<gmaps>`      | Gmaps link to a pin of the gym     |
-| `<dist>`       | *Distance from set location  |
+| `<dist>`       | *Distance from set location        |
+| `<dir>`        | Cardinal direction from set location   |
 | `<points>`     | Number of points the gym currently has |
 | `<old_team>`   | Name of the team who lost the gym      |
 | `<new_team>`   | Name of the team who captured the gym  |
+| `<old_team_id>`   | ID  of the team who lost the gym    |
+| `<new_team_id>`   | ID of the team who captured the gym |
+| `<old_team_leader>`   | Name of the team leader who lost the gym     |
+| `<new_team_leader>`   | Name of the team leader who captured the gym |
 *If no location has been set, dist will always return 0 (meters or yards)
 
 ## Egg Text
@@ -138,6 +149,9 @@ A list of text substitutions for the `egg` field in the alarm section are below:
 | Text                  | Description                            |
 |:----------------------|:---------------------------------------|
 | `<raid_level>`        | The tier level of the raid (1-5)       |
+| `<gym_name>`          | Name of the raid gym                   |
+| `<gym_description>`   | Description of the raid gym            |
+| `<gym_url>`           | URL of the raid gym                    |
 | `<lat>`               | Latitude of the raid pokemon           |
 | `<lng>`               | Longitude of the raid pokemon          |
 | `<gmaps>`             | Gmaps link to a pin of the raid        |
@@ -160,6 +174,9 @@ A list of text substitutions for the `raid` field in the alarm section are below
 | Text                  | Description                            |
 |:----------------------|:---------------------------------------|
 | `<raid_level>`        | The tier level of the raid (1-5)       |
+| `<gym_name>`          | Name of the raid gym                   |
+| `<gym_description>`   | Description of the raid gym            |
+| `<gym_url>`           | URL of the raid gym                    |
 | `<pkmn_id>`           | ID of the alerted raid pokemon         |
 | `<pkmn>`              | Name of the alerted raid pokemon       |
 | `<lat>`               | Latitude of the raid pokemon           |
@@ -194,9 +211,9 @@ The following text substitutions will only work if a Google Maps API Key with Ge
 
 | Text             | Description                            |
 |:---------------- |:---------------------------------------|
-| `<street_num>`   | Street number of the alert location
-| `<street>`       | Street name of the alert location
-| `<address>`      | Address of the alert location, includes both street number and street name, in that order only
+| `<street_num>`   | Street number of the alert location    |
+| `<street>`       | Street name of the alert location      |
+| `<address>`      | Address of the alert location, includes both street number and street name, in that order only |
 | `<postal>`       | Postal code of the alert location      |
 | `<neighborhood>` | Neighborhood code of the alert location|
 | `<sublocality>`  | Sublocality code of the alert location |

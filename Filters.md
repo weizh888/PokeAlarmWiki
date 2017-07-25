@@ -26,23 +26,23 @@ The `filters.json` configuration file filters Gym, Pokestop, Pokemon, Egg, and R
 The basic structure of `filters.json` contains 5 sections:
 
 ```
-[
-	"gyms":{
-	    GYM_FILTERS_ARE_HERE
-	},
-	"pokestops":{
-	    POKESTOP_FILTERS_ARE_HERE
-	},
-	"pokemon":{
-	    POKEMON_FILTERS_ARE_HERE
-	},
-	"eggs": {
-	    EGG_FILTERS_HERE
-	},
-	"raids": {
-	    RAID_FILTERS_ARE_HERE
-	}
-]
+{
+    "gyms":{
+        GYM_FILTERS_ARE_HERE
+    },
+    "pokestops":{
+        POKESTOP_FILTERS_ARE_HERE
+    },
+    "pokemon":{
+        POKEMON_FILTERS_ARE_HERE
+    },
+    "eggs": {
+        EGG_FILTERS_ARE_HERE
+    },
+    "raids": {
+        RAID_FILTERS_ARE_HERE
+    }
+}
 ```
 
 
@@ -124,10 +124,10 @@ Below is an example of the Default level options:
     "pokemon":{
         "enabled":"True",
         "default":{
-            "min_dist":"0", "max_dist":"inf", "min_iv":"0", "max_iv":"100",
-            "min_atk":"0", "max_atk":"15", "min_def":"0", "max_def":"15", "min_sta":"0", "max_sta":"15",
+            "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "4760", "min_iv":"0", "max_iv":"100",
+            "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
             "quick_move": null, "charge_move": null, "moveset": null,
-            "size": null, "gender": null, "ignore_missing": "False"
+            "size": null, "gender": null, "form": null, "ignore_missing": "False"
         },
 ```
 
@@ -139,6 +139,8 @@ Below is a description of all filters available at both Default and Specific Pok
 | `max_dist` | `"inf"`  | Maximum distance from current location by which the specific Pokemon will trigger configured alarm(s). Pokemon farther than this value will not trigger configured alarm(s). Can be an integer, e.g., `"1000"`, or `"inf"` for unlimited range.
 | `min_iv`   | `"0"`   | Minimum percent IV for all Pokemon. 0 to 100.
 | `max_iv`   | `"100"` | Maximum percent IV for all Pokemon. 0 to 100.
+| `min_cp`   | `"0"`   | Minimum CP for all Pokemon. 0 to 4760.
+| `max_cp`   | `"4760"` | Maximum CP for all Pokemon. 0 to 4760.
 | `min_atk` | `"0"` | Value, 0-15, corresponding to the attack IV 
 | `max_atk` | `"15"`| Value, 0-15, corresponding to the attack IV 
 | `min_def` | `"0"` | Value, 0-15, corresponding to the defense IV 
@@ -160,7 +162,7 @@ By default, PokeAlarm will notify on any Pokemon set to `"True"`, at any distanc
     "pokemon":{
         "enabled":"True",
         "default": {
-            "min_dist":"0", "max_dist":"inf", "min_iv":"0", "max_iv":"100",
+            "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "4760", "min_iv":"0", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
             "quick_move": null, "charge_move": null, "moveset": null,
             "size": null, "gender": null, "ignore_missing": "False"
@@ -176,7 +178,7 @@ By default, PokeAlarm will notify on any Pokemon set to `"True"`, at any distanc
     "pokemon":{
         "enabled":"True",
         "default": {
-            "min_dist":"0", "max_dist":"5000", "min_iv":"0", "max_iv":"100",
+            "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"0", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
             "quick_move": null, "charge_move": null, "moveset": null,
             "size": null, "gender": null, "ignore_missing": "False"
@@ -192,7 +194,7 @@ By default, PokeAlarm will notify on any Pokemon set to `"True"`, at any distanc
     "pokemon":{
         "enabled":"True",
         "default": {
-            "min_dist":"0", "max_dist":"5000", "min_iv":"90", "max_iv":"100",
+            "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
             "quick_move": null, "charge_move": null, "moveset": null,
             "size": null, "gender": null, "ignore_missing": "False"
@@ -213,7 +215,7 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
     "pokemon":{
         "enabled":"True",
         "default": {
-            "min_dist":"0", "max_dist":"5000", "min_iv":"90", "max_iv":"100",
+            "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
             "quick_move": null, "charge_move": null, "moveset": null,
             "size": null, "gender": null, "ignore_missing": "False"
@@ -230,7 +232,7 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
     "pokemon":{
         "enabled":"True",
         "default": {
-            "min_dist":"0", "max_dist":"5000", "min_iv":"90", "max_iv":"100",
+            "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
             "quick_move": null, "charge_move": null, "moveset": null,
             "size": null, "gender": null, "ignore_missing": "False"
@@ -245,10 +247,10 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
 **Filtering on quick and charge moves.** Add the `move_1` and/or `charge_move` key-value pair to the specific Pokemon.  Wrap each move in double quotes.  Separate multiple moves with a comma. In the example below, We want to be notified of Bulbasaur with either Power Whip or Seed Bomb as a charge move. Separate each move by a comma, and wrap the list in brackets `[ ]`. The Pokemon example configuration for Bulbasaur would be as below:
 
 ```json
-        "pokemon":{
+    "pokemon":{
         "enabled":"True",
         "default": {
-            "min_dist":"0", "max_dist":"5000", "min_iv":"90", "max_iv":"100",
+            "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
             "quick_move": null, "charge_move": null, "moveset": null,
             "size": null, "gender": null, "ignore_missing": "False"
@@ -268,7 +270,7 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
     "pokemon":{
         "enabled":"True",
         "default": {
-            "min_dist":"0", "max_dist":"5000", "min_iv":"90", "max_iv":"100",
+            "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
             "quick_move": null, "charge_move": null, "moveset": null,
             "size": null, "gender": null, "ignore_missing": "False"
@@ -285,12 +287,29 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
     "pokemon":{
         "enabled":"True",
         "default": {
-            "min_dist":"0", "max_dist":"5000", "min_iv":"90", "max_iv":"100",
+            "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
             "quick_move": null, "charge_move": null, "moveset": null,
             "size": null, "gender": null, "ignore_missing": "False"
         },
         "Bulbasaur":{ "max_dist":"1000", "min_iv":"100", "charge_move":["Power Whip", "Seed Bomb"] },
+        "Ivysaur":"False",
+        "Venusaur":"True",
+        "Charmander":"False"
+    }
+```
+
+**Other combination of parameters with CP and IV.** Let's say we want to be notified of any Pokemon with at least 90% of IVs and 600 minimum CP. The Pokemon configuration would be as below:
+```json
+    "pokemon":{
+        "enabled":"True",
+        "default": {
+            "min_dist":"0", "max_dist":"inf", "min_cp": "600", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
+            "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
+            "quick_move": null, "charge_move": null, "moveset": null,
+            "size": null, "gender": null, "ignore_missing": "False"
+        },
+        "Bulbasaur":"False",
         "Ivysaur":"False",
         "Venusaur":"True",
         "Charmander":"False"
@@ -309,7 +328,7 @@ we would configure our `filters.json` for Bulbasaur like so:
     "pokemon":{
         "enabled":"True",
         "default": {
-            "min_dist":"0", "max_dist":"5000", "min_iv":"90", "max_iv":"100",
+            "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
             "quick_move": null, "charge_move": null, "moveset": null,
             "size": null, "gender": null, "ignore_missing": "False"
@@ -360,11 +379,11 @@ These are filter settings that controls what kind of eggs will get an alarm.
 
 Example eggs filter:
 ```json
- "eggs": {
-         "enabled":"True",
-         "min_level": "1",
-         "max_level": "5"
- },
+     "eggs": {
+        "enabled":"True",
+        "min_level": "1",
+        "max_level": "5"
+    },
 ```
 
 ## Raid Filters
@@ -373,16 +392,16 @@ You may filter raids by the specific raid pokemons in a similar fashion as the p
 Raid filters has 3 sections: enabled, default pokemon filtering and individual pokemon filtering
 
 ```json
-"raids": {
-    "enabled": "False",
-    "default": {
-        "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "999999", "min_iv":"0", "max_iv":"100",
-        "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-        "quick_move": null, "charge_move": null, "moveset": null,
-        "size": null, "gender": null, "form": null,"ignore_missing": "False"
-    },
-    "Tyranitar": { "True" } 
-}
+    "raids": {
+        "enabled": "False",
+        "default": {
+            "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "999999", "min_iv":"0", "max_iv":"100",
+            "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
+            "quick_move": null, "charge_move": null, "moveset": null,
+            "size": null, "gender": null, "form": null,"ignore_missing": "False"
+        },
+        "Tyranitar": { "True" } 
+    }
 ```
 
 You may set filters for Raid pokemon at 2 levels of the `"raid":` section of `filters.json`:
@@ -426,132 +445,165 @@ Below is a description of all meaningful filters available at both Default and S
 Reports all known egg levels and raid pokemon
 
 ```json
-"eggs": {
-    "enabled":"True",
-    "min_level": "1",
-    "max_level": "5"
-},
-"raids": {
-    "enabled": "True",
-    "default": {
-        "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "999999", "min_iv":"0", "max_iv":"100",
-        "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-        "quick_move": null, "charge_move": null, "moveset": null,
-        "size": null, "gender": null, "form": null, "ignore_missing": "False"
+    "eggs": {
+        "enabled":"True",
+        "min_level": "1",
+        "max_level": "5"
     },
-    "Bayleef":"True",
-    "Croconaw":"True",
-    "Magikarp":"True",
-    "Quilava":"True",
-    "Electabuzz":"True",
-    "Exeggutor":"True",
-    "Magmar":"True",
-    "Muk":"True",
-    "Weezing":"True",
-    "Alakazam":"True",
-    "Arcanine":"True",
-    "Flareon":"True",
-    "Gengar":"True",
-    "Jolteon":"True",
-    "Machamp":"True",
-    "Vaporeon":"True",
-    "Blastoise":"True",
-    "Charizard":"True",
-    "Lapras":"True",
-    "Rhydon":"True",
-    "Snorlax":"True",
-    "Tyranitar":"True",
-    "Venusaur":"True"
-}
+    "raids": {
+        "enabled": "True",
+        "default": {
+            "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "999999", "min_iv":"0", "max_iv":"100",
+            "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
+            "quick_move": null, "charge_move": null, "moveset": null,
+            "size": null, "gender": null, "form": null, "ignore_missing": "False"
+        },
+        "Bayleef":"True",
+        "Croconaw":"True",
+        "Magikarp":"True",
+        "Quilava":"True",
+        "Electabuzz":"True",
+        "Exeggutor":"True",
+        "Magmar":"True",
+        "Muk":"True",
+        "Weezing":"True",
+        "Alakazam":"True",
+        "Arcanine":"True",
+        "Flareon":"True",
+        "Gengar":"True",
+        "Jolteon":"True",
+        "Machamp":"True",
+        "Vaporeon":"True",
+        "Blastoise":"True",
+        "Charizard":"True",
+        "Lapras":"True",
+        "Rhydon":"True",
+        "Snorlax":"True",
+        "Tyranitar":"True",
+        "Venusaur":"True",
+        "Articuno":"True",
+        "Zapdos":"True",
+        "Moltres":"True",
+        "Mewtwo":"True",
+        "Mew":"True",
+        "Raikou":"True",
+        "Entei":"True",
+        "Suicune":"True",
+        "Lugia":"True",
+        "Ho-Oh":"True",
+        "Celebi":"True"
+    }
 ```
 
 **Only report raids once we know the pokemon, ignore eggs**
 
 ```json
-"eggs": {
-    "enabled":"False",
-    "min_level": "1",
-    "max_level": "5"
-},
-"raids": {
-    "enabled": "True",
-    "default": {
-        "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "999999", "min_iv":"0", "max_iv":"100",
-        "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-        "quick_move": null, "charge_move": null, "moveset": null,
-        "size": null, "gender": null, "form": null, "ignore_missing": "False"
+    "eggs": {
+        "enabled":"False",
+        "min_level": "1",
+        "max_level": "5"
     },
-    "Bayleef":"True",
-    "Croconaw":"True",
-    "Magikarp":"True",
-    "Quilava":"True",
-    "Electabuzz":"True",
-    "Exeggutor":"True",
-    "Magmar":"True",
-    "Muk":"True",
-    "Weezing":"True",
-    "Alakazam":"True",
-    "Arcanine":"True",
-    "Flareon":"True",
-    "Gengar":"True",
-    "Jolteon":"True",
-    "Machamp":"True",
-    "Vaporeon":"True",
-    "Blastoise":"True",
-    "Charizard":"True",
-    "Lapras":"True",
-    "Rhydon":"True",
-    "Snorlax":"True",
-    "Tyranitar":"True",
-    "Venusaur":"True"
-}
+    "raids": {
+        "enabled": "True",
+        "default": {
+            "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "999999", "min_iv":"0", "max_iv":"100",
+            "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
+            "quick_move": null, "charge_move": null, "moveset": null,
+            "size": null, "gender": null, "form": null, "ignore_missing": "False"
+        },
+        "Bayleef":"True",
+        "Croconaw":"True",
+        "Magikarp":"True",
+        "Quilava":"True",
+        "Electabuzz":"True",
+        "Exeggutor":"True",
+        "Magmar":"True",
+        "Muk":"True",
+        "Weezing":"True",
+        "Alakazam":"True",
+        "Arcanine":"True",
+        "Flareon":"True",
+        "Gengar":"True",
+        "Jolteon":"True",
+        "Machamp":"True",
+        "Vaporeon":"True",
+        "Blastoise":"True",
+        "Charizard":"True",
+        "Lapras":"True",
+        "Rhydon":"True",
+        "Snorlax":"True",
+        "Tyranitar":"True",
+        "Venusaur":"True",
+        "Articuno":"True",
+        "Zapdos":"True",
+        "Moltres":"True",
+        "Mewtwo":"True",
+        "Mew":"True",
+        "Raikou":"True",
+        "Entei":"True",
+        "Suicune":"True",
+        "Lugia":"True",
+        "Ho-Oh":"True",
+        "Celebi":"True"
+    }
 ```
 
 **Only report Eggs level 4 and 5, do not send alarms about pokemon**
  
 ```json
-"eggs": {
-    "enabled":"True",
-    "min_level": "4",
-    "max_level": "5"
-},
-"raids": {
-    "enabled": "False",
-    "default": {
-        "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "999999", "min_iv":"0", "max_iv":"100",
-        "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-        "quick_move": null, "charge_move": null, "moveset": null,
-        "size": null, "gender": null, "form": null, "ignore_missing": "False"
+    "eggs": {
+        "enabled":"True",
+        "min_level": "4",
+        "max_level": "5"
+    },
+    "raids": {
+        "enabled": "False",
+        "default": {
+            "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "999999", "min_iv":"0", "max_iv":"100",
+            "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
+            "quick_move": null, "charge_move": null, "moveset": null,
+            "size": null, "gender": null, "form": null, "ignore_missing": "False"
+        }
     }
-}
 ```
 
 **Report Eggs level 3 and higher, but only some specific raid pokemon**
 
  ```json
- "eggs": {
-     "enabled":"True",
-     "min_level": "3",
-     "max_level": "5"
- },
- "raids": {
-     "enabled": "True",
-     "default": {
-         "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "999999", "min_iv":"0", "max_iv":"100",
-         "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-         "quick_move": null, "charge_move": null, "moveset": null,
-         "size": null, "gender": null, "form": null, "ignore_missing": "False"
-     },
-     "Alakazam":"True",
-     "Machamp":"True",
-     "Blastoise":"True",
-     "Charizard":"True",
-     "Lapras":"True",
-     "Rhydon":"True",
-     "Snorlax":"True",
-     "Tyranitar":"True",
-     "Venusaur":"True"
- }
+    "eggs": {
+        "enabled":"True",
+        "min_level": "3",
+        "max_level": "5"
+    },
+    "raids": {
+        "enabled": "True",
+        "default": {
+            "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "999999", "min_iv":"0", "max_iv":"100",
+            "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
+            "quick_move": null, "charge_move": null, "moveset": null,
+            "size": null, "gender": null, "form": null, "ignore_missing": "False"
+        },
+        "Alakazam":"True",
+        "Machamp":"True",
+        "Blastoise":"True",
+        "Charizard":"True",
+        "Lapras":"True",
+        "Rhydon":"True",
+        "Snorlax":"True",
+        "Tyranitar":"True",
+        "Venusaur":"True",
+        "Articuno":"True",
+        "Zapdos":"True",
+        "Moltres":"True",
+        "Mewtwo":"True",
+        "Mew":"True",
+        "Raikou":"True",
+        "Entei":"True",
+        "Suicune":"True",
+        "Lugia":"True",
+        "Ho-Oh":"True",
+        "Celebi":"True"
+    }
  ```
 
 **Filter specific raid pokemon**

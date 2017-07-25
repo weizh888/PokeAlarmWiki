@@ -44,11 +44,11 @@ The filter following new egg filters are available:
 
 Example eggs filter:
 ```json
- "eggs": {
-         "enabled":"True",
-         "min_level": "1",
-         "max_level": "5"
- },
+    "eggs": {
+        "enabled":"True",
+        "min_level": "1",
+        "max_level": "5"
+    },
 ```
 
 The default pokemon filter is used for raids and kept the same way as pokemon filters for simplicity, but some values like iv and size will not have a meaningful use. Raid pokemon will only report CP and have perfect IVs. 
@@ -57,7 +57,7 @@ See the pokemon filter documentation ([Filters] ) for more information.
 
 Example raids filter:
 ```json
-"raids":{
+    "raids":{
         "enabled":"True",
         "default": {
             "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "999999", "min_iv":"0", "max_iv":"100",
@@ -87,7 +87,18 @@ Example raids filter:
         "Rhydon":"True",
         "Snorlax":"True",
         "Tyranitar":"True",
-        "Venusaur":"True"
+        "Venusaur":"True",
+        "Articuno":"True",
+        "Zapdos":"True",
+        "Moltres":"True",
+        "Mewtwo":"True",
+        "Mew":"True",
+        "Raikou":"True",
+        "Entei":"True",
+        "Suicune":"True",
+        "Lugia":"True",
+        "Ho-Oh":"True",
+        "Celebi":"True"
     }
 ```
 
@@ -106,26 +117,26 @@ The following is the default alarms for egg and raid in Discord:
 
 ### Egg
 ```json
-"egg": {
-    "username": "Egg",
-    "content": "",
-    "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
-    "avatar_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
-    "title": "Raid is incoming!",
-    "url": "<gmaps>",
-    "body": "A level <raid_level> raid will hatch <begin_24h_time> (<begin_time_left>)."
-}
+    "egg": {
+        "username": "Egg",
+        "content": "",
+        "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
+        "avatar_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
+        "title": "Raid is incoming!",
+        "url": "<gmaps>",
+        "body": "A level <raid_level> raid will hatch <begin_24h_time> (<begin_time_left>)."
+    }
 ```
 
 ### Raid
 ```json
-"raid": {
-    "username": "Raid",
-    "content": "",
-    "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
-    "avatar_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
-    "title": "Level <raid_level> Raid is available against <pkmn>!",
-    "url": "<gmaps>",
-    "body": "The raid is available until <24h_time> (<time_left>)."
-}
+    "raid": {
+        "username": "Raid",
+        "content": "",
+        "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+        "avatar_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
+        "title": "Level <raid_level> Raid is available against <pkmn>!",
+        "url": "<gmaps>",
+        "body": "The raid is available until <24h_time> (<time_left>)."
+    }
 ```
