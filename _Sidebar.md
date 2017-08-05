@@ -1,25 +1,30 @@
 ### **Wiki Contents**  
-[Home](Home)  
-[Quick Start Guide](PokeAlarm-Version-3-Quick-Start-Guide)  
-[Installation](Installation)  
-[Command Line Execution](Execution)      
-[Dynamic Text Substitution](Dynamic-Text-Substitution)  
-[Google Maps API Key](Google-Maps-API-Key)  
-
-### **Settings**    
-[Filters](Filters)     
-[Geofences](Geofences)     
-[Alarms](Alarms)
+[Home](home)    
+[Installation](installation)  
+[FAQ](faq)
+   
+### **Settings**
+[Configuring PokeAlarm](configure_pokealarm)   
+[Server Settings](server_settings)   
+[Filters](filters)    
+[Alarms](alarms)  
+[Geofences](geofences)  
+[Managers](managers)  
 
 ### **Services**  
 [Discord](Discord)  
-[Facebook Page](Facebook-Pages)  
+[Facebook Pages](Facebook-Pages)  
 [Pushbullet](Pushbullet)   
 [Slack](Slack)  
 [Telegram](Telegram)    
 [Twilio (SMS)](Twilio)  
 [Twitter](Twitter)
 
+### **Other**
+[Dynamic Text Substitution](Dynamic-Text-Substitution)  
+[Google Maps API Keys](Google-Maps-API-Key)   
+[Remedy's v3.2 Guide](v3.2_guide)  
+[Remedy's v3 Guide](v3_guide.md)
 
 ### **Documentation**
 [Webhook Standards](Webhook-Standard)  

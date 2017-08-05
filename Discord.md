@@ -78,6 +78,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, `gy
 | `title`          | Notification text to begin the message            | `A wild <pkmn> has appeared!`                 |
 | `url`            | Link to be added to notification text             | `<gmaps>`                                     |
 | `body`           | Additional text to be added to the message        | `Available until <24h_time> (<time_left>).`   | 
+| `content`        | Text before the Discord embed                     |                                               | 
 *Note: Nidorans will be `nidoranf` or `nidoranm`, Farfetch'd will be `farfetchd`, and Mr. Mime will be `mrmime`.
 
 

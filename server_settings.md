@@ -1,25 +1,42 @@
-Execution is handled through the command `python start_pokealarm.py`.
+## Overview
+This guide will walk you through configuring server settings for PokeAlarm.
 
-PokeAlarm defaults to `127.0.0.1:4000`. Ensure that your RocketMap instance is running with the `-wh http://127.0.0.1:4000` flag or `webhook:http://127.0.0.1:4000` in your RocketMap `config.ini` file.  Update HOST and PORT per your particular installation.
+* [Prerequisites](#prerequisites)
+* [Server Settings](#overview)
+* [Command Line](#command-line)
+* [Configuration File](#configuration-file)
+* [Additional Options](#additional-options)
 
-## Command Line Arguments
+## Prerequisites
+This guide assumes the following:
+
+1. You have correctly [installed PokeAlarm](installation).
+
+2. You are using Notepad++, Nano, or Vi(m) to configure any files. Do **NOT** use or open any files with Notepad or TextEdit - they will break your files!
+
+## Server Settings
+
+Settings for the PokeAlarm server can be done the following two ways:
+
+1. **Command Line** - When starting PokeAlarm, you can specify certain settings with flags following the start up command. For example, you can change the IP that PokeAlarm binds itself to by using either `python start_pokealarm.py -H 192.168.0.1` or `python start_pokealarm.py --host 192.168.0.1`.  
+  **Note**: when used together, command line flags will override arguements specified in the configuration file.
+
+2. **Configuration File** - You can also use a configuration file in `ini` format to set server settings for PokeAlarm. These settings use the same flags at the command line. For example, you either `host: 192.168.0.1` or `H: 192.168.0.1` line to the configuration file to change the IP that PokeAlarm binds itself to.
+
+For files, all relative paths will being from the PokeAlarm root folder, but absolute file paths can still be used. 
+
+## Command Line
+
+To get the most recent command line settings for your version, use the following command:  `python start_pokealarm.py --help`.
+
 
 ```
-pokealarm@pokealarm:/PokeAlarm$ python start_pokealarm.py -h
 usage: start_pokealarm.py [-h] [-cf CONFIG] [-d] [-H HOST] [-P PORT]
                           [-m MANAGER_COUNT] [-M MANAGER_NAME] [-k KEY]
                           [-f FILTERS] [-a ALARMS] [-gf GEOFENCES]
                           [-l LOCATION] [-L {de,en,es,fr,it,ko,zh_hk}]
                           [-u {metric,imperial}] [-tl TIMELIMIT]
                           [-ma MAX_ATTEMPTS] [-tz TIMEZONE]
-
-Args that start with '--' (eg. -d) can also be set in a config file
-(/PokeAlarm/config/config.ini or specified via -cf). The
-recognized syntax for setting (key, value) pairs is based on the INI and YAML
-formats (e.g. key=value or foo=TRUE). For full documentation of the
-differences from the standards please refer to the ConfigArgParse
-documentation. If an arg is specified in more than one place, then commandline
-values override config file values which override defaults.
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -58,11 +75,13 @@ optional arguments:
                         "America/Los_Angeles"
 ```
 
+## Configuration File
 
+A copy of the most recent configuration file should be located at `config/config.ini.example`. You can copy this file as a starting point. 
 
-## `config.ini`
-To facilitate use of PokeAlarm, all of the optional arguments above may be configured in `config.ini`, located in the `config` subfolder of your PokeAlarm installation.  Below is `config.ini.example`.  Copy this file, rename to `config.ini`, and update as necessary for your instance.
-```
+By default, PokeAlarm will load the file at `config/config.ini` if it exists. You can manually specify a configuration file with either the `-cf` or `--config` file via the command line.
+
+```ini
 # Copy this file to config.ini and modify to suit your needs
 # Uncomment a line (remove the #) when you want to change its default value.
 # Multiple arguments can be listed as [arg1, arg2, ... ]

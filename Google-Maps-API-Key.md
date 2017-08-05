@@ -14,7 +14,7 @@
 This guide assumes:
 
 1. You have a functional PokeAlarm installation
-2. You have an available Google account (e.g., gmail)
+2. You have an available Google account (e.g., Gmail)
 3. You have read and understood the available Command Line Arguments in the [Execution](Execution) Wiki
 
 ## Introduction

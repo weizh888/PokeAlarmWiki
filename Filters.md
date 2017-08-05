@@ -1,5 +1,3 @@
-##Attention! PokeAlarm version 3.1 contains significant changes to `filters.json` compared to previous versions.  Read the patch notes if you are upgrading from a working v3 installation.
-
 ## Overview
 * [Prerequisites](#prerequisites)
 * [Introduction](#introduction)
