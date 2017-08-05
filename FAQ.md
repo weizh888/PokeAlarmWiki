@@ -6,7 +6,7 @@
 
 #### What scanners are supported?
 
-* Currently RocketMap and Monocole are compatible with PA. Any others following our [Webhook Standards](webhook-standard) should work as well. The PA team does NOT support
+* Currently RocketMap and Monocole are compatible with PA. Any others following our [Webhook Standards](webhook-standard) should work as well. The PA team does NOT help with troubleshooting scanners - they have their own resources you can use.
 
 #### I have a great idea for a new feature!
 * Open an Enhancement Request on our Github page. Use the correct template - Do NOT post requests in Discord!
