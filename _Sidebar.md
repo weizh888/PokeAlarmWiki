@@ -4,8 +4,8 @@
 [FAQ](faq)
    
 ### **Settings**
-[Configuring PokeAlarm](configure_pokealarm)   
-[Server Settings](server_settings)   
+[Configuring PokeAlarm](configuring-pokeAlarm)   
+[Server Settings](server-settings)   
 [Filters](filters)    
 [Alarms](alarms)  
 [Geofences](geofences)  
@@ -23,8 +23,8 @@
 ### **Other**
 [Dynamic Text Substitution](Dynamic-Text-Substitution)  
 [Google Maps API Keys](Google-Maps-API-Key)   
-[Remedy's v3.2 Guide](v3.2_guide)  
-[Remedy's v3 Guide](v3_guide.md)
+[Remedy's v3.2 Guide](v3.2-Guide)  
+[Remedy's v3 Guide](v3-Guide.md)
 
 ### **Documentation**
 [Webhook Standards](Webhook-Standard)  

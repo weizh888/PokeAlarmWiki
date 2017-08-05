@@ -56,7 +56,7 @@ geofence: [ city1.json, none, city2.json ]
 ```
 As you can see, you can mix managers with geofences and without by using `none` for any managers that you don't want a geofence file loaded for.
 
-You can find more information about Geofences on the [Geoence](geofence) wiki page.
+You can find more information about Geofences on the [Geoences](geofences) wiki page.
 
 
 ### Timezones
