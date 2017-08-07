@@ -24,8 +24,15 @@
 1. Make sure you didn't open any files with Notepad or TextEdit - they can break the encoding on your files.
 2. If you sure that isn't the problem, then you probably have an error with your JSON Formatting. Look up how JSON formatting works and use a [JSON Editor](http://www.jsoneditoronline.org/) to find your problem.
 
-#### My maps in discord or other services only work once in a while. What can I do?
+#### Why does <iv>, <cp>, or another DTS show up as '?'?
+* This means that PA wasn't send that information by your scanner. Make sure your scanner is configured to scan for the data you want. 
+
+#### My maps don't show up consistently... What can I do?
 * Make sure you have added a [Google API Key](Google-Maps-API-Key) and have the Static Maps API enabled. If you already have it enabled, make sure that you haven't hit the limit for free users.
+
+#### Why isn't <gym_name> working right?
+* You must have gym-details enabled in your scanner and webhook options. 
+* Most scanners don't send the gym-details with every gym related webhook - PA will cache the details and try to remember them, but this goes away upon restart. It takes time for the scanner to send all the details. 
 
 #### I have some other problem and can't figure it out.
 * If you have already checked the [Wiki](Home) thoroughly, you can try asking in our [Discord](https://discord.gg/S2BKC7p). Make sure to read the Rules before posting.
