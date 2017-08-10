@@ -24,6 +24,14 @@
 1. Make sure you didn't open any files with Notepad or TextEdit - they can break the encoding on your files.
 2. If you sure that isn't the problem, then you probably have an error with your JSON Formatting. Look up how JSON formatting works and use a [JSON Editor](http://www.jsoneditoronline.org/) to find your problem.
 
+#### PokeAlarm repeatedly spams Error 10053 on Windows or Error 53 on Linux?
+
+* This error is when your machine can't keep up with the current number of sockets open. This is particularly common on Windows. You can try the following:
+1. Lower the number of webhook threads (wh-concurrent or similiar)
+2. Decrease database threads (db-concurrency or similiar)
+3. If on Windows, try Linux (even a VM will see improvements)
+4. If all of the above fails, you are being bottlenecked by hardware. It could be CPU is maxed out, HD is too slow, etc. You can upgrade your hardware or add on additional machine(s) to split the load.
+
 #### Why does <iv>, <cp>, or another DTS show up as '?'?
 * This means that PA wasn't send that information by your scanner. Make sure your scanner is configured to scan for the data you want. 
 
