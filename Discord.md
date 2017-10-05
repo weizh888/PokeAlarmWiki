@@ -73,6 +73,7 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, `gy
 | Parameters       | Description                                       | Default                                       |
 | -----------------|---------------------------------------------------|-----------------------------------------------|
 | `webhook_url`    | URL of specific channel name.  Overrides `webhook_url` at Alarm level.  Use to post only 
+| `disable_embed`  | Disables the body to make one line notifications  | `False`                                      |
 | `username`       | Username the bot should post the message as       | `<pkmn>`                                      | 
 | `icon_url`       | URL path to pokemon icon	   					   |												 |
 | `title`          | Notification text to begin the message            | `A wild <pkmn> has appeared!`                 |
