@@ -77,6 +77,7 @@ For what fields (title, message, etc) you have the option to change, please see 
 | `<iv>`          | Percent IV of the alerted pokemon      |
 | `<iv_0>`        | Percent IV rounded to 0 decimals of the alerted pokemon      |
 | `<iv_2>`        | Percent IV rounded to 2 decimals of the alerted pokemon      |
+| `<level>`       | Level of the alerted pokemon           |
 | `<cp>`          | CP number of the alerted pokemon       |
 | `<atk>`         | Attack IV of the alerted pokemon       |
 | `<def>`         | Defense IV of the alerted pokemon      |
@@ -94,6 +95,7 @@ For what fields (title, message, etc) you have the option to change, please see 
 | `<charge_dps>` | Damage per second value of charge move  |
 | `<charge_energy>` | Energy of charge move      |
 | `<id>`| Database encounter_id of the pokemon   |
+| `<form_id>`     | Numerical value for unown form        |
 | `<gender>`      | Gender of the alerted pokemon          |
 | `<height>`      | Height of the alerted pokemon          |
 | `<weight>`      | Weight of the alerted pokemon          |

@@ -11,24 +11,29 @@ Pokemon standard now includes moveset and IVs as of commit [oc1b4](https://githu
 #### Example:
 ```json
 {
-  "type": "pokemon",
+    "type": "pokemon",
     "message": {
         "encounter_id": "0",
         "spawnpoint_id": "0",
-        "pokemon_id": 1,
-        "latitude": -45.10312534490142,
-        "longitude": 40.677737099053275,
-        "disappear_time": 1584828794,
+        "pokemon_id": 201,
+        "pokemon_level": 30,
+        "player_level": 31,
+	"latitude": 33.980823, 
+        "longitude":  -81.052988,
+        "disappear_time": 1506897031,
         "last_modified_time": 1475033386661,
         "time_until_hidden_ms": 5000,
-        "individual_attack": 15,
-        "individual_defense": 15,
-        "individual_stamina": 15,
-        "move_1": 214,
-        "move_2": 90,
-        "height": 1.0,
-        "weight": 1.0,
-        "gender": 1
+	"cp_multiplier": 0.7317000031471252,
+	"form": 15,
+        "cp": 768,
+        "individual_attack": 10,
+        "individual_defense": 1,
+        "individual_stamina": 9,
+	"move_1": 281,
+        "move_2": 133,
+        "height": 0.5694651007652283,
+        "weight": 5.733094215393066,
+        "gender": 3
     }
 }
 ```
@@ -57,10 +62,16 @@ Pokemon standard now includes moveset and IVs as of commit [oc1b4](https://githu
 { 
     "type": "gyms",
     "message": {
+		"raid_active_until": 0,
 		"gym_id": 0,
 		"team_id": 0,
 		"guard_pokemon_id": 0,
 		"gym_points": 100,
+		"slots_available": 0,
+		"guard_pokemon_id": 99,
+		"lowest_pokemon_motivation": 0.8795773983001709,
+		"total_cp": 11099,
+                "occupied_since": 1506886787,
 		"enabled": "True",
 		"latitude": 62.790967,
 		"longitude":  76.927920,
@@ -72,16 +83,16 @@ Pokemon standard now includes moveset and IVs as of commit [oc1b4](https://githu
 #### Gym-details Example:
 ```json
 {
-	"type": "gym_details",
+    "type": "gym_details",
     "message": {
-        "id": "4b432a31c3c247e5b0f7656d09e2c050.11",
-        "url": "http://lh3.ggpht.com/yBqXtFfq3nOlZmLc7DbgSIcXcyfvsWfY3VQs_gBziPwjUx7xOfgvucz6uxP_Ri-ianoWFt5mgJ7_zpsa7VNK",
-        "name": "Graduate School of Public Health Sculpture",
-        "description": "Sculpture on the exterior of the Graduate School of Public Health building.",
-        "team": 1,
-        "latitude": 40.442506,
-        "longitude": -79.957962,
-        "pokemon": [{
+            "id": "OWNmOTFmMmM0YTY3NGQwYjg0Y2I1N2JlZjU4OWRkMTYuMTY=",
+            "url": "http://lh3.ggpht.com/yBqXtFfq3nOlZmLc7DbgSIcXcyfvsWfY3VQs_gBziPwjUx7xOfgvucz6uxP_Ri-ianoWFt5mgJ7_zpsa7VNK",
+            "name": "Graduate School of Public Health Sculpture",
+            "description": "Sculpture on the exterior of the Graduate School of Public Health building.",
+            "team": 1,
+            "latitude": 40.442506,
+            "longitude": -79.957962,
+            "pokemon": [{
             "num_upgrades": 0,
             "move_1": 234,
             "move_2": 99,
@@ -94,11 +105,13 @@ Pokemon standard now includes moveset and IVs as of commit [oc1b4](https://githu
             "height": 0.7160492539405823,
             "stamina": 46,
             "pokemon_uid": 9278614152997308833,
+            "deployment_time": 1506894280,
             "iv_attack": 12,
             "trainer_name": "SportyGator",
             "trainer_level": 18,
             "cp": 138,
-            "iv_stamina": 8
+            "iv_stamina": 8,
+            "cp_decayed": 125
         }, {
             "num_upgrades": 0,
             "move_1": 234,
@@ -112,11 +125,13 @@ Pokemon standard now includes moveset and IVs as of commit [oc1b4](https://githu
             "height": 1.4966495037078857,
             "stamina": 250,
             "pokemon_uid": 6103380929145641793,
+            "deployment_time": 1506894733,
             "iv_attack": 5,
             "trainer_name": "Meckelangelo",
             "trainer_level": 22,
             "cp": 1353,
-            "iv_stamina": 15
+            "iv_stamina": 15,
+            "cp_decayed": 1024
         }, {
             "num_upgrades": 9,
             "move_1": 224,
@@ -130,11 +145,13 @@ Pokemon standard now includes moveset and IVs as of commit [oc1b4](https://githu
             "height": 1.0611374378204346,
             "stamina": 252,
             "pokemon_uid": 3580711458547635980,
+            "deployment_time": 1506894763,
             "iv_attack": 10,
             "trainer_name": "Plaidflamingo",
             "trainer_level": 23,
             "cp": 1670,
-            "iv_stamina": 11
+            "iv_stamina": 11,
+            "cp_decayed": 1435
         }]
     }
 }
