@@ -1,9 +1,11 @@
 ## Overview
-* [Prerequisites](#prerequities)
+* [Prerequisites](#prerequisites)
 * [Introduction](#introduction)
 * [Pokemon Text](#pokemon-text)
 * [Pokestop Text](#pokestop-text)
 * [Gym Text](#gym-text)
+* [Egg Text](#egg-text)
+* [Raid Text](#raid-text)
 * [Reverse Location Text](#reverse-location-text)
 * [Distance Matrix Text](#distance-matrix-text)
 * [Example: Slack](#example-slack)
@@ -12,8 +14,8 @@
 This guide assumes:
 
 1. You have a working RocketMap installation
-2. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
-3. You have read and understood the [Alarm Configuration](https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration) Wiki
+2. You are familiar with [JSON formatting](https://www.w3schools.com/js/js_json_intro.asp)
+3. You have read and understood the [Alarms](alarms) Wiki
 4. You are comfortable with the layout of `alarms.json`.
 5. You are using the latest version of PokeAlarm
 
@@ -24,7 +26,7 @@ All alarms in the `alarms.json` alarm configuration file have customizable field
 
 **Note:** The alarm configuration file is the only file within the PokeAlarm installation that you are **required** to directly edit (`config.ini` file is optional.)  Editing other files in your PokeAlarm installation directory is not supported.
 
-In order to customize an Alert, you must specify what type of alert you want to config: Either `pokemon`, `pokestop`, or `gym`. Each of these has different defaults available. The following is an `alarms` config where a portion of the Alert has been updated:
+In order to customize an Alert, you must specify what type of alert you want to config: Either `pokemon`, `pokestop`, `gym`, `egg`, or `raid`. Each of these has different defaults available. The following is an `alarms` config where a portion of the Alert has been updated:
 
 ```json
 {
@@ -56,7 +58,6 @@ The above might produce the following customized pokemon and pokestop notificati
 For what fields (title, message, etc) you have the option to change, please see the wiki page for the specific service.
 
 ## Pokemon Text
-
 
 **Note:** There are **two** `pokemon` keys in `alarms.json` - one at the top level, and another optional at the alarm level.  The follow text substitutions below pertain to the `pokemon` field in the `alarms:[]` level.
 
@@ -266,58 +267,84 @@ In other words, there is a Dragonite, pokemon number 149, at the given address, 
 
 ```json
 {
-	"alarms":[
-		{
-			"active": "True",
-			"type":"slack",
-			"api_key":"YOUR_SLACK_API_KEY",
-			"startup_message":"False",
-			"channel":"#general",
-			"pokemon":{
-				"channel":"#brooklyn",
-				"username":"Pokemon",
-				"title":"<pkmn> #<id> at <address> <postal>",
-				"url":"<gmaps>",
-				"body":"Available until <24h_time> (<time_left>). \n*Walking:* <walk_dist> <dir>, ~<walk_time> \nMoves: <quick_move> / <charge_move> \n**IVs:** <iv>% (<atk>/<def>/<sta>)",
-				"map": { 
-					"enabled":"True",
-					"width":"330",
-					"height":"250",
-					"maptype":"roadmap",
-					"zoom": "17"
-				}
-			},
-			"pokestop":{
-				"channel":"pokestops",
-				"username":"Pokestop",
-				"icon_url":"https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png",
-				"title":"New lure placed at <address> <city> <postal>",
-				"url":"<gmaps>",
-				"body":"expires at <24h_time> (<time_left>).",
-				"map": { 
-					"enabled":"True",
-					"width":"330",
-					"height":"250",
-					"maptype":"roadmap",
-					"zoom": "15"
-				}
-			},
-			"gym":{
-				"channel":"gyms",
-				"username":"Gym",
-				"icon_url":"https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png",
-				"title":"A Team <old_team> gym has fallen at <address> <city> <postal>",
-				"url":"<gmaps>",
-				"body": "It is now controlled by <new_team>.",
-				"map": { 
-					"enabled":"True",
-					"width":"250",
-					"height":"250",
-					"maptype":"roadmap",
-					"zoom": "13"
-				}
-			}
-		}
-	],
+    "active": "True",
+    "type":"slack",
+    "api_key":"YOUR_API_KEY",
+    "channel":"general",
+    "startup_message":"True",
+    "pokemon":{
+        "channel":"#brooklyn",
+        "username":"Pokemon",
+        "title":"<pkmn> #<id> at <address> <postal>",
+        "url":"<gmaps>",
+        "body":"Available until <24h_time> (<time_left>). \n*Walking:* <walk_dist> <dir>, ~<walk_time> \nMoves: <quick_move> / <charge_move> \n**IVs:** <iv>% (<atk>/<def>/<sta>)",
+        "map": { 
+            "enabled":"True",
+            "width":"330",
+            "height":"250",
+            "maptype":"roadmap",
+            "zoom": "17"
+        }
+    },
+    "pokestop":{
+        "channel":"general",
+        "username":"Pokestop",
+        "icon_url" : "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/pokestop.png",
+        "title":"Someone has placed a lure on a Pokestop!",
+        "url":"<gmaps>",
+        "body":"Lure will expire at <24h_time> (<time_left>).",
+        "map": { 
+            "enabled":"True",
+            "width":"330",
+            "height":"250",
+            "maptype":"roadmap",
+            "zoom": "15"
+        }
+    },
+    "gym":{
+        "channel":"gyms",
+        "username":"Gym",
+        "icon_url" : "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/gym_<team_id>.png",
+        "title":"A Team <old_team> gym has fallen!",
+        "url":"<gmaps>",
+        "body": "It is now controlled by <new_team>.",
+        "map": { 
+            "enabled":"True",
+            "width":"250",
+            "height":"250",
+            "maptype":"roadmap",
+            "zoom": "13"
+        }
+    },
+    "egg": {
+        "channel":"eggs",
+        "username": "Egg",
+        "icon_url": "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/egg_<raid_level>.png",
+        "title": "A level <raid_level> raid is incoming!",
+        "url": "<gmaps>",
+        "body": "The egg will hatch <begin_24h_time> (<begin_time_left>).",
+        "map": { 
+            "enabled":"True",
+            "width":"250",
+            "height":"250",
+            "maptype":"roadmap",
+            "zoom": "15"
+        }
+    },
+    "raid": {
+        "channel":"raids",
+        "username": "<pkmn> Raid",
+        "icon_url": "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/<pkmn_id>.png",
+        "title": "A Raid is available against <pkmn>!",
+        "url": "<gmaps>",
+        "body": "The raid is available until <24h_time> (<time_left>).",
+        "map": { 
+            "enabled":"True",
+            "width":"250",
+            "height":"250",
+            "maptype":"roadmap",
+            "zoom": "15"
+        }
+    }
 }
 ```

@@ -7,13 +7,13 @@
 * [Advanced Config](#advanced-config)
   * [Optional Parameters](#optional-parameters)
   * [Example: Alarm Configuration Using Optional Parameters](#example-alarm-configuration-using-optional-parameters)
-* [How to get a Permanent Facebook Page Access Token](#how-to-get-a-permanent-facebook-page-access-token)
+* [How to get a Permanent Facebook Page Access Token](#how-to-get-a-permanent-facebook-page-token)
 
 ## Prerequisites
 This guide assumes 
 
-1. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
-2. You have read and understood the [Alarm Configuration](https://github.com/kvangent/PokeAlarm/wiki/Alarm-Configuration) Wiki
+1. You are familiar with [JSON formatting](https://www.w3schools.com/js/js_json_intro.asp)
+2. You have read and understood the [Alarms](alarms) Wiki
 3. You are comfortable with the layout of `alarms.json`.
 
 Please familiarize yourself with all of the above before proceeding.
@@ -24,7 +24,7 @@ Please familiarize yourself with all of the above before proceeding.
 
 PokeAlarm offers the following for Facebook Pages:
 
-* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Subsitution)
+* Personalized notifications via [Dynamic Text Substitution](Dynamic-Text-Substitution)
 
 ## Basic Config
 
@@ -52,7 +52,7 @@ These `alarms.json` parameters - `active`, `type`, and `page_access_token` - are
 ### Optional Parameters
 In addition to the 3 required parameters, several optional parameters are available to personalize your Facebook Pages notifications.  Below is an example of these optional parameters and how they are incorporated into a functional alarm layout for Facebook Pages.
 
-These optional parameters are entered at the same level as `"type":"facebookpages"`.
+These optional parameters are entered at the same level as `"type":"facebook_page"`.
 
 | Parameters         | Description                                                | Default                      |
 |--------------------|------------------------------------------------------------|------------------------------|
@@ -83,7 +83,7 @@ For example if you have `link` as a google maps link and you disable the `image`
 | -----------------|-----------------------------------------------|
 | `message`        |  `A wild <pkmn> has appeared!` |
 | `link`           | `<gmaps>` |
-| `image`          | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png` |
+| `image`          | `https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/<pkmn_id>.png` |
 | `name`           | `<pkmn>`  |
 | `description`    | `Available until <24h_time> (<time_left>)`  |
 | `caption`        |  None  |
@@ -95,7 +95,7 @@ For example if you have `link` as a google maps link and you disable the `image`
 | -----------------|-----------------------------------------------|
 | `message`        |  `Someone has placed a lure on a Pokestop!`                                      |
 | `link`           | `<gmaps>` |
-| `image`          | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png` |
+| `image`          | `https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/pokestop.png` |
 | `name`           | `Lured Pokestop`  |
 | `description`    | `Lure will expire at <24h_time> (<time_left>)`  |
 | `caption`        | None  |
@@ -107,7 +107,7 @@ For example if you have `link` as a google maps link and you disable the `image`
 | -----------------|-----------------------------------------------|
 | `message`        | `A Team <old_team> gym has fallen!`                                      |
 | `link`           |  `<gmaps>` |
-| `image`          |  `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png` |
+| `image`          |  `https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/gym_<team_id>.png` |
 | `name`           |  `<old_team> gym fallen`  |
 | `description`    | `It is now controlled by <new_team>`  |
 | `caption`        |  None  |
@@ -117,7 +117,7 @@ For example if you have `link` as a google maps link and you disable the `image`
 | Parameters       |  Default                                       |
 | -----------------|-----------------------------------------------|
 | `message`        | `A level <raid_level> raid is upcoming!` |
-| `image`          | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png`|
+| `image`          | `https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/egg_<raid_level>.png`|
 | `link`           | `<gmaps>`|
 | `name`           | `Egg`|
 | `description`    | `The egg will hatch <begin_24h_time> (<begin_time_left>).`|
@@ -128,7 +128,7 @@ For example if you have `link` as a google maps link and you disable the `image`
 | Parameters       |  Default                                       |
 | -----------------|-----------------------------------------------|
 | `message`        | `A Raid is available against <pkmn>!`|
-| `image`          | `https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png`|
+| `image`          | `https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/<pkmn_id>.png`|
 | `link`           | `<gmaps>`|
 | `name`           | `Raid`|
 | `description`    | `The raid is available until <24h_time> (<time_left>).`|
@@ -146,7 +146,7 @@ For example if you have `link` as a google maps link and you disable the `image`
     "pokemon":{
         "message": "<pkmn> available. <move_1>/<move_2> (<iv>% - <atk>/<def>/<sta>)",
         "link": "<gmaps>",
-        "image" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+        "image" : "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/<pkmn_id>.png",
         "description": "Address: <address>",
         "name": "<pkmn>"		
     },
@@ -165,14 +165,14 @@ For example if you have `link` as a google maps link and you disable the `image`
     },
     "egg": {
         "message": "A level <raid_level> raid is upcoming!",
-        "image": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
+        "image": "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/egg_<raid_level>.png",
         "link": "<gmaps>",
         "name": "Egg",
         "description": "The egg will hatch <begin_24h_time> (<begin_time_left>)."
     },
     "raid": {
         "message": "A Raid is available against <pkmn>!",
-        "image": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+        "image": "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/<pkmn_id>.png",
         "link": "<gmaps>",
         "name": "Raid",
         "description": "The raid is available until <24h_time> (<time_left>)."

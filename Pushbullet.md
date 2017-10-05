@@ -13,8 +13,8 @@
 ## Prerequisities
 This guide assumes: 
 
-1. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
-2. You have read and understood the [Alarms](https://github.com/kvangent/PokeAlarm/wiki/Alarms) Wiki
+1. You are familiar with [JSON formatting](https://www.w3schools.com/js/js_json_intro.asp)
+2. You have read and understood the [Alarms](alarms) Wiki
 3. You are comfortable with the layout of `alarms.json`.
 
 Please familiarize yourself with all of the above before proceeding.
@@ -112,8 +112,8 @@ These optional parameters below are applicable to the `pokemon`, `pokestop`, `gy
 
 ## How to get a Pushbullet API Key
 
-1. Go to Pushbullet.com and click one of the 'Sign up' options.
+1. Go to [Pushbullet](https://www.pushbullet.com/) and click one of the 'Sign up' options.
 
 2. In the top right corner, click on the letter and select 'My Account'.
 
-3. Scroll down to 'Create Access Token`. Copy this token and place it in api_key parmater. 
+3. Scroll down to 'Create Access Token`. Copy this token and place it in api_key paramater. 

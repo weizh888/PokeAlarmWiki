@@ -13,8 +13,8 @@
 ## Prerequisities
 This guide assumes: 
 
-1. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
-2. You have read and understood the [Alarms](https://github.com/kvangent/PokeAlarm/wiki/Alarms) Wiki
+1. You are familiar with [JSON formatting](https://www.w3schools.com/js/js_json_intro.asp)
+2. You have read and understood the [Alarms](alarms) Wiki
 3. You are comfortable with the layout of `alarms.json`.
 
 Please familiarize yourself with all of the above before proceeding.
@@ -109,7 +109,7 @@ For more information on text substitutions, please see the main configuration pa
 * Fill out all details, and **make sure to include your phone number**. This is a requirement for remote access, and you will need that to make the Twitter bot work.
 
 ### Step 2: Create a Twitter app
-* Go to [app.twitter.com](https://apps.twitter.com)
+* Go to [apps.twitter.com](https://apps.twitter.com)
 * Click 'Create New App' button
 * Fill out the details on the form. You have to give your app a name, description, and website. This can be a simple place holder like http://www.example.com
 * Read the Developer Agreement, and check the box at the bottom if you agree. Then click on the ‘Create your Twitter application’ button.

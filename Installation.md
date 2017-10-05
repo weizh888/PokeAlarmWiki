@@ -2,7 +2,7 @@
 This guide will walk you through the initial setup of PokeAlarm.
 
 * [Prerequisites](#prerequisites)
-* [Installation](#initial-setup)
+* [Installation](#installation)
 * [Running PokeAlarm](#running-pokealarm)
 * [Updating PokeAlarm](#updating-pokealarm)
 
@@ -16,7 +16,7 @@ This guide assumes the following:
 
 ## Installation
 
-1. **Clone PokeAlarm locally** - Create a new folder to install PokeAlarm in (It is recommended you store it in a different folder than your scanner). Use `git clone https://github.com/kvangent/PokeAlarm.git` to create a local copy of the project.
+1. **Clone PokeAlarm locally** - Create a new folder to install PokeAlarm in (It is recommended you store it in a different folder than your scanner). Use `git clone https://github.com/RocketMap/PokeAlarm.git` to create a local copy of the project.
 
 2. **Install requirements** - Navigate into the root folder of your PokeAlarm installation. Run `pip install -r requirements.txt --upgrade`.  This will install and update the packages that PokeAlarm needs to run.
 
@@ -24,7 +24,7 @@ This guide assumes the following:
 
 4. **Create your Alarms configuration file** - Copy and paste `filters.json.example`. Rename the copy to `filters.json`. This file will tell PokeAlarm what the alerts to say and what service to send them on.
 
-5. **Finish configuring PokeAlarm** - Now you should configure PokeAlarm. Use the [Configuration Guide](configure_pokealarm) for more detailed instructions on how to personalize PokeAlarm to fit your needs.
+5. **Finish configuring PokeAlarm** - Now you should configure PokeAlarm. Use the [Configuration Guide](configuring-pokeAlarm) for more detailed instructions on how to personalize PokeAlarm to fit your needs.
 
 
 ## Running PokeAlarm
@@ -39,4 +39,4 @@ Updating PokeAlarm is a simple process, provided you haven't changed any files y
 1. Open a command line in the root folder of your PokeAlarm installation. 
 2. Run `git pull`.
 3. Run `pip install -r requirements.txt`.
-4. Make sure to checkout the [Patch Notes](patch_notes) to see if any updates to your config files are nessecary. 
+4. Make sure to checkout the [Patch Notes](patch-notes) to see if any updates to your config files are nessecary. 

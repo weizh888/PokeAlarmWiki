@@ -1,19 +1,15 @@
 ## Overview
-* [Prerequisites](#prerequities)
+* [Prerequisites](#prerequisites)
 * [Introduction](#introduction)
-* [Basic Structure of Alarm Configuration File](#basic-structure-of-alarm-configuration-file)
-* [Configuring Multiple Different Alarm Services](#configuring-multiple-different-alarm-services)
-* [Configuring Multiple of the Same Alarm Services](#configuring-multiple-of-the-same-alarm-services)
 * [Editing or Adding Alarms](#editing-or-adding-alarms)
 * [Customizing Alerts](#customizing-alerts)
 * [Example `alarms.json`](#example-alarmsjson)
-* [Enabling/Disabling Pokemon](#enabling-disabling-pokemon)
 
 ## Prerequisites
 This guide assumes:
 
 1. You have a working RocketMap installation
-2. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
+2. You are familiar with [JSON formatting](https://www.w3schools.com/js/js_json_intro.asp)
 
 ## Introduction
 
@@ -47,7 +43,7 @@ Alarms are represented as a list of JSON Objects, inside an array labeled alarms
   {
     "active": "False",
     "type": "discord",
-    "api_key": "YOUR_WEBHOOK_URL"
+    "webhook_url": "YOUR_WEBHOOK_URL"
   },
   {
     "active": "False",
@@ -137,7 +133,7 @@ Below is a working alarm configuration for discord and slack:
     "pokemon":{
       "webhook_url":"DISCORD_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
       "username":"<pkmn>",
-      "icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+      "icon_url" : "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/<pkmn_id>.png",
       "title": "[<neighborhood>] <pkmn> (<iv>% <atk>/<def>/<sta>, <quick_move> / <charge_move>) at <address> <postal>",
       "url": "<gmaps>",
       "body": "Available until <24h_time> (<time_left> remaining)"
@@ -145,7 +141,7 @@ Below is a working alarm configuration for discord and slack:
     "pokestop":{
       "username":"Pokestop",
       "webhook_url":"DISCORD_WEBHOOK_URL_FOR_POKESTOP_CHANNEL",
-      "icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png",
+      "icon_url" : "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/pokestop.png",
       "title": "[<neighborhood>] <address> <postal>",
       "url": "<gmaps>",
       "body": "expires at <24h_time> (<time_left>)."
@@ -153,7 +149,7 @@ Below is a working alarm configuration for discord and slack:
     "gym":{
       "webhook_url":"DISCORD_WEBHOOK_URL_FOR_GYM_CHANNEL",
       "username":"Pokemon Gym",
-      "icon_url" : "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png",
+      "icon_url" : "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/gym_<team_id>.png",
       "title": "[<neighborhood>] <address> <postal>",
       "url": "<gmaps>",
       "body": "A team <old_team> gym has fallen to <new_team>."
@@ -161,8 +157,8 @@ Below is a working alarm configuration for discord and slack:
     "egg": {
       "webhook_url":"DISCORD_WEBHOOK_URL_FOR_EGG_CHANNEL",
       "username": "Egg",
-      "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
-      "avatar_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
+      "icon_url": "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/egg_<raid_level>.png",
+      "avatar_url": "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/egg_<raid_level>.png",
       "title": "Raid is incoming!",
       "url": "<gmaps>",
       "body": "A level <raid_level> raid will hatch <begin_24h_time> (<begin_time_left>)."
@@ -170,8 +166,8 @@ Below is a working alarm configuration for discord and slack:
     "raid": {
       "webhook_url":"DISCORD_WEBHOOK_URL_FOR_RAID_CHANNEL",
       "username": "Raid",
-      "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
-      "avatar_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/egg_<raid_level>.png",
+      "icon_url": "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/<pkmn_id>.png",
+      "avatar_url": "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/egg_<raid_level>.png",
       "title": "Level <raid_level> Raid is available against <pkmn>!",
       "url": "<gmaps>",
       "body": "The raid is available until <24h_time> (<time_left>)."
@@ -185,7 +181,7 @@ Below is a working alarm configuration for discord and slack:
     "pokemon": {
       "channel": "pokemon",
       "username": "Pokemon",
-      "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/<pkmn_id>.png",
+      "icon_url": "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/<pkmn_id>.png",
       "title": "*<pkmn>* (<iv>% <atk>/<def>/<sta>) in <neighborhood> at <address> <postal>",
       "url": "<gmaps>",
       "body": "Available until <24h_time> (<time_left>)\n*Moves:* <quick_move> / <charge_move>",
@@ -200,7 +196,7 @@ Below is a working alarm configuration for discord and slack:
     "pokestop": {
       "channel": "pokestops",
       "username": "Pokestop",
-      "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/pokestop.png",
+      "icon_url": "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/pokestop.png",
       "title": "[<neighborhood>] <address> <postal>",
       "url": "<gmaps>",
       "body": "expires at <24h_time> (<time_left>).",
@@ -215,7 +211,7 @@ Below is a working alarm configuration for discord and slack:
     "gym": {
       "channel": "gyms",
       "username": "Gym",
-      "icon_url": "https://raw.githubusercontent.com/kvangent/PokeAlarm/master/icons/gym_<team_id>.png",
+      "icon_url": "https://raw.githubusercontent.com/RocketMap/PokeAlarm/master/icons/gym_<team_id>.png",
       "title": "[<neighborhood>] <address> <postal>",
       "url": "<gmaps>",
       "body": "A team <old_team> gym has fallen to <new_team>.",

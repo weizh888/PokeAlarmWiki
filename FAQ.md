@@ -1,5 +1,5 @@
 ## Overview
-* [General Info](#general=info)
+* [General Info](#general-info)
 * [Troubleshooting](#troubleshooting)
 
 ## General Info
@@ -12,12 +12,12 @@
 * Open an Enhancement Request on our Github page. Use the correct template - Do NOT post requests in Discord!
 
 #### Do you support new services?
-* Please check in the [New/Upcoming Service MEGA-THREAD](https://github.com/kvangent/PokeAlarm/issues/147) to see if the service has already been requested. If it hasn't, feel free to leave a post requesting it.
+* Please check in the [New/Upcoming Service MEGA-THREAD](https://github.com/RocketMap/PokeAlarm/issues/147) to see if the service has already been requested. If it hasn't, feel free to leave a post requesting it.
 
-##Troubleshooting
+## Troubleshooting
 
 #### I am receiving an Error from RocketMap! What do I do?
-* Check the [RocketMap Wiki](https://rocketmap.readthedocs.io) or the ask in the RocketMap Discord.  We will not troubleshoot your RocketMap installation.
+* Check the [RocketMap Wiki](https://rocketmap.readthedocs.io/en/develop/) or the ask in the RocketMap Discord.  We will not troubleshoot your RocketMap installation.
 
 #### PokeAlarm outputs an alarm about 'ValueError' when starting up?
 
@@ -43,5 +43,5 @@
 * Most scanners don't send the gym-details with every gym related webhook - PA will cache the details and try to remember them, but this goes away upon restart. It takes time for the scanner to send all the details. 
 
 #### I have some other problem and can't figure it out.
-* If you have already checked the [Wiki](Home) thoroughly, you can try asking in our [Discord](https://discord.gg/S2BKC7p). Make sure to read the Rules before posting.
+* If you have already checked the [Wiki](Home) thoroughly, you can try asking in our [RocketMap Discord](https://discord.gg/RocketMap). Make sure to read the Rules before posting.
 * **Note**: Only [PokeAlarm Patrons](https://www.patreon.com/pokealarm) are guaranteed responses from the PA team as thanks for their helping to keep PA alive and running. 

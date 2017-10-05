@@ -1,4 +1,4 @@
-Updated: 13 March 2017
+Updated: 28 August 2017
 
 ## Purpose
 * This document is intended to quickly provide PokeAlarm users with info to get started. It is not intended to replace the full wiki.
@@ -13,14 +13,14 @@ Updated: 13 March 2017
         * [Gyms](#gyms)
         * [Changes in move filtering](#changes-in-move-filtering)
             * [Filtering on a single `quick_move`](#filtering-on-a-single-quick_move)
-            * [Filtering on more than one `charge_move`](#filtering-on-more-than-one-charge_move)
+            * [Filtering on more than one `charge_move`](#filtering-on-multiple-charge_move-moves)
             * [NEW: filtering on `moveset`](#new-filtering-on-moveset)
             * [NEW: filtering on `size`](#new-filtering-on-size)
         * [New: Optional ignoring of pokemon with missing IVs or moves](#new-optional-ignoring-of-pokemon-with-missing-ivs-or-moves)
     * [Config file: `geofence.txt` (optional)](#config-file-geofencetxt-optional)
     * [Config file: `alarms.json`](#config-file-alarmsjson)
         * [New and updated Dynamic Text Substitutions](#new-and-updated-dynamic-text-substitutions) 
-* [Upgrading from PokeAlarm Version 2 to Version 3](#upgrading-from-pokealarm-version-2-to-version-3)
+* [Upgrading from PokeAlarm Version 2 to Version 3](#upgrading-from-pokealarm-version-2-to-version-31)
 * [Running PokeAlarm v3](#running-pokealarm-v3)
     * [Optional Arguments for `start_pokealarm.py`](#optional-arguments-for-start_pokealarmpy)
     * [Running multiple alarms, filters, etc., in a single `start_pokealarm.py` instance from the command line](#running-multiple-alarms-filters-etc-in-a-single-start_pokealarmpy-instance-from-the-command-line)
@@ -38,7 +38,7 @@ Updated: 13 March 2017
 * Version 2 is now in a separate branch, [v2](https://github.com/kvangent/PokeAlarm/tree/v2)
 * If you have experience with PokeAlarm v2, use the .example files in v3 root to quickly get started 
 * Features are constantly being added. Always visit the #announcements discord channel for udpates
-* Contact us in the [#troubleshooting discord channel](https://discordapp.com/channels/215181169761714177/218822834225545216) or open a ticket on our [github page](https://github.com/kvangent/PokeAlarm/issues)
+* Contact us in the [#troubleshooting discord channel](https://discordapp.com/channels/215181169761714177/218822834225545216) or open a ticket on our [github page](https://github.com/RocketMap/PokeAlarm/issues)
 
 ## Notes
 
@@ -255,7 +255,7 @@ The list of arguments are below:
 | `-L {de,en,es,fr,it,zh_hk}`, `--locale {de,en,es,fr,it,zh_hk}` | |Locale for Pokemon and Move names: default en, check locale folder for more options
 | `-u {metric,imperial}`, `--units {metric,imperial}` | | Specify either metric or imperial units to use for distance measurements.
 | `-tl TIMELIMIT`, `--timelimit TIMELIMIT` | | Minimum number of seconds remaining on a pokemon to send a notify
-| `-tz TIMEZONE`, `--timezone TIMEZONE` | |  Timezone used for notifications. Ex: `America/Los_Angeles`. Visit https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for a list of timezones.
+| `-tz TIMEZONE`, `--timezone TIMEZONE` | |  Timezone used for notifications. Ex: `America/Los_Angeles`. Visit [this article](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for a list of valid timezones.
 
 Running `start_pokealarm.py` will start the PokeAlarm server and assume the following as default:
 

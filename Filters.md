@@ -5,16 +5,17 @@
 * [Pokestop Filters](#pokestop-filters)
 * [Pokemon Filters](#pokemon-filters)
   * [Example Pokemon Config](#example-pokemon-config)
-  * [List of Optional Parameters for Specific Pokemon](#list-of-optional-parameters-for-specific-pokemon)
-  * [Example Specific Pokemon Config](#example-specific-pokemon-config)
+  * [Specific Pokemon Level Options](#specific-pokemon-level-options)
     * [Filtering on multiple combinations of parameters, a.k.a., "Multifiltering"](#filtering-on-multiple-combinations-of-parameters-aka-multifiltering)
+* [Egg Filters](#egg-filters)
 * [Raid Filters](#raid-filters)
 * [Final Words](#final-words)
+
 ## Prerequisites
 This guide assumes:
 
 1. You have a working RocketMap installation
-2. You are familiar with [JSON formatting](http://www.w3schools.com/json/default.asp)
+2. You are familiar with [JSON formatting](https://www.w3schools.com/js/js_json_intro.asp)
 3. You are using the latest version of PokeAlarm
 
 ## Introduction
@@ -149,7 +150,7 @@ Below is a description of all filters available at both Default and Specific Pok
 | `charge_move`   |  | Charge moves for the specific Pokemon.  Can contain multiple moves for the specific Pokemon, separated by whitespace. Set to `"all"` to notify on any charge moves.  Leaving out this parameter is the equivalent of notifying on all charge moves.
 | `moveset` |  | Combination of `quick_move` and `charge_move`, useful for filtering on best attacking or defending moves. Format is`"moveset":[ "QUICK_MOVE_NAME/CHARGE_MOVE_NAME" ]`. Example - `"moveset":[ "Dragon Breath/Dragon Claw", "Steel Wing/Dragon Pulse" ]`
 | `ignore_missing` | `True` | Prevents PokeAlarm from notifying on Pokemon without moves or IVs.  WARNING: enabling this could potentially result in losing a snorlax, lapras, dragonite, etc., if RocketMap screws up and sends the webhook without info. A better way is to configure your blacklist or whitelist in RocketMap and set the unwanted Pokemon in filters.json to `False`.
-| `size` | `null` | Useful for the tiny Rattata and big Magikarp badges.  Filter with  `"Tiny`, `"Small"`, `"Normal"`, `"Large"`, and `"Big"`
+| `size` | `null` | Useful for the tiny Rattata and big Magikarp badges.  Filter with  `"tiny"`, `"small"`, `"normal"`, `"large"`, and `"big"`
 | `gender` | `null` | Useful to collect pairs of pokemon.  Filter with  `"male`, `"female"`, and `"neutral"`
 | `ignore_missing` | `True` | Prevents PokeAlarm from notifying on Pokemon without moves or IVs.  WARNING: enabling this could potentially result in losing a snorlax, lapras, dragonite, etc., if RocketMap errors and sends the snorlax webhook without info. A better way is to configure your blacklist or whitelist in RocketMap and set the unwanted Pokemon in filters.json to `False`.
   
@@ -205,8 +206,6 @@ By default, PokeAlarm will notify on any Pokemon set to `"True"`, at any distanc
 ```
 ## Specific Pokemon Level Options
 At the lower specific Pokemon level, each Pokemon can have a configuration that will override the defaults that was set at the Default level.
-
-### Example Specific Pokemon Config
 
 **Filtering on a maximum range for a specific Pokemon.**  Add a `max_dist` key-value pair to the specific Pokemon.  Remember this will override the `max_dist` at the top `"pokemon":` level.  In the example below, Bulbasaur within 1000m will trigger the alarm.  A Venusaur at any distance will trigger the alarm.
 ```json
@@ -314,7 +313,7 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
     }
 ```
 
-####Filtering on multiple combinations of parameters, a.k.a., "Multifiltering".
+### Filtering on multiple combinations of parameters, a.k.a., "Multifiltering".
 You can have multiple filter sets for a particular pokemon.  For example, if we want either:
 
 1) A perfect Bulbasaur within 100m that has either Power Whip or Seed Bomb as a charge move, or
@@ -343,12 +342,12 @@ we would configure our `filters.json` for Bulbasaur like so:
 
 **Filtering on size.**
 
-You may filter on pokemon size.  Options are, from smallest to largest: `"Tiny"`, `"Small"`, `"Normal"`, `"Large"`, or `"Big"`.  Options must be wrapped in `[ ]`, similar to `quick_move`, `charge_move`, and `moveset`.
+You may filter on pokemon size.  Options are, from smallest to largest: `"tiny"`, `"small"`, `"normal"`, `"large"`, or `"big"`.  Options must be wrapped in `[ ]`, similar to `quick_move`, `charge_move`, and `moveset`.
 
 Example:  Filtering for tiny Ratatta or big Magikarp
 ```json
-"Rattata":{"size":["Tiny"] },
-"Magikarp":{ "size":["Big"] },
+"Rattata":{"size":["tiny"] },
+"Magikarp":{ "size":["big"] },
 ```
 
 **Filtering on gender.**

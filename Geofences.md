@@ -6,12 +6,10 @@
 * [Example: Multiple Geofences in the same `geofences.txt` file](#example--multiple-geofences-in-the-same-geofencestxt-file)
 * [Geofence Generator: Draw Your Own Geofence](#geofence-generator-draw-your-own-geofence)
 
-
-
 ## Introduction
 Geofencing will restrict PokeAlarm alerts to a defined geographical area.  The area is defined by a list of at least 2 sets of latitude and longitude coordinates.  You may provide as many coordinates as you'd like to define your area of interest, provided that these sets are in the order that defines your polygon.
 
-**Note:** PokeAlarm will first check pokemon alert distance, *then* will check to see if the pokemon is located within your geofence.  See [Pokemon configuration](https://github.com/kvangent/PokeAlarm/wiki/Pokemon-Configuration) on how to limit alerts based on distance.
+**Note:** PokeAlarm will first check pokemon alert distance, *then* will check to see if the pokemon is located within your geofence.  See [Pokemon configuration](https://github.com/RocketMap/PokeAlarm/wiki/filters#example-pokemon-config) on how to limit alerts based on distance.
 
 ## Instructions
 

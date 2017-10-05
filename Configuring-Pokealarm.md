@@ -5,6 +5,9 @@ This guide contains an overview to the different parts of configuring and custom
 * [Goals](#goals)
 * [Setting up an Alarm](#setting-up-an-alarm)
 * [Setting up Filters](#setting-up-filters)
+  * [Pokemon Filters](#pokemon-filters)
+  * [Gym Filters](#gym-filters)
+  * [Raid Filters](#raid-filters)
 * [Customizing Alert Text](#customizing-alert-text)
 * [Adding Additional Managers](#adding-additional-managers)
 
@@ -49,11 +52,11 @@ Once we have our webhook url set up, we can edit the default discord alarm in th
 
 Try starting PokeAlarm - If you have configured your Alarm correctly, you should see a start up message posted in your discord channel!
 
-### Setting up Filters
+## Setting up Filters
 
 To learn all the ins and outs of Filters, you should checkout the [Filters](filters) wiki page. There are 5 sections in a filters file: `pokemon`, `pokestops`, `gyms`, `eggs`, and `raids`.
 
-#### Pokemon Filters
+### Pokemon Filters
 In PokeAlarm, 'Filters' are used to determine if a notification needs to be sent or not. For example, when PokeAlarm receives information about a Pokemon, it compares it to the filters set for that Pokemon. If it fits the criteria, PA will send to the the Alarm we set up in the last section.
 
 First we want to make sure that Bulbasaur, Squirtle, and Charmander notifications are sent. We can set them up with the default filter by setting them to `"True"`.
@@ -88,7 +91,7 @@ Next, we went to allow Dratini, but only for a certain IV range. For this to wor
 ```
 This will create a filter that is identical to the default except for the two fields we overwrote. 
 
-#### Gym Filters
+### Gym Filters
 
 Next we want to know whenever an Instinct gym goes down. Our Gym section is as follows:
 ```json
@@ -111,7 +114,7 @@ Next we want to know whenever an Instinct gym goes down. Our Gym section is as f
 This filter will allow in any gym that switches from Instinct to any other team. Additionally, we don't want to know about when it switches to neutral, so we set `"ignore_neutral":"True"`. You can list multiple different filters in the filters section of gyms, and PA will check them one by one. 
 
 
-#### Raid Filters
+### Raid Filters
 
 Raid filters work very similar to Pokemon Filters. You can set up alerts for any pokemon - not just the ones in the example. Here is the Raid section of a filters file set up for legendary birds:
 ```json
@@ -134,7 +137,7 @@ Raid filters work very similar to Pokemon Filters. You can set up alerts for any
 ```
 **Note**: for brevity only part of the filters file is shown
 
-### Customizing Alert Text
+## Customizing Alert Text
 
 PokeAlarm allows you to customize the Alerts that it sends out. We want to customize our Raid Alerts to show a more appropriate message. To add custom text to a Discord Alarm, you should be famliar with three pages:
 1. Learn how to configure your alarms file with the [Alarms](alarms) wiki page.
@@ -177,7 +180,7 @@ You can customize any notification by adding the proper alert settings to your a
 
 You can customize more than just the title - each service have many different options. Check out the wiki page for your specific service for a full list. 
 
-### Adding Additional Managers
+## Adding Additional Managers
 
 Now that we've customized our message, we have a little problem. We are getting messages for Dratini, that say "The starter Dratini jumped out of the bushes!". But Dratini isn't a starter pokemon! Let's add a second manager that allow us to customize even more. 
 

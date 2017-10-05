@@ -2,10 +2,9 @@
 This guide will walk you through configuring server settings for PokeAlarm.
 
 * [Prerequisites](#prerequisites)
-* [Server Settings](#overview)
+* [Server Settings](#server-settings)
 * [Command Line](#command-line)
 * [Configuration File](#configuration-file)
-* [Additional Options](#additional-options)
 
 ## Prerequisites
 This guide assumes the following:
