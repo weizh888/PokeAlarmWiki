@@ -1,7 +1,20 @@
 ## Patch History
 
+* [Patch 3.3](#patch-33---------------------------------------------------------------)
 * [Patch 3.2](#patch-32---------------------------------------------------------------)
 * [Patch 3.1](#patch-31---------------------------------------------------------------)
+
+### Patch 3.3 --------------------------------------------------------------
+
+### Dynamic Text Subsitutions
+* **Pokemon**
+    * (Re) added `'form'` DTS (and made it more robust)
+
+#### Server Settings
+* **Reverse Location**
+    * Location services have been completely reworked to be more reliable.
+    * Location results now retrieve results set in whatever language is set for that manager.
+    * Location results now cache in memory - lowering overall API usage.
 
 ### Patch 3.2 --------------------------------------------------------------
 

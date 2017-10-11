@@ -9,7 +9,7 @@
 * Currently RocketMap and Monocole are compatible with PA. Any others following our [Webhook Standards](webhook-standard) should work as well. The PA team does NOT help with troubleshooting scanners - they have their own resources you can use.
 
 #### I have a great idea for a new feature!
-* Open an Enhancement Request on our Github page. Use the correct template - Do NOT post requests in Discord!
+* Open a Feature Request on our Github page. Use the correct template - Do NOT post requests in Discord!
 
 #### Do you support new services?
 * Please check in the [New/Upcoming Service MEGA-THREAD](https://github.com/RocketMap/PokeAlarm/issues/147) to see if the service has already been requested. If it hasn't, feel free to leave a post requesting it.
@@ -43,5 +43,5 @@
 * Most scanners don't send the gym-details with every gym related webhook - PA will cache the details and try to remember them, but this goes away upon restart. It takes time for the scanner to send all the details. 
 
 #### I have some other problem and can't figure it out.
-* If you have already checked the [Wiki](Home) thoroughly, you can try asking in our [RocketMap Discord](https://discord.gg/RocketMap). Make sure to read the Rules before posting.
+* If you have already checked the [Wiki](Home) thoroughly, you can try asking in our [PokeAlarm Discord](https://discord.gg/S2BKC7p). Make sure to read the Rules before posting.
 * **Note**: Only [PokeAlarm Patrons](https://www.patreon.com/pokealarm) are guaranteed responses from the PA team as thanks for their helping to keep PA alive and running. 
