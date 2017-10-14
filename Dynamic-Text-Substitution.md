@@ -204,6 +204,8 @@ A list of text substitutions for the `raid` field in the alarm section are below
 | `<charge_duration>`   | Duration value of charge move          |
 | `<charge_dps>`        | Damage per second value of charge move | 
 | `<charge_energy>`     | Energy of charge move                  |
+| `<team_id>`           | ID of team that controls raid gym      |
+| `<team_name>`         | Name of team that controls raid gym    |
 | `<geofence>`          | Geofence name of where the alarm originated |
 | `<gmaps>`             | Google Maps URL to pokemon location    |
 | `<applemaps>`         | Apple Maps URL to pokemon location     |
