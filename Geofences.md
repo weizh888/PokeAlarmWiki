@@ -130,7 +130,17 @@ You are permitted to add more than one geofence area in a single `geofences.txt`
 ```
 
 ## Geofence Generator: Draw Your Own Geofence
-JennerPalacios's Codepen [Geofence Generator](https://codepen.io/jennerpalacios/full/mWWVeJ), a handy web tool to easily create and visualize your desired geofence.  To use it:
+These are handy web tool to create and visualize your desired geofence.
+Jason's [A Better Fence Editor](http://geo.jasparke.net/) - Currently reccomended by RocketMap
+To use it:
+1. Create a fence name, color and click Create. (If you have a fence already paste it into the Cordinate Set)
+2. Click for each geofence point until you have made made a full circle.
+3. Click Exp (Export) From there you can copy, paste or click download with or without fence name tag.
+4. To better manage all your geofences in one file you can save a json file that saves everything as you have it.
+5. Click load to load previously generated geofences and continue.
+
+JennerPalacios's Codepen [Geofence Generator](https://codepen.io/jennerpalacios/full/mWWVeJ)
+To use it:
 
 1. Type your desired location.
 2. Click for each geofence point that you would like to add to the coordinate list.
