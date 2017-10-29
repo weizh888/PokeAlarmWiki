@@ -166,6 +166,8 @@ A list of text substitutions for the `egg` field in the alarm section are below:
 | `<begin_12h_time>`    | Raid begin time in 12hour format       |
 | `<begin_24h_time>`    | Raid begin time in 24hour format       |
 | `<dir>`               | Cardinal direction from set location   |
+| `<team_id>`           | ID of team that controls raid gym      |
+| `<team_name>`         | Name of team that controls raid gym    |
 | `<geofence>`          | Geofence name of where the alarm originated |
 | `<gmaps>`             | Google Maps URL to pokemon location    |
 | `<applemaps>`         | Apple Maps URL to pokemon location     |
