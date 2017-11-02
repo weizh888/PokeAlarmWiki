@@ -67,6 +67,8 @@ For what fields (title, message, etc) you have the option to change, please see 
 | `<pkmn>`        | Name of the alerted pokemon            |
 | `<lat>`         | Latitude of the pokemon                |
 | `<lng>`         | Longitude of the pokemon               |
+| `<lat_5>`       | Latitude rounded to 5 decimals of the pokemon                |
+| `<lng_5>`       | Longitude rounded to 5 decimals of the pokemon               |
 | `<gmaps>`       | Gmaps link to a pin of the pokemon     |
 | `<dist>`        | *Distance from set location in meters  |
 | `<time_left>`   | Time remaining for the pokemon         |
@@ -115,6 +117,8 @@ A list of text substitutions for the `pokestop` field in the alarm section are b
 | `<id>`         | ID of the alerted pokestop             |
 | `<lat>`        | Latitude of the pokestop               |
 | `<lng>`        | Longitude of the pokestop              |
+| `<lat_5>`       | Latitude rounded to 5 decimals of the pokestop  |
+| `<lng_5>`       | Longitude rounded to 5 decimals of the pokestop |
 | `<gmaps>`      | Gmaps link to a pin of the pokestop    |
 | `<dist>`       | *Distance from set location in meters  |
 | `<time_left>`  | Time remaining for the pokestop        |
@@ -131,6 +135,8 @@ A list of text substitutions for the `gym` field in the alarm section are below:
 | `<id>`         | ID of the alerted gym              |
 | `<lat>`        | Latitude of the gym                |
 | `<lng>`        | Longitude of the gym               |
+| `<lat_5>`       | Latitude rounded to 5 decimals of the gym                |
+| `<lng_5>`       | Longitude rounded to 5 decimals of the gym               |
 | `<name>`       | Name of the gym                    |
 | `<description>`  | Description of the gym           |
 | `<url>`        | URL of the gym                     |
@@ -157,6 +163,8 @@ A list of text substitutions for the `egg` field in the alarm section are below:
 | `<gym_url>`           | URL of the raid gym                    |
 | `<lat>`               | Latitude of the raid pokemon           |
 | `<lng>`               | Longitude of the raid pokemon          |
+| `<lat_5>`             | Latitude rounded to 5 decimals of the egg  |
+| `<lng_5>`             | Longitude rounded to 5 decimals of the egg |
 | `<gmaps>`             | Gmaps link to a pin of the raid        |
 | `<dist>`              | *Distance from set location in meters  |
 | `<time_left>`         | Time remaining before the raid ends    |
@@ -184,6 +192,8 @@ A list of text substitutions for the `raid` field in the alarm section are below
 | `<pkmn>`              | Name of the alerted raid pokemon       |
 | `<lat>`               | Latitude of the raid pokemon           |
 | `<lng>`               | Longitude of the raid pokemon          |
+| `<lat_5>`             | Latitude rounded to 5 decimals of the raid pokemon |
+| `<lng_5>`             | Longitude rounded to 5 decimals of the raid pokemon|
 | `<gmaps>`             | Gmaps link to a pin of the raid        |
 | `<dist>`              | *Distance from set location in meters  |
 | `<time_left>`         | Time remaining for the raid            |
