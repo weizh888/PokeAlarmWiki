@@ -125,7 +125,7 @@ Below is an example of the Default level options:
         "default":{
             "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "4760", "min_iv":"0", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-            "quick_move": null, "charge_move": null, "moveset": null,
+            "quick_move": null, "charge_move": null, "moveset": null, "min_level":"0", "max_level":"30",
             "size": null, "gender": null, "form": null, "ignore_missing": "False"
         },
 ```
@@ -140,6 +140,8 @@ Below is a description of all filters available at both Default and Specific Pok
 | `max_iv`   | `"100"` | Maximum percent IV for all Pokemon. 0 to 100.
 | `min_cp`   | `"0"`   | Minimum CP for all Pokemon. 0 to 4760.
 | `max_cp`   | `"4760"` | Maximum CP for all Pokemon. 0 to 4760.
+| `min_level` | `"0"` | Minimum level for all Pokemon. 0 to 30.
+| `max_level` | `"30"` | Maximum level for all Pokemon. 0 to 30.
 | `min_atk` | `"0"` | Value, 0-15, corresponding to the attack IV 
 | `max_atk` | `"15"`| Value, 0-15, corresponding to the attack IV 
 | `min_def` | `"0"` | Value, 0-15, corresponding to the defense IV 
@@ -163,7 +165,7 @@ By default, PokeAlarm will notify on any Pokemon set to `"True"`, at any distanc
         "default": {
             "min_dist":"0", "max_dist":"inf", "min_cp": "0", "max_cp": "4760", "min_iv":"0", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-            "quick_move": null, "charge_move": null, "moveset": null,
+            "quick_move": null, "charge_move": null, "moveset": null, "min_level":"0", "max_level":"30",
             "size": null, "gender": null, "ignore_missing": "False"
         },
         "Bulbasaur":"True",
@@ -179,7 +181,7 @@ By default, PokeAlarm will notify on any Pokemon set to `"True"`, at any distanc
         "default": {
             "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"0", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-            "quick_move": null, "charge_move": null, "moveset": null,
+            "quick_move": null, "charge_move": null, "moveset": null, "min_level":"0", "max_level":"30",
             "size": null, "gender": null, "ignore_missing": "False"
         },
         "Bulbasaur":"True",
@@ -195,7 +197,7 @@ By default, PokeAlarm will notify on any Pokemon set to `"True"`, at any distanc
         "default": {
             "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-            "quick_move": null, "charge_move": null, "moveset": null,
+            "quick_move": null, "charge_move": null, "moveset": null, "min_level":"0", "max_level":"30",
             "size": null, "gender": null, "ignore_missing": "False"
         },
         "Bulbasaur":"True",
@@ -214,7 +216,7 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
         "default": {
             "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-            "quick_move": null, "charge_move": null, "moveset": null,
+            "quick_move": null, "charge_move": null, "moveset": null, "min_level":"0", "max_level":"30",
             "size": null, "gender": null, "ignore_missing": "False"
         },
         "Bulbasaur":{ "max_dist":"1000" },
@@ -231,10 +233,27 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
         "default": {
             "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-            "quick_move": null, "charge_move": null, "moveset": null,
+            "quick_move": null, "charge_move": null, "moveset": null, "min_level":"0", "max_level":"30",
             "size": null, "gender": null, "ignore_missing": "False"
         },
         "Bulbasaur":{ "min_iv":"100" },
+        "Ivysaur":"False",
+        "Venusaur":"True",
+        "Charmander":"False"
+    }
+```
+
+**Filtering on minimum Level for a specific Pokemon.**  Add a `min_level` key-value pair to the specific Pokemon.  Remember this will override the `min_level` at the top `"pokemon":` level.  In the example below, a Level 20+ Bulbasaur  will trigger the alarm.  Any Venusaur will trigger the alarm.
+```json
+    "pokemon":{
+        "enabled":"True",
+        "default": {
+            "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
+            "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
+            "quick_move": null, "charge_move": null, "moveset": null, "min_level":"0", "max_level":"30",
+            "size": null, "gender": null, "ignore_missing": "False"
+        },
+        "Bulbasaur":{ "min_level":"20" },
         "Ivysaur":"False",
         "Venusaur":"True",
         "Charmander":"False"
@@ -249,7 +268,7 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
         "default": {
             "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-            "quick_move": null, "charge_move": null, "moveset": null,
+            "quick_move": null, "charge_move": null, "moveset": null, "min_level":"0", "max_level":"30",
             "size": null, "gender": null, "ignore_missing": "False"
         },
         "Bulbasaur":{ "quick_move": ["Power Whip", "Seed Bomb"] },
@@ -269,7 +288,7 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
         "default": {
             "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-            "quick_move": null, "charge_move": null, "moveset": null,
+            "quick_move": null, "charge_move": null, "moveset": null, "min_level":"0", "max_level":"30",
             "size": null, "gender": null, "ignore_missing": "False"
         },
         "Bulbasaur":{ "moveset": ["Vine Whip/Seed Bomb", "Tackle/Power Whip"] },
@@ -286,7 +305,7 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
         "default": {
             "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-            "quick_move": null, "charge_move": null, "moveset": null,
+            "quick_move": null, "charge_move": null, "moveset": null, "min_level":"0", "max_level":"30",
             "size": null, "gender": null, "ignore_missing": "False"
         },
         "Bulbasaur":{ "max_dist":"1000", "min_iv":"100", "charge_move":["Power Whip", "Seed Bomb"] },
@@ -303,7 +322,7 @@ At the lower specific Pokemon level, each Pokemon can have a configuration that 
         "default": {
             "min_dist":"0", "max_dist":"inf", "min_cp": "600", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-            "quick_move": null, "charge_move": null, "moveset": null,
+            "quick_move": null, "charge_move": null, "moveset": null, "min_level":"0", "max_level":"30",
             "size": null, "gender": null, "ignore_missing": "False"
         },
         "Bulbasaur":"False",
@@ -327,7 +346,7 @@ we would configure our `filters.json` for Bulbasaur like so:
         "default": {
             "min_dist":"0", "max_dist":"5000", "min_cp": "0", "max_cp": "4760", "min_iv":"90", "max_iv":"100",
             "min_atk": "0", "max_atk":"15", "min_def": "0", "max_def":"15", "min_sta": "0", "max_sta":"15",
-            "quick_move": null, "charge_move": null, "moveset": null,
+            "quick_move": null, "charge_move": null, "moveset": null, "min_level":"0", "max_level":"30",
             "size": null, "gender": null, "ignore_missing": "False"
         },
         "Bulbasaur": [

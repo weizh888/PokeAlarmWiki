@@ -36,6 +36,8 @@ usage: start_pokealarm.py [-h] [-cf CONFIG] [-d] [-H HOST] [-P PORT]
                           [-l LOCATION] [-L {de,en,es,fr,it,ko,zh_hk}]
                           [-u {metric,imperial}] [-tl TIMELIMIT]
                           [-ma MAX_ATTEMPTS] [-tz TIMEZONE]
+                          [-ct {mem,file}]
+
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -72,6 +74,9 @@ optional arguments:
   -tz TIMEZONE, --timezone TIMEZONE
                         Timezone used for notifications. Ex:
                         "America/Los_Angeles"
+  -ct {mem,file}, --cache_type {mem,file}
+                        Caching method used to cache data objects for use
+                        in Alerts. default: `mem`
 ```
 
 ## Configuration File
@@ -105,4 +110,5 @@ By default, PokeAlarm will load the file at `config/config.ini` if it exists. Yo
 #timelimit:					# Minimum number of seconds remaining to send a notification (default: 0)
 #max_attempts:					# Maximum number of attempts an alarm makes to send a notification. (default: 3)
 #timezone:					# Timezone used for notifications Ex: 'America/Los_Angeles' or '[America/Los_Angeles, America/New_York]'
+#cache_type:					# Method used to cache dynamic objects used in Alerts. (default: mem)
 ```

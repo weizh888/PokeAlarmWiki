@@ -89,7 +89,7 @@ Below is how an advanced alarm configuration would appear in `alarms.json`. Note
     "type":"telegram",
     "bot_token":"YOUR_BOT_TOKEN",
     "chat_id":"YOUR_CHAT_ID",
-    "startup_message:":"True",
+    "startup_message":"True",
     "stickers": "True",
     "pokemon" : {
         "chat_id": "OVERRIDES_DEFAULT_CHANNEL",

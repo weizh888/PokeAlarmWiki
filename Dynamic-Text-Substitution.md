@@ -64,9 +64,12 @@ For what fields (title, message, etc) you have the option to change, please see 
 | Text            | Description                            |
 |:----------------|:---------------------------------------|
 | `<pkmn_id>`     | ID of the alerted pokemon              |
+| `<pkmn_id_3>`   | ID of the alerted raid pokemon with leading zeros |
 | `<pkmn>`        | Name of the alerted pokemon            |
 | `<lat>`         | Latitude of the pokemon                |
 | `<lng>`         | Longitude of the pokemon               |
+| `<lat_5>`       | Latitude rounded to 5 decimals of the pokemon                |
+| `<lng_5>`       | Longitude rounded to 5 decimals of the pokemon               |
 | `<gmaps>`       | Gmaps link to a pin of the pokemon     |
 | `<dist>`        | *Distance from set location in meters  |
 | `<time_left>`   | Time remaining for the pokemon         |
@@ -84,19 +87,24 @@ For what fields (title, message, etc) you have the option to change, please see 
 | `<sta>`         | Stamina IV of the alerted pokemon      |
 | `<quick_move>`  | Quick move of the alerted pokemon      |
 | `<charge_move>` | Charge move of the alerted pokemon     |
-| `<quick_id>`    | ID number of the quick move  |
-| `<quick_damage>` | Damage value of quick move  |
-| `<quick_duration>` | Duration value of quick move     |
-| `<quick_dps>` | Damage per second value of quick move |
-| `<quick_energy>` | Energy of quick move     |
-| `<charge_id>` | ID number of charge move    |
-| `<charge_damage>` |  Damage value of charge move       |
-| `<charge_duration>` | Duration value of charge move    |
-| `<charge_dps>` | Damage per second value of charge move  |
-| `<charge_energy>` | Energy of charge move      |
-| `<id>`| Database encounter_id of the pokemon   |
-| `<form_id>`     | Numerical value for unown form        |
+| `<quick_id>`    | ID number of the quick move            |
+| `<quick_damage>` | Damage value of quick move            |
+| `<quick_duration>` | Duration value of quick move        |
+| `<quick_dps>`   | Damage per second value of quick move  |
+| `<quick_energy>` | Energy of quick move                  |
+| `<charge_id>`   | ID number of charge move               |
+| `<charge_damage>` |  Damage value of charge move         |
+| `<charge_duration>` | Duration value of charge move      |
+| `<charge_dps>`  | Damage per second value of charge move |
+| `<charge_energy>` | Energy of charge move                |
+| `<id>`          | Database encounter_id of the pokemon   |
+| `<form_id>`     | Numerical value for unown form         |
+| `<form>`        | Form of the alerted pokemon            |
+| `<form_id_or_empty>`  | Returns <form_id> or empty field if unknown |
+| `<form_or_empty>`     | Returns <form> or empty field if unknown  |
 | `<gender>`      | Gender of the alerted pokemon          |
+| `<form_id_or_empty>`  | Returns <form_id> or empty field if unknown |
+| `<form_or_empty>`     | Returns <form> or empty field if unknown  |
 | `<height>`      | Height of the alerted pokemon          |
 | `<weight>`      | Weight of the alerted pokemon          |
 | `<size>`        | Size of the alerted pokemon            |
@@ -115,6 +123,8 @@ A list of text substitutions for the `pokestop` field in the alarm section are b
 | `<id>`         | ID of the alerted pokestop             |
 | `<lat>`        | Latitude of the pokestop               |
 | `<lng>`        | Longitude of the pokestop              |
+| `<lat_5>`       | Latitude rounded to 5 decimals of the pokestop  |
+| `<lng_5>`       | Longitude rounded to 5 decimals of the pokestop |
 | `<gmaps>`      | Gmaps link to a pin of the pokestop    |
 | `<dist>`       | *Distance from set location in meters  |
 | `<time_left>`  | Time remaining for the pokestop        |
@@ -131,6 +141,8 @@ A list of text substitutions for the `gym` field in the alarm section are below:
 | `<id>`         | ID of the alerted gym              |
 | `<lat>`        | Latitude of the gym                |
 | `<lng>`        | Longitude of the gym               |
+| `<lat_5>`       | Latitude rounded to 5 decimals of the gym                |
+| `<lng_5>`       | Longitude rounded to 5 decimals of the gym               |
 | `<name>`       | Name of the gym                    |
 | `<description>`  | Description of the gym           |
 | `<url>`        | URL of the gym                     |
@@ -157,6 +169,8 @@ A list of text substitutions for the `egg` field in the alarm section are below:
 | `<gym_url>`           | URL of the raid gym                    |
 | `<lat>`               | Latitude of the raid pokemon           |
 | `<lng>`               | Longitude of the raid pokemon          |
+| `<lat_5>`             | Latitude rounded to 5 decimals of the egg  |
+| `<lng_5>`             | Longitude rounded to 5 decimals of the egg |
 | `<gmaps>`             | Gmaps link to a pin of the raid        |
 | `<dist>`              | *Distance from set location in meters  |
 | `<time_left>`         | Time remaining before the raid ends    |
@@ -166,6 +180,8 @@ A list of text substitutions for the `egg` field in the alarm section are below:
 | `<begin_12h_time>`    | Raid begin time in 12hour format       |
 | `<begin_24h_time>`    | Raid begin time in 24hour format       |
 | `<dir>`               | Cardinal direction from set location   |
+| `<team_id>`           | ID of team that controls raid gym      |
+| `<team_name>`         | Name of team that controls raid gym    |
 | `<geofence>`          | Geofence name of where the alarm originated |
 | `<gmaps>`             | Google Maps URL to pokemon location    |
 | `<applemaps>`         | Apple Maps URL to pokemon location     |
@@ -181,9 +197,12 @@ A list of text substitutions for the `raid` field in the alarm section are below
 | `<gym_description>`   | Description of the raid gym            |
 | `<gym_url>`           | URL of the raid gym                    |
 | `<pkmn_id>`           | ID of the alerted raid pokemon         |
+| `<pkmn_id_3>`         | ID of the alerted raid pokemon with leading zeros |
 | `<pkmn>`              | Name of the alerted raid pokemon       |
 | `<lat>`               | Latitude of the raid pokemon           |
 | `<lng>`               | Longitude of the raid pokemon          |
+| `<lat_5>`             | Latitude rounded to 5 decimals of the raid pokemon |
+| `<lng_5>`             | Longitude rounded to 5 decimals of the raid pokemon|
 | `<gmaps>`             | Gmaps link to a pin of the raid        |
 | `<dist>`              | *Distance from set location in meters  |
 | `<time_left>`         | Time remaining for the raid            |
@@ -192,6 +211,8 @@ A list of text substitutions for the `raid` field in the alarm section are below
 | `<begin_12h_time>`    | Raid begin time in 12hour format       |
 | `<begin_24h_time>`    | Raid begin time in 24hour format       |
 | `<dir>`               | Cardinal direction from set location   |
+| `<min_cp>`		| Minimum Catchable CP for raid pokemon	 |
+| `<max_cp>`		| Maximum Catchable CP for raid pokemon	 |
 | `<quick_move>`        | Quick move of the alerted pokemon      |
 | `<charge_move>`       | Charge move of the alerted pokemon     |
 | `<quick_id>`          | ID number of the quick move            |
@@ -204,6 +225,12 @@ A list of text substitutions for the `raid` field in the alarm section are below
 | `<charge_duration>`   | Duration value of charge move          |
 | `<charge_dps>`        | Damage per second value of charge move | 
 | `<charge_energy>`     | Energy of charge move                  |
+| `<form_id>`           | Numerical value for raid pokemon form  |
+| `<form>`              | Name of raid pokemon form              |
+| `<form_id_or_empty>`  | Returns <form_id> or empty field if unknown |
+| `<form_or_empty>`     | Returns <form> or empty field if unknown  |
+| `<team_id>`           | ID of team that controls raid gym      |
+| `<team_name>`         | Name of team that controls raid gym    |
 | `<geofence>`          | Geofence name of where the alarm originated |
 | `<gmaps>`             | Google Maps URL to pokemon location    |
 | `<applemaps>`         | Apple Maps URL to pokemon location     |

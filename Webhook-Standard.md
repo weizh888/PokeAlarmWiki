@@ -18,11 +18,15 @@ Pokemon standard now includes moveset and IVs as of commit [oc1b4](https://githu
         "pokemon_id": 201,
         "pokemon_level": 30,
         "player_level": 31,
-	"latitude": 33.980823, 
-        "longitude":  -81.052988,
+	"latitude": 37.7876146,
+	"longitude": -122.390624, 
         "disappear_time": 1506897031,
         "last_modified_time": 1475033386661,
         "time_until_hidden_ms": 5000,
+	"seconds_until_despawn": 1754, 
+	"spawn_start": 2153, 
+	"spawn_end": 3264, 
+	"verified": false,
 	"cp_multiplier": 0.7317000031471252,
 	"form": 15,
         "cp": 768,
@@ -47,8 +51,8 @@ Pokemon standard now includes moveset and IVs as of commit [oc1b4](https://githu
     "message": {
         "pokestop_id": 0,
         "enabled": "True",
-        "latitude": 62.790967,
-        "longitude":  76.927920,
+	"latitude": 37.7876146,
+	"longitude": -122.390624, 
         "last_modified_time": 1572241600,
         "lure_expiration": 1572241600,
         "active_fort_modifier": 0
@@ -66,15 +70,14 @@ Pokemon standard now includes moveset and IVs as of commit [oc1b4](https://githu
 		"gym_id": 0,
 		"team_id": 0,
 		"guard_pokemon_id": 0,
-		"gym_points": 100,
 		"slots_available": 0,
 		"guard_pokemon_id": 99,
 		"lowest_pokemon_motivation": 0.8795773983001709,
 		"total_cp": 11099,
                 "occupied_since": 1506886787,
 		"enabled": "True",
-		"latitude": 62.790967,
-		"longitude":  76.927920,
+		"latitude": 37.7876146,
+		"longitude": -122.390624, 
 		"last_modified": 1572241600
     }
 }
@@ -90,8 +93,8 @@ Pokemon standard now includes moveset and IVs as of commit [oc1b4](https://githu
             "name": "Graduate School of Public Health Sculpture",
             "description": "Sculpture on the exterior of the Graduate School of Public Health building.",
             "team": 1,
-            "latitude": 40.442506,
-            "longitude": -79.957962,
+	    "latitude": 37.7876146,
+	    "longitude": -122.390624,          
             "pokemon": [{
             "num_upgrades": 0,
             "move_1": 234,
@@ -169,8 +172,8 @@ Take note that the type for egg is `raid` because it is collected from the same 
         "start": 1499244052,
         "end": 1499246052 ,
         "level": 5,
-        "latitude": 12.345678,
-        "longitude": 12.345678
+	"latitude": 37.7876146,
+	"longitude": -122.390624
     }
 }
 ```
@@ -189,8 +192,8 @@ Take note that the type for egg is `raid` because it is collected from the same 
         "start": 1499244052,
         "end": 1499246052 ,
         "level": 5,
-        "latitude": 12.345678,
-        "longitude": 12.345678
+	"latitude": 37.7876146,
+	"longitude": -122.390624
     }
 }
 ```

@@ -1,8 +1,47 @@
 ## Patch History
 
+* [Patch 3.4](#patch-34---------------------------------------------------------------)
 * [Patch 3.3](#patch-33---------------------------------------------------------------)
 * [Patch 3.2](#patch-32---------------------------------------------------------------)
 * [Patch 3.1](#patch-31---------------------------------------------------------------)
+
+### Patch 3.4 --------------------------------------------------------------
+
+### Server Settings
+
+* Implemented caching for managers with `-ct` or `--cache_type`. Cache is used to handling remembering things like pokemon history and gym names.
+    * (default) `mem` - data persists only in memory
+    * `file` - data is saved and loaded from a file
+* PA now gracefully exits on ctrl+c, finishing items in queue and logging the status of managers.
+
+### Dynamic Text Substitutions
+
+* **All**
+
+    * `lat_5` and `lng_5` - Latitude and Longitude for the event, truncated to 5 decimal places.
+    * `address_eu` - same as `<street> <street_num>`
+
+* **Pokemon**
+
+    * `form_or_empty` - Reports the form name of the pokemon if known, or an empty string if unknown.
+    * `pkmn_id_3` - pokemon id padded to 3 digits
+    * `form_id_or_emtpy` - prints form_id padded to 3 digits if known, or and empty string if unknown.
+
+* **Raids**
+    * `form_or_empty` - Reports the form name of the pokemon if known, or an empty string if unknown.
+    * `team_name` - Reports the current team for a Raid gym if known, or 'unknown' if not.
+    * `team_id` - Reports the current team id for a Raid gym if known, or '?' if not.
+    * `min_cp` and `max_cp` - min and max potential cp for the raid boss if caught
+    * `team_name` - name of the team that owns the gym
+    * `team_id` - id of the team that owns the gym
+    * `pkmn_id_3` - pokemon id padded to 3 digits
+    * `form_id_or_emtpy` - prints form_id padded to 3 digits if known, or and empty string if unknown.
+
+### Tools
+
+* Webhook Tester
+    * Added `webhook_tester.py` for users to simulate sending events
+
 
 ### Patch 3.3 --------------------------------------------------------------
 
