@@ -22,7 +22,7 @@
 
 ### **Other**
 [Dynamic Text Substitution](Dynamic-Text-Substitution)  
-[Object Caching](Object-Caching)
+[Object Caching](Object-Caching)  
 [Google Maps API Keys](Google-Maps-API-Key)   
 [Remedy's v3.2 Guide](v3.2-Guide)  
 [Remedy's v3 Guide](v3-Guide)
