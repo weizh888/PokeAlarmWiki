@@ -98,13 +98,11 @@ For what fields (title, message, etc) you have the option to change, please see 
 | `<charge_dps>`  | Damage per second value of charge move |
 | `<charge_energy>` | Energy of charge move                |
 | `<id>`          | Database encounter_id of the pokemon   |
-| `<form_id>`     | Numerical value for unown form         |
 | `<form>`        | Form of the alerted pokemon            |
-| `<form_id_or_empty>`  | Returns <form_id> or empty field if unknown |
 | `<form_or_empty>`     | Returns <form> or empty field if unknown  |
+| `<form_id>`     | Numerical value for unown form         |
+| `<form_id_or_empty>`  | Returns <form_id> or empty field if unknown |
 | `<gender>`      | Gender of the alerted pokemon          |
-| `<form_id_or_empty>`  | Returns <form_id> or empty field if unknown |
-| `<form_or_empty>`     | Returns <form> or empty field if unknown  |
 | `<height>`      | Height of the alerted pokemon          |
 | `<weight>`      | Weight of the alerted pokemon          |
 | `<size>`        | Size of the alerted pokemon            |
@@ -123,8 +121,8 @@ A list of text substitutions for the `pokestop` field in the alarm section are b
 | `<id>`         | ID of the alerted pokestop             |
 | `<lat>`        | Latitude of the pokestop               |
 | `<lng>`        | Longitude of the pokestop              |
-| `<lat_5>`       | Latitude rounded to 5 decimals of the pokestop  |
-| `<lng_5>`       | Longitude rounded to 5 decimals of the pokestop |
+| `<lat_5>`      | Latitude rounded to 5 decimals of the pokestop  |
+| `<lng_5>`      | Longitude rounded to 5 decimals of the pokestop |
 | `<gmaps>`      | Gmaps link to a pin of the pokestop    |
 | `<dist>`       | *Distance from set location in meters  |
 | `<time_left>`  | Time remaining for the pokestop        |
@@ -225,10 +223,10 @@ A list of text substitutions for the `raid` field in the alarm section are below
 | `<charge_duration>`   | Duration value of charge move          |
 | `<charge_dps>`        | Damage per second value of charge move | 
 | `<charge_energy>`     | Energy of charge move                  |
-| `<form_id>`           | Numerical value for raid pokemon form  |
 | `<form>`              | Name of raid pokemon form              |
-| `<form_id_or_empty>`  | Returns <form_id> or empty field if unknown |
 | `<form_or_empty>`     | Returns <form> or empty field if unknown  |
+| `<form_id>`           | Numerical value for raid pokemon form  |
+| `<form_id_or_empty>`  | Returns <form_id> or empty field if unknown |
 | `<team_id>`           | ID of team that controls raid gym      |
 | `<team_name>`         | Name of team that controls raid gym    |
 | `<geofence>`          | Geofence name of where the alarm originated |
