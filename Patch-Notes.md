@@ -32,8 +32,6 @@
     * `team_name` - Reports the current team for a Raid gym if known, or 'unknown' if not.
     * `team_id` - Reports the current team id for a Raid gym if known, or '?' if not.
     * `min_cp` and `max_cp` - min and max potential cp for the raid boss if caught
-    * `team_name` - name of the team that owns the gym
-    * `team_id` - id of the team that owns the gym
     * `pkmn_id_3` - pokemon id padded to 3 digits
     * `form_id_or_emtpy` - prints form_id padded to 3 digits if known, or and empty string if unknown.
 
