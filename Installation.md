@@ -16,7 +16,7 @@ This guide assumes the following:
 
 ## Installation
 
-1. **Clone PokeAlarm locally** - Create a new folder to install PokeAlarm in (It is recommended you store it in a different folder than your scanner). Use `git clone https://github.com/RocketMap/PokeAlarm.git` to create a local copy of the project.
+1. **Clone PokeAlarm locally** - Create a new folder to install PokeAlarm in (It is recommended you store it in a different folder than your scanner). Use `git clone https://github.com/PokeAlarm/PokeAlarm.git` to create a local copy of the project.
 
 2. **Install requirements** - Navigate into the root folder of your PokeAlarm installation. Run `pip install -r requirements.txt --upgrade`.  This will install and update the packages that PokeAlarm needs to run.
 
