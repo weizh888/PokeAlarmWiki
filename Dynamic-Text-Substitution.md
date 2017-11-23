@@ -180,6 +180,7 @@ A list of text substitutions for the `egg` field in the alarm section are below:
 | `<dir>`               | Cardinal direction from set location   |
 | `<team_id>`           | ID of team that controls raid gym      |
 | `<team_name>`         | Name of team that controls raid gym    |
+| `<team_leader>`   	| Name of the team leader of the gym     |
 | `<geofence>`          | Geofence name of where the alarm originated |
 | `<gmaps>`             | Google Maps URL to pokemon location    |
 | `<applemaps>`         | Apple Maps URL to pokemon location     |
@@ -229,6 +230,7 @@ A list of text substitutions for the `raid` field in the alarm section are below
 | `<form_id_or_empty>`  | Returns <form_id> or empty field if unknown |
 | `<team_id>`           | ID of team that controls raid gym      |
 | `<team_name>`         | Name of team that controls raid gym    |
+| `<team_leader>`   	| Name of the team leader of the gym     |
 | `<geofence>`          | Geofence name of where the alarm originated |
 | `<gmaps>`             | Google Maps URL to pokemon location    |
 | `<applemaps>`         | Apple Maps URL to pokemon location     |
