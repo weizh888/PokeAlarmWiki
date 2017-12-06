@@ -2,7 +2,7 @@
 [Home](home)    
 [Installation](installation)  
 [FAQ](faq)
-   
+
 ### **Settings**
 [Configuring PokeAlarm](configuring-pokeAlarm)   
 [Server Settings](server-settings)   
@@ -29,5 +29,5 @@
 
 ### **Documentation**
 [Webhook Standards](Webhook-Standard)  
+[Patch Notes](patch-notes)  
 [Blog](https://pokealarm.github.io/)
-[Patch Notes](patch-notes)
