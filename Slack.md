@@ -8,6 +8,7 @@
   * [Optional Parameters](#optional-parameters)
   * [Example: Alarm Configuration Using Optional Parameters](#example-alarm-configuration-using-optional-parameters)
   * [Mini Map Configuration](#mini-map-configuration)
+  * [Formatting alarms text](#formatting-alarms-text)
 * [How to Get a Slack API Key](#how-to-get-a-slack-api-key)
 
 ## Prerequisites
@@ -175,6 +176,18 @@ Below is an example of enabling the mini map for pokemon.
 | `maptype`      | Link to be added to notification text             | `roadmap`                                 |
 | `zoom`         | Specifies the zoom of the map                     | `15`                                      |
 
+### Formatting alarms text
+
+Here is a basic guide to apply custom styles to alarm text:
+
+| Style                              | Example                          |
+|------------------------------------|----------------------------------|
+| `_italics_`                        | *italics*                        |
+| `*bold*`                           | **bold**                         |
+| `_*bold italics*_`                 | ***bold italics***               |
+| `~Strikethrough~`                  | ~~Strikethrough~~                |
+
+You can see other options in the official Slack information about formatting text [here](https://get.slack.help/hc/en-us/articles/202288908-Format-your-messages).
 
 ## How to get a Slack API Key
 

@@ -8,6 +8,7 @@
   * [Optional Parameters](#optional-parameters)
   * [Example: Alarm Configuration Using Optional Parameters](#example-alarm-configuration-using-optional-parameters)
   * [Mini Map Configuration](#mini-map-configuration)
+  * [Formatting alarms text](#formatting-alarms-text)
 * [How to Enable Discord Webhooks](#how-to-enable-discord-webhooks)
 
 ## Prerequisites
@@ -169,6 +170,23 @@ Below is an example of enabling the mini map for pokemon.
 | `height`       | Height of the map                                 | `150` px                                      |
 | `maptype`      | Link to be added to notification text             | `roadmap`                                     |
 | `zoom`         | Specifies the zoom of the map                     | `15`                                          |
+
+### Formatting alarms text
+
+Here is a basic guide to apply custom styles to alarm text:
+
+| Style                              | Example                          |
+|------------------------------------|----------------------------------|
+| `*italics*`                        | *italics*                        |
+| `**bold**`                         | **bold**                         |
+| `***bold italics***`               | ***bold italics***               |
+| `__underline__`                    | __underline__                    |
+| `__*underline italics*__`          | __*underline italics*__          |
+| `__**underline bold**__`           | __**underline bold**__           |
+| `__***underline bold italics***__` | __***underline bold italics***__ |
+| `~~Strikethrough~~`                | ~~Strikethrough~~                |
+
+You can see other options in the official Discord information about formatting text [here](https://support.discordapp.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-).
 
 ## How to enable Discord webhooks
 

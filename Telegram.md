@@ -7,6 +7,7 @@
 * [Advanced Config](#advanced-config)
   * [Optional Parameters](#optional-parameters)
   * [Example: Alarm Configuration Using Optional Parameters](#example-alarm-configuration-using-optional-parameters)
+  * [Formatting alarms text](#formatting-alarms-text)
 * [How to Get a Telegram API Key](#how-to-get-a-telegram-api-key)
 * [How to Create a Custom Channel](#how-to-create-a-custom-channel)
 
@@ -124,6 +125,17 @@ Below is how an advanced alarm configuration would appear in `alarms.json`. Note
 }
 ```
 
+### Formatting alarms text
+
+Here is a basic guide to apply custom styles to alarm text:
+
+| Style                              | Example                          |
+|------------------------------------|----------------------------------|
+| `_italic text_`                    | *italics*                        |
+| `*bold text*`                      | **bold**                         |
+| `_*bold italics*_`                 | ***bold italics***               |
+
+You can see other options in the official Telegram information about formatting text [here](https://core.telegram.org/bots/api#formatting-options).
 
 ## How to get a Telegram API Key
 
