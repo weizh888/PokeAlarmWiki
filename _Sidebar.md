@@ -2,7 +2,7 @@
 [Home](home)    
 [Installation](installation)  
 [FAQ](faq)
-   
+
 ### **Settings**
 [Configuring PokeAlarm](configuring-pokeAlarm)   
 [Server Settings](server-settings)   
@@ -22,11 +22,12 @@
 
 ### **Other**
 [Dynamic Text Substitution](Dynamic-Text-Substitution)  
+[Object Caching](Object-Caching)  
 [Google Maps API Keys](Google-Maps-API-Key)   
 [Remedy's v3.2 Guide](v3.2-Guide)  
 [Remedy's v3 Guide](v3-Guide)
 
 ### **Documentation**
 [Webhook Standards](Webhook-Standard)  
-[Blog](blog_content)  
-[Patch Notes](patch-notes)
+[Patch Notes](patch-notes)  
+[Blog](https://pokealarm.github.io/)
